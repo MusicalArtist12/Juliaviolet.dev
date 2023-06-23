@@ -10,9 +10,16 @@ import {faGithub} from '@fortawesome/free-brands-svg-icons'
 
 
 function Badge( {location, link}) {
+    let style = footer.badge;
+
+    if(link == "https://breq.dev") {
+        style = footer.breq;
+    }
+    
     return(
         <div className="inline">
-            <a className={footer.badgeHover} href={link}><img className={footer.badge} src={location} /></a>
+            
+            <a className={footer.badgeHover} href={link}><img className={style} src={location} /></a>
         </div>
     );
 }
@@ -26,7 +33,7 @@ export default function Footer() {
                     <Badge location="/88x31/breq.png" link="https://breq.dev"/>
                     <Badge location="/88x31/vivi.png" link="https://www.vhafener.com/"/>
                 </div>
-                
+
                 <div className={footer.right}>
                     <p className={footer.p}><a className={footer.link} href="https://github.com/MusicalArtist12/MusicalArtist12.github.io"><FontAwesomeIcon icon={faGithub} /> juliaviolet.dev</a> | 2023</p> 
                 </div>

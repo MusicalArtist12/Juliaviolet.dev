@@ -25,6 +25,16 @@
     box-shadow: 5px 5px;
 }
 
+.breq {
+    margin: 5px;
+    display: inline;
+}
+
+.breq:hover {
+    text-decoration: none;
+    box-shadow: 5px 5px #ffda00;
+}
+
 .right {
     margin-left: auto;
     align-self: center;
