@@ -1,10 +1,12 @@
 import '../styles/globals.css'
-import Navbar from './navbar';
-import Footer from './footer'
+import flexbox from "../styles/flexbox.module.css"
 
+import Header from './header';
+import Footer from './footer'
+import Head from 'next/head'
 
 export default function RootLayout({ 
-    children 
+    children
 } : { 
     children: React.ReactNode 
 }) {
@@ -12,18 +14,13 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>  
-                <div>
-                    <Navbar/>
-                </div>
-                <div className="body">
+                <Header/>
+                
+                <section className='body'>
                     {children}
-                </div>
-                <div>
-                    <Footer/>
-                </div>
-                
+                </section>
 
-                
+                <Footer/>
             </body>
         </html>
     );

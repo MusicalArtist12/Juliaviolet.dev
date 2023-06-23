@@ -1,5 +1,3 @@
-// juliaviolet.dev/Projects
-
 export default function Page() {
     return (
         <>

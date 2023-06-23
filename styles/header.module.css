@@ -1,0 +1,110 @@
+.bar {
+    padding: 10px;
+    padding-left:20px;
+    padding-right:20px;
+    width: 100%;
+    color: var(--text_light);
+    background-color: var(--header_color);
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: normal;
+    align-self: center;
+    display:inline;
+    color: var(--text_light);
+}
+
+.title:hover {
+    align-self: center;
+    display:inline;
+    text-decoration: none;
+}
+
+.navButton {
+    display: none;
+}
+
+.menu {
+    display:block;
+    background-color: var(--header_color);
+}
+
+.menuItem {
+    margin:2px;
+    padding:2px;
+    font-size: 15px;
+    color: var(--text_light);
+}
+
+.menuItem:hover {
+    color: var(--text_dark);
+    text-decoration: none;
+}  
+
+.mobileMenuItem {
+    display: none;
+}
+
+
+/* Phones*/
+@media screen and (max-width: 550px) {
+    .menu {
+        display: none; 
+    }
+
+    .navButton {
+        display: inline;
+        margin-left: auto;
+        align-self: center;
+        font-size: 30px;
+    }
+
+    .title {
+        font-size: 40px;
+    }
+
+    .mobileMenu {
+        position: absolute;
+        background-color: var(--divAlt_color);
+        left: 0;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .mobileMenuItem {
+        display:block;
+        padding-bottom: 5px;
+    }
+
+}
+
+@media screen and (max-width: 500px) { 
+    .title {
+        font-size: 30px;
+    }
+    .navButton {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 400px) { 
+    .title {
+        font-size: 25px;
+    }
+    .navButton {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 350px) { 
+    .title {
+        font-size: 20px;
+    }
+    .navButton {
+        font-size: 20px;
+    }
+}

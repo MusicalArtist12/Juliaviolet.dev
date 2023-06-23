@@ -1,0 +1,44 @@
+.bar {
+    margin-top: auto;
+    
+    padding: 20px;
+    width: 100%;
+
+    color: var(--text_dark);
+    background-color: var(--footer_color);
+}
+
+.content {
+    margin: auto;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+}
+
+.badge {
+    margin: 5px;
+    display: inline;
+}
+
+.badge:hover {
+    text-decoration: none;
+    box-shadow: 5px 5px;
+}
+
+.right {
+    margin-left: auto;
+    align-self: center;
+}
+
+.p {
+    font-size: 12px;
+}
+
+.link {
+    color: var(--text_dark);
+}
+
+.link:hover {
+    color: var(--text_dark);
+    text-decoration: underline;
+}
