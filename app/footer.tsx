@@ -35,7 +35,7 @@ export default function Footer() {
                 </div>
 
                 <div className={footer.right}>
-                    <p className={footer.p}><a className={footer.link} href="https://github.com/MusicalArtist12/MusicalArtist12.github.io"><FontAwesomeIcon icon={faGithub} /> juliaviolet.dev</a> | 2023</p> 
+                    <p className={footer.p}><a className={footer.link} href="https://github.com/MusicalArtist12/Juliaviolet.dev"><FontAwesomeIcon icon={faGithub} /> MusicalArtist12/Juliaviolet.dev</a> | 2023</p> 
                 </div>
             </div>
         </footer>
