@@ -28,7 +28,7 @@ export default function Footer() {
     return (
         <footer className={footer.bar}>
             <div className={footer.content}>
-                <div>
+                <div className={footer.left}> 
                     <Badge location="/88x31/ava.png" link="https://avasilver.dev"/>
                     <Badge location="/88x31/breq.png" link="https://breq.dev"/>
                     <Badge location="/88x31/vivi.png" link="https://www.vhafener.com/"/>

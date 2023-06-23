@@ -74,3 +74,30 @@ p {
     text-decoration: underline;
 }
 
+
+@media screen and (max-width: 500px) { 
+    h1 {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
+    h2 {
+        font-size: 15px;
+        
+    }
+    
+    p {
+        font-size: 12px;
+        font-weight: light;
+    } 
+
+    .link {
+        font-size: 12px;
+        font-weight: light;
+        color: var(--footer_color);
+    }
+    
+    .link:hover {
+        text-decoration: underline;
+    }   
+}
