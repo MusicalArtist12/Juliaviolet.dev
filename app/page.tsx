@@ -1,9 +1,13 @@
+// juliaviolet.dev/
+
 export default function Page() {
     return (
-        <div>
-            <h1>Hello World!</h1>
-            <h2>now in react!</h2>    
-        </div>
+        <section>
+            <div className="body_panel">
+                <h2>Hello World! and Hello Next.js!</h2>
+                <p>You have reached my new webpage! More is to come in the future, hold on tight.</p>
+            </div>
+        </section>
     )
 }
 
