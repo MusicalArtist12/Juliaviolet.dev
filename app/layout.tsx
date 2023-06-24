@@ -1,9 +1,11 @@
 import '../styles/globals.css'
-import flexbox from "../styles/flexbox.module.css"
 
-import Header from './header';
-import Footer from './footer'
+import Header from './Header/Header';
+import Footer from './Footer/Footer'
 import Head from 'next/head'
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 export default function RootLayout({ 
     children

@@ -1,0 +1,80 @@
+.bar {
+    background-color: var(--header_color);
+
+    color: var(--text_light);
+    
+    position: sticky;
+    top: 0;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    margin: auto;
+    width: 85%;
+}
+
+.titlebar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: clamp(1.5625rem, 6.6vw, 2.5rem);
+    width:100%;
+    display: flex;
+    flex-direction: row;
+}
+    .title {
+        letter-spacing: 2px;
+        font-size: inherit;
+        font-weight: normal;
+        color: var(--text_light);
+    }
+
+    .navButton {
+        font-size: inherit;
+        display: none;   
+    }
+
+.navbar, .mobile_navbar {
+    font-size: 15px;
+}
+
+.mobile_navbar {
+    background-color: var(--divAlt_color);
+}
+
+    .menu {
+        margin-top: -15px;
+        padding-bottom: 10px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .mobile_menu {
+        display: grid;
+        row-gap: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .menuItem {
+        font-size: inherit;
+        padding-right: 10px;
+    }
+
+    .menuItem:hover {
+        color: var(--text_dark);
+        text-decoration: none;
+    } 
+
+
+
+
+@media screen and (max-width: 600px) { 
+    .navButton {
+        display: inline;
+        margin-left: auto;
+    }
+}

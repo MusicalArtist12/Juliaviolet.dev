@@ -25,20 +25,16 @@ body {
 }
 
 .body {
-    padding:10px;
+    padding:15px;
     width: 100%;
+    display: grid;
+    row-gap: 15px;
 }
 
 .body_panel{
     padding: 10px;
-    margin: 10px;
     border-radius: 10px;
     background-color: var(--div_color);
-}
-
-.stickyTop {
-    position: sticky;
-    top: 0;
 }
 
 .inline {
@@ -52,54 +48,26 @@ body {
 
 h1 {
     color: var(--text_header);
-    font-size: 30px;
+    font-size: clamp(1rem, 3vw, 1.875rem);
     font-weight: bold;
 }
 
 h2 {
     color: var(--text_header);
-    font-size: 20px;
+    font-size: clamp(0.875rem, 2vw, 1.25rem);
 }
 
 p {
-    font-size: 15px;
+    font-size: clamp(0.75rem, 1.6vw, 1rem);
     font-weight: light;
 }
 
 .link {
-    font-size: 15px;
+    font-size: inherit;
     font-weight: light;
     color: var(--footer_color);
 }
 
 .link:hover {
     text-decoration: underline;
-}
-
-
-@media screen and (max-width: 500px) { 
-    h1 {
-        font-size: 20px;
-        font-weight: bold;
-    }
-    
-    h2 {
-        font-size: 15px;
-        
-    }
-    
-    p {
-        font-size: 12px;
-        font-weight: light;
-    } 
-
-    .link {
-        font-size: 12px;
-        font-weight: light;
-        color: var(--footer_color);
-    }
-    
-    .link:hover {
-        text-decoration: underline;
-    }   
 }

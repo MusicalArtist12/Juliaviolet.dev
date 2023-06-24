@@ -1,0 +1,57 @@
+.bar {
+    margin-top: auto;
+    
+    padding: 20px;
+    width: 100%;
+
+    color: var(--text_dark);
+    background-color: var(--footer_color);
+}
+
+.content {
+    margin: auto;
+    padding-bottom:20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.badge {
+    display: inline;
+    image-rendering: pixelated;
+}
+
+.breq {
+    display: inline;
+    image-rendering: pixelated;
+}
+
+
+.badge:hover {
+    text-decoration: none;
+    box-shadow: 5px 5px;
+}
+
+.breq:hover {
+    text-decoration: none;
+    box-shadow: 5px 5px #ffda00;
+}
+
+.p {
+    padding: 10px;
+    text-align: center;
+    align-self:center;
+    font-size: 12px;
+}
+
+.badge_collection {
+    display: grid;
+    gap: 10px;
+    grid-auto-flow: column;
+    color: var(--text_dark);
+    align-self:center;
+}
+
+.link:hover {
+    color: var(--text_dark);
+    text-decoration: underline;
+}
