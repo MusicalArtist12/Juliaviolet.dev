@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 :root {
-    /*--header_color: #a06ffd;*/
-    --header_color: #7A4ECC;
+    --header_color: #a06ffd;
     --div_color: #573499;
     --divAlt_color: #8A5FD9;
     --footer_color: #FC62BF;
