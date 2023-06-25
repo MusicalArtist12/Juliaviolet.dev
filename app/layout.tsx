@@ -12,6 +12,10 @@ export default function RootLayout({
     // root layout, must have html and body tag
     return (
         <html lang="en">
+            <head>
+                <meta name="google-site-verification" content="......." />
+            </head>
+            
             <body>  
                 <Header/>
                 
