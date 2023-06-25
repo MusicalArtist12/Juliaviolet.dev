@@ -34,12 +34,13 @@ export default function Header() {
     const [width, setWidth] = useState(0);
   
     useLayoutEffect(() => {
-      setWidth(ref.current.offsetWidth);
+    if ( ref && ref.current ) { setWidth(ref.current['clientWidth']); }
+      ;
     }, []);
 
     useEffect(() => {
         function handleWindowResize() {
-          setWidth(ref.current.clientWidth);
+            if ( ref && ref.current ) { setWidth(ref.current['clientWidth']); }
         }
     
         window.addEventListener('resize', handleWindowResize);
