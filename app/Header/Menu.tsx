@@ -19,7 +19,7 @@ export default function Menu( { children, open, isMobile}) {
         menuType = header.mobile_menu;
     }
     
-    let menu = (
+    let menu: JSX.Element = (
         <div>
             <div className={navType}>
                 
@@ -39,8 +39,9 @@ export default function Menu( { children, open, isMobile}) {
     } else if(open) {
         return(menu);
         
+    } else {
+        return(null);
     }
-
 }
 
 function mobileMenu({children}) {
