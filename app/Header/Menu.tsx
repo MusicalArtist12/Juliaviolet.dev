@@ -1,13 +1,12 @@
 "use client"
 
-import { animated } from '@react-spring/web'
-import { useSpring } from '@react-spring/web'
+import { useSpring, animated } from '@react-spring/web'
 
 import header from "./header.module.css"
 
 
 export default function Menu( { children, open, isMobile}) {
-    const [springs, api] = useSpring(
+    const [springs, api]= useSpring(
         () => ({
             config: {
                 velocity: 5,
@@ -53,7 +52,7 @@ export default function Menu( { children, open, isMobile}) {
         ); 
     } else if(open) {
         return(
-            <animated.div className={navType} style={...springs}>
+            <animated.div className={navType} style={{...springs}}>
                 {menu}
             </animated.div>
         )
