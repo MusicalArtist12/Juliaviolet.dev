@@ -1,11 +1,11 @@
 "use client"
 
-import * as React from 'react';
-import { useState, useEffect } from 'react';
-import { useSpring } from '@react-spring/web'
+import { useState } from 'react';
 
 import header from "./header.module.css"
 import Menu from "./Menu"
+import WindowWidth from "./WindowWidth";
+
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { config } from '@fortawesome/fontawesome-svg-core'
@@ -15,63 +15,23 @@ config.autoAddCss = false;
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 
-function Button( {title, link }) {
+function MenuItem( {title, link }) {
     
     return (
         <a href={link} className={header.menuItem}>{ title }</a>
     );
 }
 
-function WindowWidth(): number {
-    const [windowSize, setWindowSize] = useState({
-        width: 0,
-        height: 0,
-    });
-    
-    useEffect(() => {
-        function handleResize() {
-            setWindowSize({
-                width: window.innerWidth,
-                height: window.innerHeight,
-            });
-        }
 
-        window.addEventListener('resize', handleResize);
-
-        handleResize();
-
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
-
-    return windowSize.width;
-}
 
 export default function Header() {
     
     // Button handling
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
 
-    const [springs, api] = useSpring(
-        () => ({
-            config: {
-                velocity: 5,
-            },
-        
-            from: { y: 0 },
-        })
-    )
-    
+
     function handleClick() {
         setOpen(!open);
-
-        api.start({
-            from: {
-            y: -100,
-            },
-            to: {
-            y: 0,
-            },
-        })
     }
 
     let width = WindowWidth();
@@ -88,8 +48,6 @@ export default function Header() {
     return  (
         <>
             <header className={header.sticky}>
-
-            
                 <div className={header.bar}>
                     <div className={header.content}>
                         <div className={header.titlebar}>
@@ -100,11 +58,11 @@ export default function Header() {
                     </div> 
                 </div>
 
-                <Menu open={open} isMobile={isMobile} springs={springs} >        
-                    <Button title={"/Projects"} link={"Projects/"} />
-                    <Button title={"/Blog"} link={"Blog/"} />
-                    <Button title={"/About Me"} link={"About-Me/"} />
-                    <Button title={"/Contact"} link={"Contact/"} />
+                <Menu open={open} isMobile={isMobile}>        
+                    <MenuItem title={"/Projects"} link={"Projects/"} />
+                    <MenuItem title={"/Blog"} link={"Blog/"} />
+                    <MenuItem title={"/About Me"} link={"About-Me/"} />
+                    <MenuItem title={"/Contact"} link={"Contact/"} />
                 </Menu>
 
 

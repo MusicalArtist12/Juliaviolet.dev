@@ -2,9 +2,6 @@ import '../styles/globals.css'
 
 import Header from './Header/Header';
 import Footer from './Footer/Footer'
-import Head from 'next/head'
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 export default function RootLayout({ 
