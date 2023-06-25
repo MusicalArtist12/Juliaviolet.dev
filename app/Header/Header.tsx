@@ -1,7 +1,8 @@
-'use client'
+"use client"
 
 import * as React from 'react';
-import {useLayoutEffect, useEffect, useRef, useState} from 'react';
+import { useState, useEffect } from 'react';
+import { useSpring } from '@react-spring/web'
 
 import header from "./header.module.css"
 import Menu from "./Menu"
@@ -21,37 +22,60 @@ function Button( {title, link }) {
     );
 }
 
+function WindowWidth(): number {
+    const [windowSize, setWindowSize] = useState({
+        width: 0,
+        height: 0,
+    });
+    
+    useEffect(() => {
+        function handleResize() {
+            setWindowSize({
+                width: window.innerWidth,
+                height: window.innerHeight,
+            });
+        }
+
+        window.addEventListener('resize', handleResize);
+
+        handleResize();
+
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    return windowSize.width;
+}
 
 export default function Header() {
+    
+    // Button handling
     const [open, setOpen] = React.useState(false);
 
-        const handleOpen = () => {
+    const [springs, api] = useSpring(
+        () => ({
+            config: {
+                velocity: 5,
+            },
+        
+            from: { y: 0 },
+        })
+    )
+    
+    function handleClick() {
         setOpen(!open);
-    };
 
-    const ref = useRef(null);
+        api.start({
+            from: {
+            y: -100,
+            },
+            to: {
+            y: 0,
+            },
+        })
+    }
 
-    const [width, setWidth] = useState(0);
-  
-    useLayoutEffect(() => {
-    if ( ref && ref.current ) { setWidth(ref.current['clientWidth']); }
-      ;
-    }, []);
-
-    useEffect(() => {
-        function handleWindowResize() {
-            if ( ref && ref.current ) { setWidth(ref.current['clientWidth']); }
-        }
-    
-        window.addEventListener('resize', handleWindowResize);
-    
-        return () => {
-          window.removeEventListener('resize', handleWindowResize);
-        };
-    }, []);
-    
-    let navType = header.navbar;
-    let menuType = header.menu;
+    let width = WindowWidth();
+     
 
     const mobileWidth = 600;
 
@@ -63,22 +87,30 @@ export default function Header() {
     
     return  (
         <>
-        <header ref={ref} className={header.bar}>
+            <header className={header.sticky}>
+
             
-            <div className={header.content}>
-                <div className={header.titlebar}>
-                    <a href="/"><h1 className={header.title}>JuliaViolet.dev</h1></a>
-                    
-                    <button onClick={handleOpen} className={header.navButton}><FontAwesomeIcon icon={faBars}/></button>
+                <div className={header.bar}>
+                    <div className={header.content}>
+                        <div className={header.titlebar}>
+                            <a href="/"><h1 className={header.title}>JuliaViolet.dev</h1></a>
+                            
+                            <button onClick={handleClick} className={header.navButton}><FontAwesomeIcon icon={faBars}/></button>
+                        </div>
+                    </div> 
                 </div>
-            </div> 
-            <Menu open={open} isMobile={isMobile}>        
-                <Button title={"/Projects"} link={"Projects/"} />
-                <Button title={"/Blog"} link={"Blog/"} />
-                <Button title={"/About Me"} link={"About-Me/"} />
-                <Button title={"/Contact"} link={"Contact/"} />
-            </Menu>
-        </header>
+
+                <Menu open={open} isMobile={isMobile} springs={springs} >        
+                    <Button title={"/Projects"} link={"Projects/"} />
+                    <Button title={"/Blog"} link={"Blog/"} />
+                    <Button title={"/About Me"} link={"About-Me/"} />
+                    <Button title={"/Contact"} link={"Contact/"} />
+                </Menu>
+
+
+            </header>
+
+            
 
 
         </>

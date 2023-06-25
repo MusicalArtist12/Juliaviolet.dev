@@ -1,15 +1,15 @@
-.bar {
-    background-color: var(--header_color);
-
-    color: var(--text_light);
-    
+.sticky {
     position: sticky;
     top: 0;
+    z-index:1;
+}
 
+.bar {
+    position: relative;
+    background-color: var(--header_color);
+    color: var(--text_light);
     width: 100%;
-
-    display: flex;
-    flex-direction: column;
+    z-index: 100 !important;
 }
 
 .content {
@@ -38,15 +38,17 @@
     }
 
 .navbar, .mobile_navbar {
+    background-color: var(--header_color);
     font-size: 15px;
 }
 
 .mobile_navbar {
+    position: relative;
+    width:100%;
     background-color: var(--divAlt_color);
 }
 
     .menu {
-        margin-top: -15px;
         padding-bottom: 10px;
         display: flex;
         flex-direction: row;
@@ -55,8 +57,8 @@
     .mobile_menu {
         display: grid;
         row-gap: 5px;
-        padding-top: 5px;
-        padding-bottom: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
     .menuItem {

@@ -1,16 +1,11 @@
+"use client"
 
-'use client'
+import { animated } from '@react-spring/web'
 
 import header from "./header.module.css"
 
 
-import * as React from 'react';
-
-
-import { useSpring, animated } from '@react-spring/web'
-
-
-export default function Menu( { children, open, isMobile}) {
+export default function Menu( { children, open, isMobile, springs}) {
     let navType = header.navbar;
     let menuType = header.menu;
     
@@ -20,42 +15,27 @@ export default function Menu( { children, open, isMobile}) {
     }
     
     let menu: JSX.Element = (
-        <div>
-            <div className={navType}>
-                
-                <div className={header.content}>
-                    <nav className={menuType}>
-                        {children} 
-                    </nav>
-                </div> 
-
-            </div>
-        </div>
+        <div className={header.content}>
+            <nav className={menuType}>
+                {children} 
+            </nav>
+        </div> 
     );
     
     if(!isMobile){
-        return(menu); 
-
+        return(
+           <div className={navType}>
+                {menu}
+           </div> 
+        ); 
     } else if(open) {
-        return(menu);
-        
+        return(
+            <animated.div className={navType} style={...springs}>
+                {menu}
+            </animated.div>
+        )
     } else {
         return(null);
     }
 }
-
-function mobileMenu({children}) {
-    return (
-        <animated.div
-          style={{
-            width: 80,
-            height: 80,
-            background: '#ff6d6d',
-            borderRadius: 8,
-          }}
-        />
-      )
-    
-}
-
 // {menu.map( (menuItem, index) => (<a key={index} className={header.menuItem}>{menuItem}</a>) )}
