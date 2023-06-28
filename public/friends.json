@@ -1,0 +1,17 @@
+{ "friends": [
+    {
+        "name": "Ava Silver",
+        "badge": "/88x31/ava.png",
+        "link": "https://avasilver.dev"
+    },
+    {
+        "name": "Brooke Chalmers",
+        "badge": "88x31/breq.png",
+        "link": "https://breq.dev"
+    },
+    {
+        "name": "Vivian",
+        "badge": "88x31/vivi.png",
+        "link": "https://www.vhafener.com/"
+    }
+]}

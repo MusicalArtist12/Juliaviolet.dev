@@ -1,12 +1,13 @@
 // juliaviolet.dev/
+import Head from 'next/head';
 
 
 export default function Page() {
     return (
         <>
-            <head>
+            <Head>
                 <title>Juliaviolet.dev</title>
-            </head>
+            </Head>
             <div className="body_panel">
                 <h1>Hello World! and Hello Next.js!</h1>
                 <h2>This page is not finished</h2>

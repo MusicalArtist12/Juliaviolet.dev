@@ -1,41 +1,24 @@
 "use client"
-
-import { useSpring, animated } from '@react-spring/web'
-
 import header from "./header.module.css"
 
+import React, { useEffect } from 'react'
+import { useTransition, animated, AnimatedProps } from '@react-spring/web'
 
-export default function Menu( { children, open, isMobile}) {
-    const [springs, api]= useSpring(
-        () => ({
-            config: {
-                velocity: 5,
-            },
-        
-            from: { y: 0 },
-        })
-    )
+import WindowWidth from "../_apps/WindowWidth";
 
-    if(open) {
-        api.start({
-            from: {
-            y: -100,
-            },
-            to: {
-            y: 0,
-            },
-        })
-    }
-    
-    
-    let navType = header.navbar;
+const mobileWidth = 600;
+
+export default function Menu( { children, index }) {
+    let width = WindowWidth();
+
+    let isMobile:boolean = false;
     let menuType = header.menu;
-    
-    if(isMobile) {
-        navType = header.mobile_navbar;
+
+    if(width <= mobileWidth) { 
+        isMobile = true; 
         menuType = header.mobile_menu;
     }
-    
+
     let menu: JSX.Element = (
         <div className={header.content}>
             <nav className={menuType}>
@@ -43,21 +26,43 @@ export default function Menu( { children, open, isMobile}) {
             </nav>
         </div> 
     );
+
+    let data: ((props: AnimatedProps<{ style }>) => React.ReactElement)[] = [
+        ({ style }) => <animated.div style={{ ...style, display: "none"}}/>,
+        ({ style }) => <animated.div style={{ ...style}} className={header.mobile_navbar}>{menu}</animated.div>,
+    ]
+
+    const [transition, api] = useTransition(index, () => ({
+        from:  { x: -width },
+        enter: { x: 0      },
+        leave: { x: width  },
+        config: {
+            tension: 150,
+            friction: 10,
+            clamp: true
+        },
     
+    }))
+
+    useEffect(() => {
+        api.start();
+    }, [index])
+
     if(!isMobile){
         return(
-           <div className={navType}>
+           <div className={header.navbar}>
                 {menu}
            </div> 
         ); 
-    } else if(open) {
-        return(
-            <animated.div className={navType} style={{...springs}}>
-                {menu}
-            </animated.div>
-        )
+
     } else {
-        return(null);
+        return( transition(
+            (style, i) => {
+                const Page = data[i];
+                return (
+                    <Page style={style}/>
+                )
+            }
+        ))
     }
 }
-// {menu.map( (menuItem, index) => (<a key={index} className={header.menuItem}>{menuItem}</a>) )}

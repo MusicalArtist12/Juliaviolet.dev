@@ -43,7 +43,7 @@
 }
 
 .mobile_navbar {
-    position: relative;
+    position: absolute;
     width:100%;
     background-color: var(--divAlt_color);
 }

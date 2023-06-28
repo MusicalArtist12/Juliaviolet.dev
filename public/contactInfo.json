@@ -1,0 +1,39 @@
+{ "methods": [
+    {
+        "name": "Twitter",
+        "handle": "@MusicalArtist12",
+        "link": "https://twitter.com/MusicalArtist12",
+        "description":"Twitter, until it dies"
+    },
+    {
+        "name":"Bluesky",
+        "handle":"@Juliaviolet.dev",
+        "link":"https://bsky.app/profile/juliaviolet.dev",
+        "description":"Bluesky, for when Twitter dies"
+    },
+    {
+        "name":"Discord",
+        "handle":"@MusicalArtist12",
+        "link":"",
+        "description":""
+    },
+    {
+        "name":"Instagram",
+        "handle":"@MusicalArtist.12",
+        "link":"https://www.instagram.com/musicalartist.12/",
+        "description":"Instagram, for the few people that want it"
+    },
+    {
+        "name":"Github",
+        "handle":"@MusicalArtist12",
+        "link":"https://github.com/MusicalArtist12",
+        "description":"Github, for the nerds"
+    },
+    {
+        "name":"Email",
+        "handle":"Julia.Violet@outlook.com",
+        "link":"mailto:julia.violet@outlook.com",
+        "description":""
+    }
+]}
+

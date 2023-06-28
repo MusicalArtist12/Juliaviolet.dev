@@ -6,16 +6,19 @@
     --header_color: #a06ffd;
     --div_color: #573499;
     --divAlt_color: #8A5FD9;
-    --footer_color: #FC62BF;
+    --background_color: #000000;
+    --footer_color: #FC6FC4;
     
-    --text_header: #D9BCFF;
+    --text_h1: #FC6FC4;
+    --text_h2: #FC9DD6;
     --text_light: #FCCAD2;
     --text_dark: #000000;
+    --text_link: #FC6FC4;
 }
 
 
 body {
-    background-color: #000000;
+    background-color: var(--background_color);
     color: var(--text_light);
     font-family: Source Code Pro, monospace;
     min-height: 100vh; /* 1 vh = 1% of viewport */
@@ -47,13 +50,13 @@ body {
 }
 
 h1 {
-    color: var(--text_header);
+    color: var(--text_h1);
     font-size: clamp(1rem, 3vw, 1.875rem);
     font-weight: bold;
 }
 
 h2 {
-    color: var(--text_header);
+    color: var(--text_h2);
     font-size: clamp(0.875rem, 2vw, 1.25rem);
 }
 
@@ -65,7 +68,7 @@ p {
 .link {
     font-size: inherit;
     font-weight: light;
-    color: var(--footer_color);
+    color: var(--text_link);
 }
 
 .link:hover {

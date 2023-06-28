@@ -1,19 +1,10 @@
 "use client"
+import header from "./header.module.css"
 
 import { useState } from 'react';
 
-import header from "./header.module.css"
 import Menu from "./Menu"
-import WindowWidth from "./WindowWidth";
-
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { config } from '@fortawesome/fontawesome-svg-core'
-import '@fortawesome/fontawesome-svg-core/styles.css'
-config.autoAddCss = false;
-
-import { faBars } from '@fortawesome/free-solid-svg-icons'
-
+import GetLogo from "../_apps/GetLogo"
 
 function MenuItem( {title, link }) {
     
@@ -22,28 +13,12 @@ function MenuItem( {title, link }) {
     );
 }
 
-
-
 export default function Header() {
     
     // Button handling
-    const [open, setOpen] = useState(false);
+    const [index, set] = useState(0);
+    const onClick = () => set(state => (state + 1) % 2);
 
-
-    function handleClick() {
-        setOpen(!open);
-    }
-
-    let width = WindowWidth();
-     
-
-    const mobileWidth = 600;
-
-    let isMobile:boolean = false;
-
-    if(width <= mobileWidth) {
-        isMobile = true;
-    }
     
     return  (
         <>
@@ -53,16 +28,16 @@ export default function Header() {
                         <div className={header.titlebar}>
                             <a href="/"><h1 className={header.title}>JuliaViolet.dev</h1></a>
                             
-                            <button onClick={handleClick} className={header.navButton}><FontAwesomeIcon icon={faBars}/></button>
+                            <button onClick={onClick} className={header.navButton}>{GetLogo("Bars", "1x")}</button>
                         </div>
                     </div> 
                 </div>
 
-                <Menu open={open} isMobile={isMobile}>        
-                    <MenuItem title={"/Projects"} link={"Projects/"} />
-                    <MenuItem title={"/Blog"} link={"Blog/"} />
-                    <MenuItem title={"/About Me"} link={"About-Me/"} />
-                    <MenuItem title={"/Contact"} link={"Contact/"} />
+                <Menu index={index}>        
+                    <MenuItem title={"/Projects"} link={"Projects/"}/>
+                    <MenuItem title={"/Blog"} link={"Blog/"}/>
+                    <MenuItem title={"/About Me"} link={"About-Me/"}/>
+                    <MenuItem title={"/Contact"} link={"Contact/"}/>
                 </Menu>
 
 
