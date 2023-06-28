@@ -21,7 +21,8 @@ export default function JuliaPhoto():JSX.Element {
         data[i] = ({ style }) => <button><animated.img style={{ ...style}} title={PhotoArray[i].title} className={photo.img} src={PhotoArray[i].location}/></button>
     }
 
-    const ref = useRef(null);
+    const ref = useRef<HTMLInputElement>(null);
+
 
     let width = ref.current ? ref.current.offsetWidth/2 : 0;
 
