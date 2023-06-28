@@ -7,7 +7,6 @@ import Menu from "./Menu"
 import GetLogo from "../_apps/GetLogo"
 
 function MenuItem( {title, link }) {
-    
     return (
         <a href={link} className={header.menuItem}>{ title }</a>
     );
@@ -19,7 +18,6 @@ export default function Header() {
     const [index, set] = useState(0);
     const onClick = () => set(state => (state + 1) % 2);
 
-    
     return  (
         <>
             <header className={header.sticky}>

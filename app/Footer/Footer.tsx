@@ -4,7 +4,7 @@ import GetLogo from "../_apps/GetLogo"
 
 import friends from "../../public/friends.json" assert { type: 'json' }
 
-function Badge( {badge, link}) {
+function Badge({badge, link}) {
     let style = footer.badge;
 
     if(link == "https://breq.dev") {
