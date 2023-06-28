@@ -1,0 +1,27 @@
+.img {
+    border-radius: 10px;
+    margin: auto; 
+}
+
+.div {
+
+    width: clamp(12rem, 30vw, 30rem);
+    height: clamp(12rem, 30vw, 30rem);
+    display: flex;
+    float: left;
+    
+    align-items: center;
+    justify-content: center;
+    
+    
+    margin: 15px;
+    margin-left: 0px;
+}
+
+@media screen and (max-width: 500px) { 
+    .div {
+        float:none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

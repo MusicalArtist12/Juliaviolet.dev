@@ -35,6 +35,7 @@ export default function Footer() {
 
                 <div className={footer.right}>
                     <p className={footer.p}><a className={footer.link} href="https://github.com/MusicalArtist12/Juliaviolet.dev">{GetLogo("Github", "1x")} MusicalArtist12/Juliaviolet.dev</a> | 2023</p> 
+                    <p className={footer.p}>Made with Next.js, React.js, React-Spring, and &lt;3 </p>
                 </div>
             </div>
         </footer>

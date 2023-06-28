@@ -2,6 +2,8 @@
 import header from "./header.module.css"
 
 import { useState } from 'react';
+import { useSpring, animated } from '@react-spring/web';
+
 
 import Menu from "./Menu"
 import GetLogo from "../_apps/GetLogo"
@@ -14,9 +16,25 @@ function MenuItem( {title, link }) {
 
 export default function Header() {
     
+
+    const [spring, api] = useSpring(
+        () => ({
+            config: {
+                tension: 100,
+                friction: 60
+            }
+        })
+    );
+
     // Button handling
     const [index, set] = useState(0);
-    const onClick = () => set(state => (state + 1) % 2);
+    const onClick = () => {
+        api.start({
+            from: { transform: 'rotateZ(0deg)' },
+            to: { transform: 'rotateZ(180deg)' }
+        });
+        set(state => (state + 1) % 2);
+    }
 
     return  (
         <>
@@ -26,7 +44,7 @@ export default function Header() {
                         <div className={header.titlebar}>
                             <a href="/"><h1 className={header.title}>JuliaViolet.dev</h1></a>
                             
-                            <button onClick={onClick} className={header.navButton}>{GetLogo("Bars", "1x")}</button>
+                            <animated.button onClick={onClick} className={header.navButton} style={{...spring}}>{GetLogo("Bars", "1x")}</animated.button>
                         </div>
                     </div> 
                 </div>

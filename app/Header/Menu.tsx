@@ -36,9 +36,10 @@ export default function Menu( { children, index }) {
         from:  { x: -width },
         enter: { x: 0      },
         leave: { x: width  },
+        exitBeforeEnter: true,
         config: {
-            tension: 150,
-            friction: 10,
+            tension: 210,
+            friction: 20,
             clamp: true
         },
     

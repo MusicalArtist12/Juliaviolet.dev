@@ -9,7 +9,7 @@
     background-color: var(--header_color);
     color: var(--text_light);
     width: 100%;
-    z-index: 100 !important;
+    z-index: 0;
 }
 
 .content {
@@ -18,12 +18,12 @@
 }
 
 .titlebar {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: clamp(1.5625rem, 6.6vw, 2.5rem);
+    padding-top: 15px;
+    font-size: clamp(1.5625rem, 5.0vw, 2.5rem);
     width:100%;
     display: flex;
     flex-direction: row;
+    
 }
     .title {
         letter-spacing: 2px;
@@ -37,10 +37,16 @@
         display: none;   
     }
 
-.navbar, .mobile_navbar {
+.navbar {
     background-color: var(--header_color);
-    font-size: 15px;
+    z-index: 10;
+
 }
+    
+.navbar, .mobile_navbar {
+    font-size: clamp(1.0rem, 3vw, 1.2rem);
+}
+
 
 .mobile_navbar {
     position: absolute;
@@ -49,6 +55,7 @@
 }
 
     .menu {
+        
         padding-bottom: 10px;
         display: flex;
         flex-direction: row;
@@ -78,5 +85,9 @@
     .navButton {
         display: inline;
         margin-left: auto;
+    }
+
+    .titlebar {
+        padding-bottom: 15px;
     }
 }

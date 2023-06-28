@@ -29,13 +29,16 @@ body {
 
 .body {
     padding:15px;
-    width: 100%;
+    margin: auto;
+    margin-top: 0px;
+    width: 90%;
     display: grid;
     row-gap: 15px;
 }
 
 .body_panel{
     padding: 10px;
+
     border-radius: 10px;
     background-color: var(--div_color);
 }
@@ -51,22 +54,32 @@ body {
 
 h1 {
     color: var(--text_h1);
-    font-size: clamp(1rem, 3vw, 1.875rem);
+    font-size: clamp(1.2rem, 3vw, 1.875rem);
     font-weight: bold;
 }
 
 h2 {
     color: var(--text_h2);
-    font-size: clamp(0.875rem, 2vw, 1.25rem);
+    font-size: clamp(0.875rem, 2vw, 1.4rem);
 }
 
 p {
-    font-size: clamp(0.75rem, 1.6vw, 1rem);
+    font-size: clamp(0.75rem, 1.6vw, 1.2rem);
     font-weight: light;
 }
 
+.text {
+    width: 95%;
+    margin-top: 0;
+    margin: auto;
+}
+
+.body_paragraph {
+    padding-top: 20px;
+
+}
+
 .link {
-    font-size: inherit;
     font-weight: light;
     color: var(--text_link);
 }
