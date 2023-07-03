@@ -18,7 +18,7 @@ export default function Page() {
                     <h2 className="body_paragraph" style={{paddingTop: "0px"}}>I use She/Her pronouns</h2>
                     <JuliaPhoto/>
                     <p className="body_paragraph" style={{paddingTop: "10px"}}> 
-                        I'm a sophomore at the <a className="link" href="https://www.uidaho.edu/">University of Idaho</a>, majoring in computer science with a minor in Music.
+                        I'm a sophomore at the <a className="link" href="https://www.uidaho.edu/">University of Idaho</a>, pursuing a bachelors degree in computer science with a minor in music.
                         I'm interested in low-level programming, Robotics, and 3D graphics (most recently OpenGL).
                         Though as i'm writing this, web development might find a home in that list. 
                         I like to learn new skills and concepts to develop clever solutions to solve difficult problems. 
@@ -36,10 +36,7 @@ export default function Page() {
                         I'm a trans girl, and i'm still learning who I am. I chose the domain <a className="link" href="https://juliaviolet.dev">JuliaViolet.dev</a> since it's
                         a concatenation of my first and middle name.
                     </p>
-
                 </div>
-                
-
             </div>
         </>
     )
