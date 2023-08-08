@@ -1,19 +1,14 @@
+
 import footer from "./footer.module.css"
-
 import GetLogo from "../_apps/GetLogo"
-
 import friends from "../../public/friends.json" assert { type: 'json' }
 
-function Badge({badge, link}) {
-    let style = footer.badge;
+function Badge({badge, link, color}) {
 
-    if(link == "https://breq.dev") {
-        style = footer.breq;
-    }
-    
+
     return(
-        <div className="inline">
-            <a className={footer.badgeHover} href={link}><img className={style} src={badge} /></a>
+        <div>
+            <a className={footer.badgeHover} href={link}><img className={footer.badge} style={{"--inputcolor": color} as any} src={badge} /></a>
         </div>
     );
 }

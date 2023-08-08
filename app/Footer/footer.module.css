@@ -20,21 +20,11 @@
     image-rendering: pixelated;
 }
 
-.breq {
-    display: inline;
-    image-rendering: pixelated;
-}
-
-
 .badge:hover {
     text-decoration: none;
-    box-shadow: 5px 5px;
+    box-shadow: 5px 5px var(--inputcolor);
 }
 
-.breq:hover {
-    text-decoration: none;
-    box-shadow: 5px 5px #ffda00;
-}
 
 .p {
     padding: 10px;

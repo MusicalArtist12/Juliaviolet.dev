@@ -1,23 +1,17 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}', // Note the addition of the `app` directory.
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
+    '.public/*.json'
   ],
   theme: {
-    colors: {
-      'header_bk': '#a06ffd',
-      'block-bk': '#573499',
-      'footer-bk': '#6FDEFC',
-      'text_light': '#FCCAD2',
-      'text_dark': '#000000',
+    extend: {
+      boxShadow: {
+        'box': '5px 5px 0px 0px rgba(0, 0, 0, 1)',
+      }
     },
-    fontFamily: {
-      sans: ['sans-serif'],
-      serif: ['serif'],
-    },
-
   },
   plugins: [],
 }
-

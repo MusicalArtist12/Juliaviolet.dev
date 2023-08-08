@@ -2,16 +2,19 @@
     {
         "name": "Ava Silver",
         "badge": "/88x31/ava.png",
-        "link": "https://avasilver.dev"
+        "link": "https://avasilver.dev",
+        "color": "#3097fa"
     },
     {
         "name": "Brooke Chalmers",
         "badge": "88x31/breq.png",
-        "link": "https://breq.dev"
+        "link": "https://breq.dev",
+        "color": "#ffda00"
     },
     {
         "name": "Vivian",
         "badge": "88x31/vivi.png",
-        "link": "https://www.vhafener.com/"
+        "link": "https://www.vhafener.com/",
+        "color": "#FFFFFF"
     }
 ]}
