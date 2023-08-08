@@ -1,0 +1,126 @@
+% Julia Abdel-Monem, 2023
+
+\documentclass[12pt]{article}
+\usepackage[margin=0.5in]{geometry}
+
+\usepackage{fontspec}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{changepage} 
+
+%% fonts
+
+\setmainfont{Futura-Light.ttf}[
+  Path = /usr/local/share/fonts/TTF/ ,
+  BoldFont = Futura-Heavy.ttf ,
+  ItalicFont = Futura-Light-Italic.ttf ,
+  BoldItalicFont = Futura-Heavy-Italic.ttf
+]
+\newfontfamily\futuramedium{Futura-Medium.ttf}[Path = /usr/local/share/fonts/TTF/]
+\newcommand{\medium}[1]{
+  {\futuramedium#1}
+}
+\newfontfamily\nerdfont{Symbols Nerd Font Mono}
+\newcommand{\nf}[1]{
+  {\nerdfont#1}
+}
+
+%% formatting
+
+\onehalfspacing
+
+% #1 = icon, #2 = link, #3 = display
+\newcommand{\link}[3]{\href{#2}{\nf{#1}\nolinebreak\underline{#3}}}
+\newcommand{\linknf}[2]{\href{#2}{\nf{#1}}}
+% #1 = title, #2 = subtitle
+\newcommand{\header}[2]{
+  \begin{adjustwidth}{0.5in}{0.5in}
+    \begin{center}
+      \Huge\textbf{#1}
+    \end{center}
+    \begin{center}
+      #2
+    \end{center}
+  \end{adjustwidth}
+}
+% #1 = topic title, #2 = topic content
+\newcommand{\topic}[2]{
+  \titlespacing*\section{0pt}{0pt}{0pt}
+  \titleformat{\section}[block]{\Large}{}{1em}{}
+  \section*{\textbf{#1}}
+  \begin{adjustwidth}{}{}
+    #2
+  \end{adjustwidth}
+}
+% #1 = entry title, #2 = entry subtitle, #3 = right-hand, #4 = content
+\newcommand{\entry}[4]{
+  \titlespacing*\subsection{0pt}{0pt}{0pt}
+  \titleformat{\subsection}[block]{\normalfont}{}{1em}{}
+  \subsection*{\medium{#1} \textit{\footnotesize#2} \hfill #3} 
+  \begin{adjustwidth}{0.25in}{0.25in}
+    #4
+  \end{adjustwidth}
+}
+
+\begin{document}
+  \header{Julia Abdel-Monem}{
+    \link{󰇮}{mailto: abde7751@vandals.uidaho.edu}{abde7751@vandals.uidaho.edu}
+    \link{}{tel:+12089220316}{208-922-0316}
+    \link{}{https://github.com/MusicalArtist12}{github.com/MusicalArtist12}
+    \link{}{https://www.juliaviolet.dev}{juliaviolet.dev}
+    \link{}{https://www.google.com/maps/place/Moscow,+ID/}{Moscow, ID}  
+  }
+  \topic{Education} {
+    \entry{University of Idaho}{Moscow, ID}{Aug 2022 - May 2026} {
+        \medium{Candidate for Bachelor of Science in Computer Science }\newline
+        \medium{GPA/Honors:}3.96/4.00, Deans List \textit{(All Semesters)} \newline
+        \medium{Relevant Coursework:} \textit{Introduction to C++, Data Structures, Computer Organization and Architecture, System Software (Fall 2023), Programming Languages (Fall 2023)}
+    }
+    \entry{Renaissance High School}{Meridian, ID}{Aug 2018 - May 2022} { 
+      \textit{International Baccalaureate Diploma Program; Total Points: 31/45} \newline
+      \textit{Certifications in Adobe Photoshop, Illustrator, and Indesign} 
+    }
+  }
+  \topic{Skills} {
+    \medium{Programming Languages:}C/C++, AVR Assembly, Python, HTML, CSS, Typescript/Javascript, LaTeX \newline
+    \medium{Tools/Frameworks:}Linux(CLI), OpenGL/GLFW/GLM, ImGUI, React/Next.JS, VS Code, Adobe CC \newline
+    \medium{Interests:}Linux Development, Low-level/Assembly Programming, Graphics Programming, and Robotics
+  }
+  \topic{Projects} {
+    \entry{Personal Website \linknf{}{https://www.juliaviolet.dev}\linknf{}{https://github.com/MusicalArtist12/Juliaviolet.dev}}{React/Next.JS, Typescript, React-Spring, HTML/CSS}{May 2023 - Present}{
+      \begin{itemize}
+        \item Developed a website to showcase my personal style and give myself a presence on the web
+        \item Showcases my personal projects and provides various methods to contact me
+      \end{itemize}
+    }
+    \entry{8 Bit Wordle \linknf{}{https://github.com/MusicalArtist12/8-Bit-Wordle}}{ATmega328p Assembly}{Jun 2023 - Present} {
+      \begin{itemize}
+        \item Developing an arduino implementation of the game \textit{Wordle}
+        \item Designing a screen and input driver, as well as implementing game logic in assembly
+      \end{itemize}
+    }
+    \entry{2D Physics Emulator \linknf{}{https://github.com/MusicalArtist12/2d-vector}}{C++, OpenGL/GLFW/GLM/ImGUI}{Aug 2023 - Present} {
+      \begin{itemize}
+        \item Developing an application that emulates physics in a 2D environemnt
+        \item Developing various detection methods to implement collision detection, movement, air pressure, and energy
+      \end{itemize}
+    }
+  }
+  \topic{Work Experience} {
+    \entry{Cook @ Panda Express}{Meridian \& Moscow, ID}{Nov 2021 - Present}{
+      \begin{itemize}
+        \item Worked in a team environment, using clear and effective communication
+        \item Memorized recipes, Minimizing waste while cooking, and Maximized quality
+      \end{itemize}
+    }
+    \entry{Shift Lead @ Gyro Shack}{Meridian, ID}{Jun 2019 - Nov 2021}{
+      \begin{itemize}
+        \item Proposed methods for efficient workflows, many of which were implemented
+        \item Focused on training others in their positions and led crews to ensure smooth operation
+      \end{itemize}
+    }
+
+    \thispagestyle{empty} 
+  }
+\end{document}

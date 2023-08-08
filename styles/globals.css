@@ -38,7 +38,6 @@ body {
 
 .body_panel{
     padding: 10px;
-
     border-radius: 10px;
     background-color: var(--div_color);
 }
