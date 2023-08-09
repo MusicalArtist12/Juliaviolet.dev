@@ -1,14 +1,12 @@
 // juliaviolet.dev/About-Me
 
 import Head from 'next/head';
+import PhotoSlideshow from '@/components/PhotoSlideshow';
 
-import JuliaPhoto from './photo';
-import GetLogo from "../_apps/GetLogo"
+import Photos from "@/public/juliaPhotos.json" assert { type: 'json' }
 
 
-export default function Page() {
-
-    
+export default function Page() { 
     return (
         <>
             <Head>
@@ -18,7 +16,7 @@ export default function Page() {
                 <div className="text">
                     <h1>Hi! I'm Julia</h1>
                     <h2 className="body_paragraph" style={{paddingTop: "0px"}}>I use She/Her pronouns</h2>
-                    <JuliaPhoto/>
+                    <PhotoSlideshow Photos={Photos} />
                     <p className="body_paragraph" style={{paddingTop: "10px"}}> 
                         I'm a sophomore at the <a className="link" href="https://www.uidaho.edu/">University of Idaho</a>, pursuing a bachelors degree in computer science with a minor in music.
                         I'm interested in low-level programming, Robotics, and 3D graphics (most recently OpenGL).

@@ -1,6 +1,5 @@
-import "./Styles.css"
-
-import GetLogo from "../_apps/GetLogo"
+import contact from "@/styles/contact.module.css"
+import GetLogo from "@/components/GetLogo"
 
 export default function ContactItem({name, handle, link, description = "", logo}): JSX.Element {
     let Logo = GetLogo(logo, "2x");
@@ -12,8 +11,8 @@ export default function ContactItem({name, handle, link, description = "", logo}
     return (
         <div className="body_panel">
             <a className="remove_global" href={link}>
-                <div className="row">
-                    <div className="logo">
+                <div className={contact.row} >
+                    <div className={contact.logo}>
                         {Logo}    
                     </div>
                     <h2 className="a">{handle}</h2>

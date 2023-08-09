@@ -1,15 +1,11 @@
 "use client"
 
-import photo from './photo.module.css'
-
 import React, { useState, useEffect, useRef } from 'react'
 import { useTransition, animated, AnimatedProps } from '@react-spring/web'
 
-import Photos from "../../public/juliaPhotos.json" assert { type: 'json' }
+import photo from '@/styles/photo.module.css'
 
-
-export default function JuliaPhoto():JSX.Element {
-    
+export default function PhotoSlideshow({Photos}):JSX.Element {
     let PhotoArray = Photos.Photos;
     const [index, set] = useState(0);
     
@@ -39,10 +35,6 @@ export default function JuliaPhoto():JSX.Element {
             x: -width,
             width: "0%"
         },
-        
-        //from: { opacity: 0},
-        //enter: { opacity: 1},
-        //leave: { opacity: 0},
         config: { 
             tension: 210,
             friction: 20,

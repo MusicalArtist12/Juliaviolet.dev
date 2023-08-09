@@ -1,4 +1,4 @@
-import HelloWorld from '../../public/Projects/Test.md'
+import HelloWorld from '@/public/Projects/Test.md'
  
 export default function Page() {
     return(

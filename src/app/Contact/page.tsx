@@ -2,9 +2,9 @@
 import "./Styles.css"
 
 import Head from 'next/head';
-import ContactItem from './ContactItem'
+import ContactItem from '@/components/ContactItem'
 
-import contacts from '../../public/contactInfo.json' assert { type: 'json' }
+import contacts from '@/public/contactInfo.json' assert { type: 'json' }
 
 export default function Page() {
     let contactItems: JSX.Element[] = [];

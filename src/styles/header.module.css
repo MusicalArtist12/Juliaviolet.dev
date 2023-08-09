@@ -1,0 +1,91 @@
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index:1;
+}
+
+.bar {
+    position: relative;
+    background-color: var(--header_color);
+    color: var(--text_light);
+    width: 100%;
+    z-index: 0;
+}
+
+.content {
+    margin: auto;
+    width: 85%;
+}
+
+.titlebar {
+    padding-top: 15px;
+    font-size: clamp(1.5625rem, 5.0vw, 2.5rem);
+    width:100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.title {
+    letter-spacing: 2px;
+    font-size: inherit;
+    font-weight: normal;
+    color: var(--text_light);
+}
+
+.navButton {
+    color: var(--text_light);
+    font-size: inherit;
+    display: none;   
+}
+
+.navbar {
+    background-color: var(--header_color);
+    z-index: 10;
+
+}
+    
+.navbar, .mobile_navbar {
+    font-size: clamp(1.0rem, 3vw, 1.2rem);
+}
+
+.menu {
+    
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.menuItem {
+    color: var(--text_light);
+    font-size: inherit;
+    padding-right: 10px;
+}
+
+.menuItem:hover {
+    color: var(--text_dark);
+    text-decoration: none;
+} 
+
+@media screen and (max-width: 600px) { 
+    .navButton {
+        display: inline;
+        margin-left: auto;
+    }
+
+    .titlebar {
+        padding-bottom: 15px;
+    }
+}
+
+.mobile_menu {
+    display: grid;
+    row-gap: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.mobile_navbar {
+    position: absolute;
+    width:100%;
+    background-color: var(--divAlt_color);
+}

@@ -1,7 +1,7 @@
 
-import footer from "./footer.module.css"
-import GetLogo from "../_apps/GetLogo"
-import friends from "../../public/friends.json" assert { type: 'json' }
+import footer from "@/styles/footer.module.css"
+import GetLogo from "@/components/GetLogo"
+import friends from "@/public/friends.json" assert { type: 'json' }
 
 function Badge({badge, link, color}) {
     return(
