@@ -5,7 +5,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false;
 
 import { faTwitter, faDiscord, faInstagram, faGithub} from '@fortawesome/free-brands-svg-icons'
-import { faCloud, faEnvelope, faBars } from '@fortawesome/free-solid-svg-icons'
+import { faCloud, faEnvelope, faBars, faFile} from '@fortawesome/free-solid-svg-icons'
 
 const logoLookup = {
     "Twitter": faTwitter,
@@ -14,7 +14,8 @@ const logoLookup = {
     "Instagram": faInstagram,
     "Github": faGithub,
     "Email": faEnvelope,
-    "Bars": faBars
+    "Bars": faBars,
+    "Resume": faFile
 }
 
 export default function GetLogo(id: string, size): JSX.Element {

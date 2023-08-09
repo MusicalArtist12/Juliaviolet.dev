@@ -3,37 +3,50 @@
         "name": "Twitter",
         "handle": "@MusicalArtist12",
         "link": "https://twitter.com/MusicalArtist12",
-        "description":"Twitter, until it dies"
+        "description":"Twitter, until it dies",
+        "logo": "Twitter"
     },
     {
         "name":"Bluesky",
         "handle":"@Juliaviolet.dev",
         "link":"https://bsky.app/profile/juliaviolet.dev",
-        "description":"Bluesky, for when Twitter dies"
+        "description":"Bluesky, for when Twitter dies",
+        "logo": "Bluesky"
     },
     {
         "name":"Discord",
         "handle":"@MusicalArtist12",
         "link":"",
-        "description":""
+        "description":"",
+        "logo":"Discord"
     },
     {
         "name":"Instagram",
         "handle":"@MusicalArtist.12",
         "link":"https://www.instagram.com/musicalartist.12/",
-        "description":"Instagram, for the few people that want it"
+        "description":"Instagram, for the few people that want it",
+        "logo":"Instagram"
     },
     {
         "name":"Github",
         "handle":"@MusicalArtist12",
         "link":"https://github.com/MusicalArtist12",
-        "description":"Github, for the nerds"
+        "description":"Github, for the nerds",
+        "logo":"Github"
     },
     {
         "name":"Email",
         "handle":"Julia.Violet@outlook.com",
         "link":"mailto:julia.violet@outlook.com",
-        "description":""
+        "description":"",
+        "logo":"Email"
+    },
+    {
+        "name":"",
+        "handle":"/Resume.pdf",
+        "link":"Resume.pdf",
+        "description":"For those who need it",
+        "logo":"Resume"
     }
 ]}
 

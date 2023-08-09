@@ -16,7 +16,6 @@
     --text_link: #FC6FC4;
 }
 
-
 body {
     background-color: var(--background_color);
     color: var(--text_light);
@@ -25,30 +24,6 @@ body {
     
     display: flex;
     flex-direction: column;
-}
-
-.body {
-    padding:15px;
-    margin: auto;
-    margin-top: 0px;
-    width: 90%;
-    display: grid;
-    row-gap: 15px;
-}
-
-.body_panel{
-    padding: 10px;
-    border-radius: 10px;
-    background-color: var(--div_color);
-}
-
-.inline {
-    display: inline;
-}
-
-.center {
-    margin:auto;
-    text-align: center;
 }
 
 h1 {
@@ -65,6 +40,110 @@ h2 {
 p {
     font-size: clamp(0.75rem, 1.6vw, 1.2rem);
     font-weight: light;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+a{
+    font-weight: light;
+    color: var(--text_link);
+}
+
+.a {
+    font-weight: light;
+    color: var(--text_link); 
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.a:hover {
+    text-decoration: underline;
+}
+
+blockquote {
+    font-style: italic;
+    padding-left: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    border-left-width: 0.25em;
+    border-left-color: var(--text_h1);
+    border-radius: 10px;
+}
+
+ol {
+    list-style-type: decimal;
+    margin-left: 4em;
+    font-size: inherit;
+}
+
+ul {
+    list-style-type: initial;
+    margin-left: 4em;
+    font-size: inherit;
+}
+
+hr {
+    border-color: var(--text_h1);   
+    height: 0.1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+pre {
+    background-color: hsl(0, 0%, 0%);
+    border-radius: 12px;
+    padding: 0.8em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    color: var(--text_h2);
+
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+code {
+    size: inherit;
+}
+
+.remove_global {
+    font-size: inherit;
+    text-decoration: none;
+    font-weight: inherit;
+    color: inherit;
+}
+
+.remove_global:hover {
+    text-decoration: none;
+}
+
+
+.body {
+    padding:15px;
+    margin: auto;
+    margin-top: 0px;
+    width: 90%;
+    display: grid;
+    row-gap: 15px;
+}
+
+.body_panel{
+    padding-left: 2em;
+    padding-right: 2em;
+    border-radius: 10px;
+    background-color: var(--div_color);
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.inline {
+    display: inline;
+}
+
+.center {
+    margin:auto;
+    text-align: center;
 }
 
 .text {
@@ -73,16 +152,6 @@ p {
     margin: auto;
 }
 
-.body_paragraph {
-    padding-top: 20px;
-
-}
-
-.link {
-    font-weight: light;
-    color: var(--text_link);
-}
-
-.link:hover {
-    text-decoration: underline;
+.no_hover:hover {
+    text-decoration: none;
 }

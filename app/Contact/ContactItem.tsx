@@ -2,8 +2,8 @@ import "./Styles.css"
 
 import GetLogo from "../_apps/GetLogo"
 
-export default function ContactItem({name, handle, link, description = ""}): JSX.Element {
-    let logo = GetLogo(name, "2x");
+export default function ContactItem({name, handle, link, description = "", logo}): JSX.Element {
+    let Logo = GetLogo(logo, "2x");
 
     if(description.length == 0) {
         description = name;
@@ -11,14 +11,14 @@ export default function ContactItem({name, handle, link, description = ""}): JSX
     
     return (
         <div className="body_panel">
-            <a  href={link}>
-            <div className="row">
-                <div className="logo">
-                    {logo}    
+            <a className="remove_global" href={link}>
+                <div className="row">
+                    <div className="logo">
+                        {Logo}    
+                    </div>
+                    <h2 className="a">{handle}</h2>
+                    <p>{description}</p>
                 </div>
-                <h2 className="link">{handle}</h2>
-                <p>{description}</p>
-            </div>
             </a>
         </div>
     );

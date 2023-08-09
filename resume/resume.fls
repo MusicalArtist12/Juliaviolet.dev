@@ -1,7 +1,7 @@
-PWD /home/julia/Documents/resume
+PWD /home/julia/projects/Juliaviolet.dev/public/resume
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/xetex/xelatex.fmt
-INPUT /home/julia/Documents/resume/resume.tex
+INPUT /home/julia/projects/Juliaviolet.dev/public/resume/resume.tex
 OUTPUT resume.log
 INPUT /usr/share/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texmf-dist/tex/latex/base/article.cls

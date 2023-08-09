@@ -42,6 +42,11 @@
     align-self:center;
 }
 
+.link {
+    color: inherit;
+    text-decoration: none;
+}
+
 .link:hover {
     color: var(--text_dark);
     text-decoration: underline;

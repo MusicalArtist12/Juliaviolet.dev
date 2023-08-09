@@ -3,6 +3,8 @@
 import Head from 'next/head';
 
 import JuliaPhoto from './photo';
+import GetLogo from "../_apps/GetLogo"
+
 
 export default function Page() {
 

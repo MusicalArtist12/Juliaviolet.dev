@@ -4,8 +4,6 @@ import GetLogo from "../_apps/GetLogo"
 import friends from "../../public/friends.json" assert { type: 'json' }
 
 function Badge({badge, link, color}) {
-
-
     return(
         <div>
             <a className={footer.badgeHover} href={link}><img className={footer.badge} style={{"--inputcolor": color} as any} src={badge} /></a>
@@ -19,7 +17,6 @@ export default function Footer() {
     for(let i = 0; i < friends.friends.length; i++) {
         badges[i] = Badge(friends.friends[i]);
     }
-
 
     return (
         <footer className={footer.bar}>
