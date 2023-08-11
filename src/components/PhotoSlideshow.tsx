@@ -11,7 +11,7 @@ export default function PhotoSlideshow({Photos}):JSX.Element {
     let data: ((props: AnimatedProps<{ style }>) => React.ReactElement)[] = [];
     
     for(let i = 0; i < PhotoArray.length; i++){
-        data[i] = ({ style }) => <button><animated.img style={{ borderRadius: "var(--panel_radius)", margin: "auto", ...style}} title={PhotoArray[i].title} src={PhotoArray[i].location}/></button>
+        data[i] = ({ style }) => <button style={{backgroundColor: "inherit", border: "none"}}><animated.img style={{ borderRadius: "var(--panel_radius)", margin: "auto", ...style}} title={PhotoArray[i].title} src={PhotoArray[i].location}/></button>
     }
 
     const ref = useRef<HTMLInputElement>(null);

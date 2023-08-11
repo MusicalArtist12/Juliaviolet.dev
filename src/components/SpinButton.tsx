@@ -22,6 +22,6 @@ export default function SpinButton({buttonStyle, logo, onClick}) {
     }
     
     return(
-        <animated.button onClick={ClickFunction} className={buttonStyle} style={{...spring}}>{logo}</animated.button>
+        <animated.button onClick={ClickFunction} className={buttonStyle} style={{backgroundColor: "inherit", border: "none", ...spring}}>{logo}</animated.button>
     )
 }

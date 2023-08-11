@@ -7,7 +7,8 @@ export default function Page() {
                 <title>Blog | Juliaviolet.dev</title>
             </Head>
             <div className="body_panel">
-                <p>Juliaviolet.dev is still under construction. Come back later.</p>
+                <h1>UNDER CONSTRUCTION</h1>
+                <p>...come back later.</p>
             </div>
         </>
     )

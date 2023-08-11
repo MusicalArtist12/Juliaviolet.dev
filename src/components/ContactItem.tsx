@@ -15,7 +15,11 @@ export default function ContactItem({name, handle, link, description = "", logo}
                     <div className={contact.logo}>
                         {Logo}    
                     </div>
-                    <h3 className="a">{handle}</h3>
+                    <h2 className="a" style={{
+                        paddingTop: "0px",
+                        paddingBottom: "0px",
+                    }}
+                    >{handle}</h2>
                     <p style={{
                         paddingTop: "0px",
                         paddingBottom: "0px"}}
