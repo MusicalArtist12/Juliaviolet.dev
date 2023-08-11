@@ -1,18 +1,18 @@
 {"Photos": [
     {
-        "location": "Julia_photos/julia-1.png",
+        "location": "/JuliaPhotos/julia-1.png",
         "title": "Taken June 12, 2023"
     },
     {
-        "location": "Julia_photos/picrew-1.png",
+        "location": "/JuliaPhotos/picrew-1.png",
         "title": "Source: https://picrew.me/en/image_maker/59454"
     },
     {
-        "location": "Julia_photos/picrew-2.png",
+        "location": "/JuliaPhotos/picrew-2.png",
         "title": "Source: https://picrew.me/en/image_maker/9971"
     },
     {
-        "location": "Julia_photos/picrew-3.png",
+        "location": "/JuliaPhotos/picrew-3.png",
         "title": "Source: https://picrew.me/en/image_maker/257476"
     }
 ]}

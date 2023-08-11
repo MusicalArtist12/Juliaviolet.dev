@@ -9,7 +9,9 @@
     "paths": {
       "@/components/*": ["components/*"],
       "@/public/*": ["../public/*"],
-      "@/styles/*": ["styles/*"]
+      "@/styles/*": ["styles/*"],
+      "@/api/*": ["api/*"],
+      "@/lib/*": ["lib/*"]
     },
     "allowJs": true,
     "skipLibCheck": true,

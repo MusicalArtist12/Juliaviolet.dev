@@ -1,9 +1,6 @@
 "use client"
-
 import React, { useState, useEffect, useRef } from 'react'
 import { useTransition, animated, AnimatedProps } from '@react-spring/web'
-
-import photo from '@/styles/photo.module.css'
 
 export default function PhotoSlideshow({Photos}):JSX.Element {
     let PhotoArray = Photos.Photos;
@@ -14,7 +11,7 @@ export default function PhotoSlideshow({Photos}):JSX.Element {
     let data: ((props: AnimatedProps<{ style }>) => React.ReactElement)[] = [];
     
     for(let i = 0; i < PhotoArray.length; i++){
-        data[i] = ({ style }) => <button><animated.img style={{ ...style}} title={PhotoArray[i].title} className={photo.img} src={PhotoArray[i].location}/></button>
+        data[i] = ({ style }) => <button><animated.img style={{ borderRadius: "var(--panel_radius)", margin: "auto", ...style}} title={PhotoArray[i].title} src={PhotoArray[i].location}/></button>
     }
 
     const ref = useRef<HTMLInputElement>(null);
@@ -49,7 +46,7 @@ export default function PhotoSlideshow({Photos}):JSX.Element {
     }, [index])
 
     return( 
-        <div onClick={onClick} className={photo.div} ref={ref}>
+        <div onClick={onClick} ref={ref}>
             {transition(
                 (style, i) => {
                     const Item = data[i];

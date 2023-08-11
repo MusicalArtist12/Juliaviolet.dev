@@ -4,6 +4,6 @@ import header from "@/styles/header.module.css"
 
 export default function NavItem({children, link}) {
     return(
-        <h2><Link className={header.nav_item} href="link">{children}</Link></h2>
+        <h2><Link className={header.menuItem} href="link">{children}</Link></h2>
     )
 }

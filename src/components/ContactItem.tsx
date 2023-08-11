@@ -9,17 +9,21 @@ export default function ContactItem({name, handle, link, description = "", logo}
     }
     
     return (
-        <div className="body_panel">
+        <div className="body_panel_link" style={{padding: "0.75em", width: "100%"}}>
             <a className="remove_global" href={link}>
                 <div className={contact.row} >
                     <div className={contact.logo}>
                         {Logo}    
                     </div>
-                    <h2 className="a">{handle}</h2>
-                    <p>{description}</p>
+                    <h3 className="a">{handle}</h3>
+                    <p style={{
+                        paddingTop: "0px",
+                        paddingBottom: "0px"}}
+                    >
+                        {description}
+                    </p>
                 </div>
             </a>
         </div>
     );
 }
-

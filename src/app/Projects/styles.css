@@ -1,0 +1,44 @@
+:root  {
+    --relative: clamp(12rem, -2.667rem + 42.667vw, 20rem)
+}
+
+@media screen and (max-width: 550px) { 
+    :root  {
+        --relative: clamp(9rem, -4.5rem + 48vw, 12rem);
+    }
+}
+
+@media screen and (max-width: 450px) { 
+    :root  {
+        --relative: 16rem;
+    }
+}
+.image {
+    text-align: center;
+    align-self: center;
+    border-radius: var(--panel_radius);
+
+    background-color: black;
+    width: var(--relative);
+    height: var(--relative);
+}
+
+.body_grid {
+    display: flex;
+    padding: inherit;
+    row-gap: inherit;
+    column-gap: inherit;
+    
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+.post {
+    width: var(--relative);
+    margin: auto;
+    display: grid;
+    grid-auto-flow: row;
+    align-content: center;   
+}
+

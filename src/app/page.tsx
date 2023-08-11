@@ -1,13 +1,13 @@
 // juliaviolet.dev/
 import Head from 'next/head';
 
+import { Metadata } from 'next'
+ 
+export const metadata: Metadata = {}
 
 export default function Page() {
     return (
         <>
-            <Head>
-                <title>Juliaviolet.dev</title>
-            </Head>
             <div className="body_panel">
                 <h1>Hello World! and Hello Next.js!</h1>
                 <h2>This page is not finished</h2>
