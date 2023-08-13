@@ -16,15 +16,11 @@
     --body-h2-color:         #FC6FC4;
     --body-h3-color:         #FCCAD2;
     --body-h4-color:         #FCCAD2;
-/*  
-    --body-h1-size: 1.8rem;
-    --body-h2-size: 1.4rem;
-    --body-h3-size: 1.3rem;
-*/
-    --body-h1-size: 1.875rem;
-    --body-h2-size: 1.500rem;
-    --body-h3-size: 1.500rem;
-    --body-h4-size: 1.250rem;
+
+    --body-h1-size: clamp(1.375rem, 1.042rem + 1.333vw, 1.875rem);
+    --body-h2-size: clamp(1.125rem, 0.875rem + 1vw, 1.5rem);
+    --body-h3-size: clamp(1.125rem, 0.875rem + 1vw, 1.5rem);
+    --body-h4-size: clamp(1rem, 0.833rem + 0.667vw, 1.25rem);
 
     --article-h1-color:         #FC6FC4;
     --article-h2-color:         #FC9DD6;
@@ -36,11 +32,11 @@
     --p-light-color:    #FCCAD2;
     --p-dark-color:     #000000;
     
-    --p-size: 1.125rem;
+    --p-size: clamp(0.875rem, 0.708rem + 0.667vw, 1.125rem);
 
     --corner-radius:    10px;
 
-    --body-width: 85%;
+    --body-width: 80%;
     --body-margin-vertical: 2em;
 
     --body-gap: 1em;

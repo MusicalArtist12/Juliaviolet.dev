@@ -11,7 +11,13 @@
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: 3.0em auto;
+
+    /* 
     grid-column-gap: 1em;
+     */
+
+    grid-column-gap: clamp(0.25rem, -0.167rem + 1.667vw, 0.875rem);
+
     padding: var(--body-panel-button-padding);
     text-overflow: ellipsis;
 }

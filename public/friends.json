@@ -1,18 +1,28 @@
 { "friends": [
     {
         "name": "Ava Silver",
+        "callsign": "",
         "badge": "/88x31/ava.png",
         "link": "https://avasilver.dev",
         "color": "#3097fa"
     },
     {
         "name": "Brooke Chalmers",
+        "callsign": "K9BRQ",
         "badge": "/88x31/breq.png",
         "link": "https://breq.dev",
         "color": "#ffda00"
     },
     {
-        "name": "Vivian",
+        "name": "Philo Gray",
+        "callsign": "KC1TGK",
+        "badge": "/88x31/philo.png",
+        "link": "https://www.philo.gay/",
+        "color": "#24affc"
+    },
+    {
+        "name": "Vivi",
+        "callsign": "K9VIV",
         "badge": "/88x31/vivi.png",
         "link": "https://www.vhafener.com/",
         "color": "#FFFFFF"
