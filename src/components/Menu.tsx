@@ -5,8 +5,8 @@ import { useTransition, animated, AnimatedProps } from '@react-spring/web'
 
 export function Menu( { children }) {
     let menu: JSX.Element = (
-        <div className={header.content }>
-            <nav className={ header.menu }>
+        <div className={header.content}>
+            <nav className={header.menu}>
                 {children} 
             </nav>
         </div> 
@@ -14,23 +14,25 @@ export function Menu( { children }) {
 
     return(
         <div className={header.navbar}>
-             {menu}
+            {menu}
         </div> 
      );
 }
 
 export function MobileMenu({ children, index, width}) {
     let menu: JSX.Element = (
-        <div className={header.content }>
-            <nav className={ header.mobile_menu }>
-                {children} 
-            </nav>
-        </div> 
+        <div className={header.menuBackground}>
+            <div className={header.content}>
+                <nav className={header.mobileMenu}>
+                    {children} 
+                </nav> 
+            </div>
+        </div>
     );
     
     let data: ((props: AnimatedProps<{ style }>) => React.ReactElement)[] = [
         ({ style }) => <animated.div style={{ ...style, display: "none"}}/>,
-        ({ style }) => <animated.div style={{ ...style}} className={header.mobile_navbar}>{menu}</animated.div>,
+        ({ style }) => <animated.div style={{ ...style}}>{menu}</animated.div>,
     ]
 
     const [transition, api] = useTransition(index, () => ({

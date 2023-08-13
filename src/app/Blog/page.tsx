@@ -6,9 +6,9 @@ export default function Page() {
             <Head>
                 <title>Blog | Juliaviolet.dev</title>
             </Head>
-            <div className="body_panel">
+            <div className="body-panel">
                 <h1>UNDER CONSTRUCTION</h1>
-                <p>...come back later.</p>
+                <h3>...come back later.</h3>
             </div>
         </>
     )

@@ -32,13 +32,12 @@ export default async function Page({ params }: Props ) {
 
     return (
         <>
-            <div className='body_panel'>
-                <h1>{data.meta.title}</h1>
-                <h2>{data.meta.subtitle}</h2>
-                <h3>{data.meta.publishDate}</h3>
-                <hr/>
-
-                {data.content}
+            <div className='body-panel'>
+                <h1>Project: {data.meta.title}</h1>
+                <h3>Writeup Date: {data.meta.publishDate}</h3>
+                <div className='article'>
+                    {data.content}
+                </div> 
             </div>
         </>
 

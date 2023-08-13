@@ -15,7 +15,7 @@ const mobileWidth = 600;
 
 function MenuItem( {title, link }) {
     return (
-        <Link href={link} className={header.menuItem}>{ title }</Link>
+        <h2><Link href={link}>{title}</Link></h2>
     );
 }
 
@@ -55,10 +55,10 @@ export default function Header() {
             <header className={header.sticky}>
                 <div className={header.bar}>
                     <div className={header.content}>
-                        <div className={header.titlebar}>
-                            <Link href="/" className='remove_global'><h1 className={header.title}>JuliaViolet.dev</h1></Link>
-                            <SpinButton onClick={onClick} buttonStyle={header.navButton} logo={GetLogo("Bars", "1x")}/>
-                        </div> 
+                        <div className={header.title}>
+                            <h1><Link href="/">JuliaViolet.dev</Link></h1>
+                            <h1 style={{textAlign: "right"}}><SpinButton onClick={onClick} buttonStyle={header.mobileMenuButton} logo={GetLogo("Bars", "1x") }/></h1>
+                        </div>
                     </div> 
                 </div>
                 {currentMenu}

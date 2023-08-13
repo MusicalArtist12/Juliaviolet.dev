@@ -1,16 +1,17 @@
 .logo{
+    color: var(--p-light-color);
     text-align: center;
     align-self: center;
-    margin: 5px;
     grid-row: 1 / span 2;
+    
 }
 
 .row {
     align-content: space-between;
-    width: 100%;
     display: grid;
     grid-auto-flow: column;
-    grid-template-rows: auto auto;
-    grid-template-columns: 60px auto;
-
+    grid-template-columns: 3.0em auto;
+    grid-column-gap: 1em;
+    padding: var(--body-panel-button-padding);
+    text-overflow: ellipsis;
 }

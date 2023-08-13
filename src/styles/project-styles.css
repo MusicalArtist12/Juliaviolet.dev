@@ -1,0 +1,19 @@
+.image {
+    background-color: black;
+
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.post {
+    display: grid;
+    grid-auto-flow: row; 
+}
+
+/* used to set the width and height */
+.post-title {
+    padding: var(--body-panel-button-padding);
+    padding-right: calc(var(--body-panel-padding) * 2);
+}

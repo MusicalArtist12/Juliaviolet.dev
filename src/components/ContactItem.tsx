@@ -1,6 +1,8 @@
 import contact from "@/styles/contact.module.css"
 import GetLogo from "@/components/GetLogo"
 
+import Link from 'next/link';
+
 export default function ContactItem({name, handle, link, description = "", logo}): JSX.Element {
     let Logo = GetLogo(logo, "2x");
 
@@ -9,25 +11,18 @@ export default function ContactItem({name, handle, link, description = "", logo}
     }
     
     return (
-        <div className="body_panel_link" style={{padding: "0.75em", width: "100%"}}>
-            <a className="remove_global" href={link}>
+        <div className="body-panel link">
+            <Link href={link}>
                 <div className={contact.row} >
                     <div className={contact.logo}>
-                        {Logo}    
+                        <h4>{Logo}</h4> 
                     </div>
-                    <h2 className="a" style={{
-                        paddingTop: "0px",
-                        paddingBottom: "0px",
-                    }}
-                    >{handle}</h2>
-                    <p style={{
-                        paddingTop: "0px",
-                        paddingBottom: "0px"}}
-                    >
+                    <h2>{handle}</h2>
+                    <h4>
                         {description}
-                    </p>
+                    </h4>
                 </div>
-            </a>
+            </Link>
         </div>
     );
 }
