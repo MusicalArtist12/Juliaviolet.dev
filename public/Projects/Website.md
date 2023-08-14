@@ -48,4 +48,4 @@ I'm using MDX to create project and blog posts because markdown is probably the 
 
 # Result
 
-I mean, the result is right here. I'm quite proud of the outcome. I learned Typescript, React and Next.JS, as well as reinforced my CSS and HTML skills. I do not consider this project *d1one* by any means, since I plan on coming back to update it as grow and change as a person. 
+I mean, the result is right here. I'm quite proud of the outcome. I learned Typescript, React and Next.JS, as well as reinforced my CSS and HTML skills. I do not consider this project *done* by any means, since I plan on coming back to update it as grow and change as a person. 
