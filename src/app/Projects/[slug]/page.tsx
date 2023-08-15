@@ -35,7 +35,7 @@ export default async function Page({ params }: Props ) {
             <div className='body-panel'>
                 <h1>Project: {data.meta.title}</h1>
                 <h3>Writeup Date: {data.meta.publishDate}</h3>
-                <div className='article'>
+                <div className='article sans-serif'>
                     {data.content}
                 </div> 
             </div>
