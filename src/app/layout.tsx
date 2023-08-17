@@ -27,7 +27,7 @@ export default function RootLayout({ children } : { children: React.ReactNode })
     // root layout, must have html and body tag
 
     return (
-        <html lang="en">
+        <html lang="en" className={SourceCodePro.className}>
             <head>
                 <script src="http://localhost:8097"></script>
                 <meta name="google-site-verification" content="r5PlHr4WDYzmUgIpNaonYMa6UIbjSNKWuVMGpRkkKVU" />

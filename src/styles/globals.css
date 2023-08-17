@@ -30,7 +30,6 @@
     --article-h1-size: 1.500rem;
     --article-h2-size: 1.25rem;
  */
-    --p-size: clamp(0.75rem, 0.589rem + 0.734vw, 1.25rem);
 
     /* percentages are relative to p-size */
     --header-h1-size: 2.25rem; 
@@ -50,8 +49,6 @@
     --p-light-color:    #FCCAD2;
     --p-dark-color:     #000000;
     
-
-
     --corner-radius:    10px;
 
     --body-width: 80%;
@@ -65,7 +62,31 @@
     --tab_size: 2em;
     --paragraph_spacing: 1em;
 
-    font-size: clamp(0.813rem, 0.743rem + 0.318vw, 1.125rem);
+    font-size: clamp(0.875rem, 0.696rem + 0.476vw, 1.125rem);
+}
+
+@media screen and (max-width: 650px) { 
+    :root {
+        --body-width: 85%;
+        --body-margin-vertical: 1.25em;
+        --body-panel-padding: 1.25em;
+        
+        --header-h1-size: 1.5rem;
+        --header-h2-size: 1.0rem;
+
+        --body-h1-size: 1.25rem;
+        --body-h2-size: 1.00rem;
+        --body-h3-size: 1.00rem;
+        --body-h4-size: 0.875rem;
+
+        --footer-p-size: 0.75rem;
+
+        
+        
+        
+        font-size: 1.125rem;
+    }
+
 }
 
 *, html {
@@ -75,16 +96,10 @@
 
 body {
     background-color: var(--background-color);
-    font-family: Source Code Pro, monospace;
     min-height: 100vh; /* 1 vh = 1% of viewport */
     width: 100%;
     display: flex;
     flex-direction: column;
-}
-
-.sans-serif {
-    font-family: Futura, sans-serif;
-    font-size: 125%;
 }
 
 .inset-photo {
@@ -295,6 +310,7 @@ header h2 > a:hover {
     word-wrap: break-word;
 }
 
+
 img {
     width: 100%;
     border-radius: var(--corner-radius);
@@ -332,6 +348,8 @@ footer p > a:hover {
 
 .badge-collection {
     display: flex;
+    row-gap: 10px;
+    column-gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
@@ -344,7 +362,7 @@ footer p > a:hover {
     width: 88px;
     height: 31px;
     border-radius: 0px;
-    margin: 10px;
+    
 }
 
 .badge:hover {

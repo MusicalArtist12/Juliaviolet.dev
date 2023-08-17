@@ -1,7 +1,7 @@
 import { getPostBySlug } from '@/lib/mdx/postAPI'
 import { notFound } from 'next/navigation'
 import { Metadata, ResolvingMetadata } from 'next'
-
+import Article from '@/components/Article'
 type Props = {
     params: { slug: string }
 }
@@ -33,11 +33,13 @@ export default async function Page({ params }: Props ) {
     return (
         <>
             <div className='body-panel'>
+                
                 <h1>Project: {data.meta.title}</h1>
                 <h3>Writeup Date: {data.meta.publishDate}</h3>
-                <div className='article sans-serif'>
+                <Article>
                     {data.content}
-                </div> 
+                </Article> 
+            
             </div>
         </>
 

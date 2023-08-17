@@ -1,23 +1,29 @@
+
+
 .logo{
     color: var(--p-light-color);
     text-align: center;
     align-self: center;
     grid-row: 1 / span 2;
-    
+    width: 3em;
 }
 
 .row {
-    align-content: space-between;
     display: grid;
     grid-auto-flow: column;
-    grid-template-columns: 3.0em auto;
 
-    /* 
-    grid-column-gap: 1em;
-     */
-
-    grid-column-gap: clamp(0.25rem, -0.167rem + 1.667vw, 0.875rem);
+    justify-content: left;
+    grid-template-columns: auto auto;
+    grid-column-gap: 0.5em;
 
     padding: var(--body-panel-button-padding);
     text-overflow: ellipsis;
+
+}
+
+@media screen and (max-width: 600px) { 
+    .logo {
+        width: 2.25em;
+    }
+
 }

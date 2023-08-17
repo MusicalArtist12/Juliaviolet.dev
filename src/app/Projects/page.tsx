@@ -21,7 +21,7 @@ export default async function Page() {
                     <div className="body-panel link">
                         <Link href={`Projects/${post.slug}`}>
                             <div className="post">
-                                <Image src={post.photo} className='image' width={100} height={100} alt={post.title}/>
+                                <Image src={post.photo} className='image' width={512} height={512} alt={post.title}/>
                                 <div className='post-title'>
                                     <h1>{post.title}</h1>
                                     <h3>{post.publishDate}</h3>

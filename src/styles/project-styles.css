@@ -10,6 +10,9 @@
 .post {
     display: grid;
     grid-auto-flow: row; 
+    width: auto;
+    max-width: 18em;
+    
 }
 
 /* used to set the width and height */

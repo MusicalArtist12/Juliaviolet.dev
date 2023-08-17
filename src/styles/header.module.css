@@ -27,7 +27,7 @@
 
 /* mobile menu button */
 .mobileMenuButton {
-    color: inherit;
+    color: inherit;--body-width: 80%;
     font-size: inherit;
     display: none; 
 }
