@@ -45,6 +45,8 @@
     --article-h1-size: 1.75rem;
     --article-h2-size: 1.50rem;
 
+    --article-p-offset-size: 1.5em;
+
     --link-color:       #FC6FC4;
     --p-light-color:    #FCCAD2;
     --p-dark-color:     #000000;
@@ -81,7 +83,7 @@
 
         --footer-p-size: 0.75rem;
 
-        
+        --article-p-offset-size: 1.125em;
         
         
         font-size: 1.125rem;
@@ -229,6 +231,10 @@ header h2 > a:hover {
     font-weight: normal;
 }
 
+
+.article {
+    font-size: var(article-p-offset-size);
+}
 
 .article h1 {
     clear: both;

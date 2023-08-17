@@ -18,7 +18,7 @@ This website serves 3 primary goals. First and foremost, it gives myself a littl
 
 The next big goal for the website is to organize my projects, give them a goal, and to easily share them. When it comes to my personal projects, I often find it difficult to maintain motivation and seeing the end goal. While I was still putting the website together, I found myself coming up with many project ideas that may have been a bit silly, but would have been a ton of fun to make. A lot of that creative motivation came from just being able to have a place to share it. 
 
-<div className='inset-photo' style={{maxWidth: "20rem"}}>
+<div className='inset-photo' style={{maxWidth: "21rem"}}>
     <img src="/ProjectPhotos/bad_website.png"/>
 </div>
 
