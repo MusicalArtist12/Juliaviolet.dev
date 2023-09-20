@@ -26,5 +26,12 @@
         "badge": "/88x31/vivi.png",
         "link": "https://www.vhafener.com/",
         "color": "#FFFFFF"
+    },
+    {
+        "name": "Nathan",
+        "callsign": "",
+        "badge": "/88x31/nkizz.png",
+        "link": "https://nkizz.com/",
+        "color": "#FF0000"
     }
 ]}
