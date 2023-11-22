@@ -47,6 +47,13 @@
         "link":"Resume.pdf",
         "description":"For those who need it",
         "logo":"Resume"
+    },
+    {
+        "name":"",
+        "handle":"Public Keys",
+        "link":"authorized_keys.txt",
+        "description":".ssh/authorized_keys.txt",
+        "logo":"Git"
     }
 ]}
 

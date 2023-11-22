@@ -64,16 +64,27 @@
     --tab_size: 2em;
     --paragraph_spacing: 1em;
 
-    font-size: clamp(0.875rem, 0.696rem + 0.476vw, 1.125rem);
+    font-size: clamp(1.0rem, 0.696rem + 0.476vw, 1.125rem);
 }
 
-@media screen and (max-width: 650px) { 
+*, html {
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 700px) {
     :root {
-        --body-width: 85%;
+        --body-width: 90%;
+    }
+    
+}
+
+@media screen and (max-width: 600px) { 
+    :root {      
         --body-margin-vertical: 1.25em;
         --body-panel-padding: 1.25em;
         
-        --header-h1-size: 1.5rem;
+        --header-h1-size: clamp(1.25rem, 1rem + 1.333vw, 1.5rem);
         --header-h2-size: 1.0rem;
 
         --body-h1-size: 1.25rem;
@@ -85,16 +96,11 @@
 
         --article-p-offset-size: 1.125em;
         
-        
-        font-size: 1.125rem;
+        font-size: clamp(0.875rem, 0.625rem + 1.333vw, 1.125rem);
     }
 
 }
 
-*, html {
-    margin: 0;
-    padding: 0;
-}
 
 body {
     background-color: var(--background-color);
@@ -354,6 +360,7 @@ footer p > a:hover {
 
 .badge-collection {
     display: flex;
+    padding-bottom: 10px;
     row-gap: 10px;
     column-gap: 10px;
     flex-wrap: wrap;
