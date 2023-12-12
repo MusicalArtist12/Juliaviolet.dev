@@ -21,6 +21,7 @@ export default function Page() {
             <div className="body-panel">
                 <h1>Hi! I'm Julia</h1>
                 <h3>I use She/Her pronouns</h3>
+
                 <Article>
                     <div className='inset-photo' style={{
                             width: "clamp(12rem, 30vw, 30rem)",
@@ -48,7 +49,7 @@ export default function Page() {
                         a concatenation of my first and middle name.
                     </p>
                 </Article>
-
+                <img className="badge" style={{display: "block", margin:"auto", width:"20%", height: "20%"}} src="Julia88x31.png" />
             </div>
         </>
     )

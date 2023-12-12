@@ -176,8 +176,6 @@ header h2 > a:hover {
 
     row-gap: var(--body-gap);
     column-gap: var(--body-gap);
-
-    
 }
 
 .body-grid {
