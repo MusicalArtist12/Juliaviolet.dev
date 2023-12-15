@@ -49,7 +49,6 @@ export default function Page() {
                         a concatenation of my first and middle name.
                     </p>
                 </Article>
-                <img className="badge" style={{display: "block", margin:"auto", width:"20%", height: "20%"}} src="Julia88x31.png" />
             </div>
         </>
     )
