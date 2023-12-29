@@ -33,5 +33,12 @@
         "badge": "/88x31/nkizz.png",
         "link": "https://nkizz.com/",
         "color": "#FF0000"
+    },
+    {
+        "name": "Estradiol - Alyx",
+        "callsign": "",
+        "badge": "/88x31/estradiol.gif",
+        "link": "https://alyx.sh/",
+        "color": "#5eb3a0"
     }
 ]}
