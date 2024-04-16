@@ -28,6 +28,13 @@
         "color": "#FFFFFF"
     },
     {
+        "name": "Ari",
+        "callsign": "REDACTED",
+        "badge": "/88x31/adryd.png",
+        "link": "https://adryd.com/",
+        "color": "#282737"
+    },
+    {
         "name": "Mia",
         "callsign": "",
         "badge": "/88x31/mia.png",

@@ -12,24 +12,28 @@ export const metadata: Metadata = {
   title: 'Projects',
 }
 
+function postElement(post) {
+    return ( 
+        <div className="body-panel link">
+            <Link href={`Projects/${post.slug}`}>
+                <div className="post">
+                    <img src={post.photo} className='image' alt={post.title}/>
+                    <div className='post-title'>
+                        <h1>{post.title}</h1>
+                        <h3>{post.publishDate}</h3>
+                    </div>
+                </div>
+            </Link>
+        </div>
+    )
+}
+
 export default async function Page() {
     const posts = await getAllPostsMeta(["public", "Projects"]);
 
     return (
         <div className='body-grid'>
-                {posts?.map(post => (   
-                    <div className="body-panel link">
-                        <Link href={`Projects/${post.slug}`}>
-                            <div className="post">
-                                <Image src={post.photo} className='image' width={512} height={512} alt={post.title}/>
-                                <div className='post-title'>
-                                    <h1>{post.title}</h1>
-                                    <h3>{post.publishDate}</h3>
-                                </div>
-                            </div>
-                        </Link>
-                    </div>
-                ))}
+                {posts?.map(post => postElement(post))}
         </div>
     )
 }
