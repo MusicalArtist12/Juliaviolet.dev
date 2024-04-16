@@ -13,13 +13,15 @@ I decided on Arch Linux as my distro of choice, even though its not *really* des
 
 To sync files between my devices, I ultimately decided on [ownCloud Infinite Scale](https://owncloud.dev/ocis/). I had a pretty rough experience with Nextcloud, since the PHP backend was fairly buggy and would consistently crash. After a bit of research I came across OCIS, which is a complete rewrite of the backend in GO, I knew this would be the best path moving forwards. I'm using [rclone](https://rclone.org/) to handle client syncing.
 
-I'm using Apache as my HTTP server since I have a little experience working with it, and my setup is fairly simple.
+I'm using Apache as my HTTP server since I have a little experience working with it.
+
+To connect to it locally, I needed to set up a DNS server since my router doesn't support NAT hairpinning. I originally tried to use dnsmasq, but got caught up in the fact that my phone requires DNS over TLS/SSL to use it properly. So I went with BIND, which is completly overkill. My router also doesn't support local DNS servers for some reason, so to use it I need to manually add the private IP address as a DNS address on each device. This still doesn't work properly with my phone, and its been driving me nuts. If anyone has any advice feel free to contact me. 
 
 # Purpose
 
-The driving factor for this project was to migrate off of OneDrive. I had switched to linux in 2022, and OneDrive doesn't really have a capable client for linux. I also wanted full control of my data. This was the primary goal.
+The driving factor for this project was to migrate off of OneDrive. I had switched to linux in 2022, and OneDrive doesn't really have a capable client for Linux. I also wanted full control of my data. This is the primary objective.
 
-I fairly small secondary goal of mine was to set up a CUPS serve, since my printer isn't web-enabled and I work off of more than one machine. I'm still working on getting it to patch through Apache, but that shouldn't be too difficult.
+A fairly small secondary goal of mine was to set up a CUPS server, since my printer isn't web-enabled and I work off of more than one machine. I'm still working on getting it to patch through Apache, but that shouldn't be too difficult.
 
 It was only recently that I decided to also use it to build and serve AUR packages (thanks ari!) and thats been very useful. I don't really want to openly link to my website, but its not that difficult to find since I have an A record for it. 
 
