@@ -1,12 +1,14 @@
 import '@/styles/globals.css'
 
-import Script from 'next/script'
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
 
 import { Metadata } from 'next'
 import localFont from 'next/font/local'
- 
+
+import friends from "@/public/friends.json" assert { type: 'json' }
+
+
 export const metadata: Metadata = {
     title: {
         template: '%s | Juliaviolet.dev',
@@ -25,20 +27,21 @@ const Futura = localFont({
 })
 
 export default function RootLayout({ children } : { children: React.ReactNode }) {
+    
     return (
         <html lang="en" className={SourceCodePro.className}>
             <head>
                 <meta name="google-site-verification" content="r5PlHr4WDYzmUgIpNaonYMa6UIbjSNKWuVMGpRkkKVU" />
             </head>
-            <body>  
-                <Script src="oneko.js/oneko-webring.js" data-cat="oneko.js/oneko.gif"/>
-
+            <body>                  
                 <Header/>
+
                 <section className='body'>
                     {children}
                 </section>
-                <Footer/>
+                <Footer friends={friends.friends}/>
             </body>
         </html>
     );
+
 }

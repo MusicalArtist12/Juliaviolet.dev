@@ -1,5 +1,5 @@
 import GetLogo from "@/components/GetLogo"
-import friends from "@/public/friends.json" assert { type: 'json' }
+import { Oneko } from '@/components/Oneko' 
 
 function Badge({badge, link, color}) {
     return(
@@ -7,15 +7,19 @@ function Badge({badge, link, color}) {
     );
 }
 
-export default function Footer() {
+export default function Footer({ friends }) {
     let badges: JSX.Element[] = [];
 
-    for(let i = 0; i < friends.friends.length; i++) {
-        badges[i] = Badge(friends.friends[i]);
+    for(let i = 0; i < friends.length; i++) {
+        badges[i] = Badge(friends[i]);
     }
+    const friendSites = friends.map((friend) => new URL(friend.link).host);
+    
+    badges.push(<Oneko startX={16} startY={16} startAlert={false} nekoSites={friendSites}/>)
 
     return (
         <footer>
+            
             <div className="content">
                 <div className="badge-collection"> 
                     {badges}
