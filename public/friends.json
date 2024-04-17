@@ -55,5 +55,13 @@
         "link": "https://archlinux.org",
         "color": "#ffffff"
 
+    },
+    {
+        "name" : "eightyeightbythirty.one",
+        "callsign": "",
+        "badge": "/88x31/88x31.png",
+        "link": "https://eightyeightthirty.one",
+        "color": "#ffffff"
+
     }
 ]}
