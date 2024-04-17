@@ -1,7 +1,7 @@
 "use client"
 
 import { oneko, freezeOneko } from '@/lib/oneko/oneko.js' 
-import {useState} from 'react';
+import { useState } from 'react';
 
 
 let rendered = false;
@@ -16,7 +16,6 @@ export function Oneko({startX, startY, startAlert, nekoSites}) {
 
   const [source,setSource] = useState("88x31/oneko_enabled.png")
 
-  
   function onClick() {
     f = !f
     freezeOneko(f)
@@ -29,7 +28,7 @@ export function Oneko({startX, startY, startAlert, nekoSites}) {
     }
   }
 
-  return <img className="badge" style={{"--inputcolor": "#ffffff00"} as any} src={source} onClick={onClick}/> 
+  return <img className="badge" style={{"--inputcolor": "#00000000"} as any} src={source} onClick={onClick}/> 
 
 }
 

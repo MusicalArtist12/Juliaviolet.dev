@@ -8,7 +8,6 @@ import localFont from 'next/font/local'
 
 import friends from "@/public/friends.json" assert { type: 'json' }
 
-
 export const metadata: Metadata = {
     title: {
         template: '%s | Juliaviolet.dev',
@@ -35,10 +34,10 @@ export default function RootLayout({ children } : { children: React.ReactNode })
             </head>
             <body>                  
                 <Header/>
-
                 <section className='body'>
                     {children}
                 </section>
+                
                 <Footer friends={friends.friends}/>
             </body>
         </html>

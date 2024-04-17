@@ -2,66 +2,66 @@
     {
         "name": "Ava Silver",
         "callsign": "",
-        "badge": "/88x31/ava.png",
+        "badges": [["/88x31/ava.png", 100]],
         "link": "https://avasilver.dev",
-        "color": "#3097fa"
+        "colors": ["#9d00db"]
     },
     {
         "name": "Brooke Chalmers",
         "callsign": "K9BRQ",
-        "badge": "/88x31/breq.png",
+        "badges": [["/88x31/breq.png", 100], ["https://breq.dev/badges/breqalt.png", 10]],
         "link": "https://breq.dev",
-        "color": "#ffda00"
+        "colors": ["#ffda00", "#1bb3ff", "#ff42a1"]
     },
     {
         "name": "Philo Gray",
         "callsign": "KC1TGK",
-        "badge": "/88x31/philo.png",
+        "badges": [["/88x31/philo.png", 100]],
         "link": "https://www.philo.gay/",
-        "color": "#24affc"
+        "colors": ["#24affc"]
     },
     {
         "name": "Vivi",
         "callsign": "K9VIV",
-        "badge": "/88x31/vivi.png",
+        "badges": [["/88x31/vivi.png", 100]],
         "link": "https://www.vhafener.com/",
-        "color": "#FFFFFF"
+        "colors": ["#FFFFFF"]
     },
     {
         "name": "Ari",
         "callsign": "REDACTED",
-        "badge": "/88x31/adryd.png",
+        "badges": [["/88x31/adryd.png", 100]],
         "link": "https://adryd.com/",
-        "color": "#282737"
+        "colors": ["#282737"]
     },
     {
         "name": "Mia",
         "callsign": "",
-        "badge": "/88x31/mia.png",
+        "badges": [["/88x31/mia.png", 100]],
         "link": "https://miakizz.quest",
-        "color": "#FFFFFF"
+        "colors": ["#FFFFFF"]
     },
     {
         "name": "Estradiol - Alyx",
         "callsign": "",
-        "badge": "/88x31/estradiol.gif",
+        "badges": [["/88x31/estradiol.gif", 100]],
         "link": "https://alyx.sh/",
-        "color": "#5eb3a0"
+        "colors": ["#5eb3a0"]
     },
     {
         "name" : "Arch Linux",
         "callsign": "",
-        "badge": "/88x31/archlinux.gif",
+        "badges": [["/88x31/archlinux.gif", 100]],
         "link": "https://archlinux.org",
-        "color": "#ffffff"
+        "colors": ["#3fb8e6"]
 
     },
     {
         "name" : "eightyeightbythirty.one",
         "callsign": "",
-        "badge": "/88x31/88x31.png",
+        "badges": [["/88x31/88x31.png", 100]],
         "link": "https://eightyeightthirty.one",
-        "color": "#ffffff"
+        "colors": ["#b147ba", "#4776ba", "#44939e", "#ba5823"]
 
     }
 ]}
