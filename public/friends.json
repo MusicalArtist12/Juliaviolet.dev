@@ -47,5 +47,13 @@
         "badge": "/88x31/estradiol.gif",
         "link": "https://alyx.sh/",
         "color": "#5eb3a0"
+    },
+    {
+        "name" : "Arch Linux",
+        "callsign": "",
+        "badge": "/88x31/archlinux.gif",
+        "link": "https://archlinux.org",
+        "color": "#ffffff"
+
     }
 ]}
