@@ -9,6 +9,10 @@ export async function freezeOneko(f) {
 }
 
 export async function oneko(startX, startY, startAlert, nekoSites) {
+  if (typeof window === "undefined") {
+    return;
+  }
+  
   const isReducedMotion =
     window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
     window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
