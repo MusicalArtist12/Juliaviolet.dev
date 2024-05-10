@@ -8,14 +8,6 @@ import Footer from './Footer/Footer'
 import { Metadata } from 'next'
 import localFont from 'next/font/local'
 
-
-export const metadata: Metadata = {
-    title: {
-        template: '%s | Juliaviolet.dev',
-        default: 'Juliaviolet.dev',
-    },
-}
-
 const SourceCodePro = localFont({
     src: "../lib/fonts/SourceCodePro-Regular.otf",
     display: 'swap'
@@ -25,6 +17,14 @@ const Futura = localFont({
     src: "../lib/fonts/Futura-Light.ttf",
     display: 'swap'
 })
+
+
+export const metadata: Metadata = {
+    title: {
+        template: '%s | Juliaviolet.dev',
+        default: 'Juliaviolet.dev',
+    },
+}
 
 export default function RootLayout({ children } : { children: React.ReactNode }) {
     

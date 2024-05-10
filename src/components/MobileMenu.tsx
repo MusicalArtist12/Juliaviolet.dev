@@ -2,8 +2,7 @@
 import React, { useEffect } from 'react'
 import { useTransition, animated, AnimatedProps } from '@react-spring/web'
 
-
-export function MobileMenu({ children, index, width}) {
+export default function MobileMenu({ children, index, width}): JSX.Element {
     let menu: JSX.Element = (
         <nav className='mobile_nav'>
             {children} 

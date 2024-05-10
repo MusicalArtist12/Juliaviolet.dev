@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useTransition, animated, AnimatedProps } from '@react-spring/web'
 
-export default function PhotoSlideshow({Photos}):JSX.Element {
+export default function PhotoSlideshow({Photos}): JSX.Element {
     let PhotoArray = Photos.Photos;
     const [index, set] = useState(0);
     

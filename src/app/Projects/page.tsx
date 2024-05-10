@@ -1,13 +1,11 @@
+
+import { Metadata } from 'next'
 import { getAllPostsMeta } from '@/lib/mdx/postAPI'
 import Link from 'next/link';
 import Image from 'next/image'
-import { Metadata } from 'next'
 
 import "@/styles/project-styles.css"
 
-export const metadata: Metadata = {
-  title: 'Projects',
-}
 
 function postElement(post) {
     return <Link href={`Projects/${post.slug}`} className="body-panel link" key={post.slug}>
@@ -19,7 +17,7 @@ function postElement(post) {
     </Link>
 }
 
-export default async function Page() {
+export async function Projects() {
     const posts = await getAllPostsMeta(["public", "Projects"]);
 
     return <>
@@ -27,4 +25,12 @@ export default async function Page() {
             {posts?.map(post => postElement(post))}
         </div>
     </>
+}
+
+export const metadata: Metadata = {
+    title: 'Projects',
+}
+
+export default async function Page() {
+    return <Projects/>
 }

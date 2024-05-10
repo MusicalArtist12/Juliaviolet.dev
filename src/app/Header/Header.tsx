@@ -2,11 +2,10 @@
 
 import '@/styles/header.css'
 import { useState } from 'react';
-
 import Link from 'next/link';
-import SpinButton from "@/components/SpinButton"
-import GetLogo from "@/components/GetLogo"
-import {  MobileMenu } from "@/components/Menu"
+import SpinButton from "@/components/SpinButton";
+import GetLogo from "@/components/GetLogo";
+import MobileMenu from "@/components/MobileMenu";
 import WindowWidth from "@/components/WindowWidth";
 
 function MenuItem( {title, link}) {
@@ -24,15 +23,12 @@ export default function Header() {
     }
 
     const menuItems = <>
-        <MenuItem title={"/Projects"} link={"/Projects"}/>
-        <MenuItem title={"/Blog"} link={"/Blog"}/>
         <MenuItem title={"/About Me"} link={"/About-Me"}/>
+        <MenuItem title={"/Projects"} link={"/Projects"}/>
         <MenuItem title={"/Contact"} link={"/Contact"}/>
     </>
 
-
     return <header>
-
         <h1 className='title'>
             <Link href="/">JuliaViolet.dev</Link>
             <span style={{float: 'right'}}><SpinButton onClick={onClick} logo={GetLogo("Bars", "1x")}/></span>
@@ -42,7 +38,6 @@ export default function Header() {
         </nav> 
         <MobileMenu index={index} width={width}>
             {menuItems}
-        </MobileMenu>
-        
+        </MobileMenu>       
     </header>
 }

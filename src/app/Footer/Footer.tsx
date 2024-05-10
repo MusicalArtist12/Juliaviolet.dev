@@ -20,7 +20,6 @@ export default function Footer() {
             {badges}
             <Oneko startX={0} startY={0} startAlert={false} nekoSites={friendSites}/>
         </div>
-        
         <div>
             <p><a href="https://github.com/MusicalArtist12/Juliaviolet.dev">{GetLogo("Github", "1x")} MusicalArtist12/Juliaviolet.dev</a> | 2023</p> 
             <p>Made with Next.js, React.js, React-Spring, and &lt;3 </p>

@@ -1,16 +1,10 @@
 // juliaviolet.dev/About-Me
-
+import { Metadata } from 'next'
 import PhotoSlideshow from '@/components/PhotoSlideshow';
 import Article from '@/components/Article'
 import Photos from "@/public/juliaPhotos.json" assert { type: 'json' }
 
-import { Metadata } from 'next'
- 
-export const metadata: Metadata = {
-  title: 'About Me',
-}
-
-export default function Page() { 
+export function About_Me() { 
     return <>  
         <div className="body-panel">
             <h1>Hi! I&apos;m Julia</h1>
@@ -45,4 +39,12 @@ export default function Page() {
             </Article>
         </div>
     </>
+}
+
+export const metadata: Metadata = {
+    title: 'About Me',
+}  
+
+export default function Page() {
+    return <About_Me/>
 }
