@@ -15,6 +15,7 @@ function BadgeElement({badges, link, colors}): JSX.Element {
         let idx = 0;
         for (let i = 0; i < badges.length; i++) {
             if (badgeIdx <= badges[i][1]) {
+                console.log("link: %s, badge id: %i, random number: %i", link, i, badgeIdx);
                 idx = i;
             }
         }
@@ -23,7 +24,7 @@ function BadgeElement({badges, link, colors}): JSX.Element {
 
     function onHover() {
         let idx = getRandomInt(colors.length);
-        // console.log("link: %s, idx: %i", self.link, idx);
+        // console.log("link: %s, idx: %i", link, idx);
         setColor(colors[idx]);
     }
 
