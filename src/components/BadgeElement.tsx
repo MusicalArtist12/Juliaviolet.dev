@@ -1,17 +1,17 @@
 "use client"
 
-import { useState } from 'react';
-import { Oneko } from '@/components/Oneko' 
+import { useEffect, useState } from 'react';
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
-function BadgeElement({badges, link, colors}): JSX.Element {
+export default function BadgeElement({badges, link, colors}): JSX.Element {
     const [color,setColor] = useState(colors[0]);
-    const [badge, _] = useState(() => {
-        const badgeIdx = getRandomInt(100);
+    const [badge, setBadge] = useState(badges[0][0]);
 
+    useEffect(() => {
+        const badgeIdx = getRandomInt(100);
         let idx = 0;
         for (let i = 0; i < badges.length; i++) {
             if (badgeIdx <= badges[i][1]) {
@@ -19,8 +19,8 @@ function BadgeElement({badges, link, colors}): JSX.Element {
                 idx = i;
             }
         }
-        return badges[idx][0];
-    });
+        setBadge(badges[idx][0]);
+    }, [badges])
 
     function onHover() {
         let idx = getRandomInt(colors.length);
@@ -31,19 +31,3 @@ function BadgeElement({badges, link, colors}): JSX.Element {
     return <a href={link} key={link}><img className="badge" style={{"--inputcolor": color} as any} src={badge} onMouseLeave={onHover} alt={link}/></a>
 }
 
-export default function Badges({ friends }) {
-    const badges: JSX.Element[] = [];
-
-    for(let i = 0; i < friends.length; i++) {
-        badges[i] = BadgeElement(friends[i])
-    }     
-
-    const friendSites = friends.map((friend) => new URL(friend.link).host);
-
-    return <>
-        <div className="badge-collection"> 
-            {badges}
-            <Oneko startX={0} startY={0} startAlert={false} nekoSites={friendSites}/>
-        </div>
-    </>
-}

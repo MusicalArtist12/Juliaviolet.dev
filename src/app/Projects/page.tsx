@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 }
 
 function postElement(post) {
-    return <Link href={`Projects/${post.slug}`} className="body-panel link post">
+    return <Link href={`Projects/${post.slug}`} className="body-panel link" key={post.slug}>
         <Image src={post.photo} className='image' alt={post.title} width={800} height={800}/>
         <div className='post-title'>
             <h1>{post.title}</h1>
@@ -19,7 +19,7 @@ function postElement(post) {
     </Link>
 }
 
-export default async function Page() {
+export default async function Page({ data }) {
     const posts = await getAllPostsMeta(["public", "Projects"]);
 
     return <>

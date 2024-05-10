@@ -1,5 +1,6 @@
 import '@/styles/globals.css'
 import '@/styles/article.css'
+import '@/styles/body.css'
 
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
@@ -7,7 +8,6 @@ import Footer from './Footer/Footer'
 import { Metadata } from 'next'
 import localFont from 'next/font/local'
 
-import friends from "@/public/friends.json" assert { type: 'json' }
 
 export const metadata: Metadata = {
     title: {
@@ -34,8 +34,7 @@ export default function RootLayout({ children } : { children: React.ReactNode })
             <section className='body'>
                 {children}
             </section>
-            
-            <Footer friends={friends.friends.sort((a, b) => { return a.order - b.order; })}/>
+            <Footer/>
         </body>
     </html>
 }

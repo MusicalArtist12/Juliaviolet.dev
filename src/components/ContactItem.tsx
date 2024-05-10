@@ -11,18 +11,16 @@ export default function ContactItem({name, handle, link, description = "", logo}
     }
     
     return <>
-        <div className="body-panel link" key={link}>
-            <Link href={link}>
-                <div className={contact.row}>
-                    <div className={contact.logo}>
-                        <h4>{Logo}</h4> 
-                    </div>
-                    <h2>{handle}</h2>
-                    <h4>
-                        {description}
-                    </h4>
+        <Link href={link} className="body-panel link" key={link}>
+            <div className={contact.row}>
+                <div className={contact.logo}>
+                    <h4>{Logo}</h4> 
                 </div>
-            </Link>
-        </div>
+                <h2>{handle}</h2>
+                <h4>
+                    {description}
+                </h4>
+            </div>
+        </Link>
     </>
 }

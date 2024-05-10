@@ -5,11 +5,9 @@ import { useTransition, animated, AnimatedProps } from '@react-spring/web'
 
 export function MobileMenu({ children, index, width}) {
     let menu: JSX.Element = (
-        <div className='mobile_nav'>
-            <nav>
-                {children} 
-            </nav> 
-        </div>
+        <nav className='mobile_nav'>
+            {children} 
+        </nav> 
     );
     
     let data: ((props: AnimatedProps<{ style }>) => React.ReactElement)[] = [
