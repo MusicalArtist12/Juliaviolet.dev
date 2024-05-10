@@ -19,7 +19,7 @@ function postElement(post) {
     </Link>
 }
 
-export default async function Page({ data }) {
+export default async function Page() {
     const posts = await getAllPostsMeta(["public", "Projects"]);
 
     return <>
