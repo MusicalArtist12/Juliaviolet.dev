@@ -30,18 +30,15 @@ export default async function Page({ params }: Props ) {
 
     Title = data.meta.title
 
-    return (
-        <>
-            <div className='body-panel'>
-                
-                <h1>Project: {data.meta.title}</h1>
-                <h3>Writeup Date: {data.meta.publishDate}</h3>
-                <Article>
-                    {data.content}
-                </Article> 
+    return <>
+        <div className='body-panel'>
             
-            </div>
-        </>
-
-    )
+            <h1>Project: {data.meta.title}</h1>
+            <h3>Writeup Date: {data.meta.publishDate}</h3>
+            <Article>
+                {data.content}
+            </Article> 
+        
+        </div>
+    </>
 }

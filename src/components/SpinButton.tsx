@@ -1,6 +1,8 @@
+"use client"
+
 import { useSpring, animated } from '@react-spring/web';
 
-export default function SpinButton({buttonStyle, logo, onClick}) {
+export default function SpinButton({logo, onClick}) {
     const [spring, api] = useSpring(
         () => ({
             config: {
@@ -11,8 +13,6 @@ export default function SpinButton({buttonStyle, logo, onClick}) {
         })
     );
 
-    // Button handling
-    
     const ClickFunction = () => {
         api.start({
             from: { transform: 'rotateZ(0deg)' },
@@ -21,7 +21,6 @@ export default function SpinButton({buttonStyle, logo, onClick}) {
         onClick();
     }
     
-    return(
-        <animated.button onClick={ClickFunction} className={buttonStyle} style={{backgroundColor: "inherit", border: "none", ...spring}}>{logo}</animated.button>
-    )
+    return <animated.button onClick={ClickFunction} style={{backgroundColor: "inherit", border: "none", ...spring}}>{logo}</animated.button>
+    
 }

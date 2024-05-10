@@ -45,7 +45,7 @@ export default function PhotoSlideshow({Photos}):JSX.Element {
         api.start();
     }, [index])
 
-    return( 
+    return <>
         <div onClick={onClick} ref={ref}>
             {transition(
                 (style, i) => {
@@ -56,5 +56,5 @@ export default function PhotoSlideshow({Photos}):JSX.Element {
                 }
             )}
         </div>
-    );
+    </>
 }

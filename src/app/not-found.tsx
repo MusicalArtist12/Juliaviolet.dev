@@ -6,12 +6,10 @@ export const metadata: Metadata = {
 }
 
 export default async function NotFound() {
-    return(
-        <>
-            <div style={{margin: "auto", textAlign: "center"}}>
-                <h1>404: This page does not exist</h1>
-                <h2><Link href='/' style={{textDecoration: "underline"}} >Go Home?</Link></h2>
-            </div> 
-        </>   
-    )
+    return <>
+        <div style={{margin: "auto", textAlign: "center"}}>
+            <h1>404: This page does not exist</h1>
+            <h2><Link href='/' style={{textDecoration: "underline"}} >Go Home?</Link></h2>
+        </div> 
+    </>   
 }

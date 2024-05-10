@@ -7,7 +7,7 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
-function createBadge({badges, link, colors}): JSX.Element {
+function BadgeElement({badges, link, colors}): JSX.Element {
     const [color,setColor] = useState(colors[0]);
     const [badge, _] = useState(() => {
         const badgeIdx = getRandomInt(100);
@@ -27,22 +27,22 @@ function createBadge({badges, link, colors}): JSX.Element {
         setColor(colors[idx]);
     }
 
-    return <a href={link} key={link}><img className="badge" style={{"--inputcolor": color} as any} src={badge} onMouseLeave={onHover}/></a>
+    return <a href={link} key={link}><img className="badge" style={{"--inputcolor": color} as any} src={badge} onMouseLeave={onHover} alt={link}/></a>
 }
 
 export default function Badges({ friends }) {
     const badges: JSX.Element[] = [];
 
     for(let i = 0; i < friends.length; i++) {
-        badges[i] = createBadge(friends[i])
+        badges[i] = BadgeElement(friends[i])
     }     
 
     const friendSites = friends.map((friend) => new URL(friend.link).host);
 
-    return (
+    return <>
         <div className="badge-collection"> 
             {badges}
-            <Oneko startX={16} startY={16} startAlert={false} nekoSites={friendSites}/>
+            <Oneko startX={0} startY={0} startAlert={false} nekoSites={friendSites}/>
         </div>
-    )
+    </>
 }

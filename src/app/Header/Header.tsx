@@ -1,17 +1,13 @@
 "use client"
 
+import '@/styles/header.css'
 import { useState } from 'react';
 
-import header from "@/styles/header.module.css"
+import Link from 'next/link';
 import SpinButton from "@/components/SpinButton"
 import GetLogo from "@/components/GetLogo"
-
-import { Menu, MobileMenu } from "@/components/Menu"
+import {  MobileMenu } from "@/components/Menu"
 import WindowWidth from "@/components/WindowWidth";
-
-import Link from 'next/link';
-
-const mobileWidth = 600;
 
 function MenuItem( {title, link }) {
     return (
@@ -20,15 +16,6 @@ function MenuItem( {title, link }) {
 }
 
 export default function Header() {
-    const [index, set] = useState(0);
-
-    const onClick = () => {
-        set(state => (state + 1) % 2);
-    }
-
-    let width = WindowWidth();
-    let isMobile = (width <= mobileWidth) 
-
     let menuItems = <>
         <MenuItem title={"/Projects"} link={"/Projects"}/>
         <MenuItem title={"/Blog"} link={"/Blog"}/>
@@ -36,33 +23,29 @@ export default function Header() {
         <MenuItem title={"/Contact"} link={"/Contact"}/>
     </>
 
-    let currentMenu = <>
-        <Menu>
-            {menuItems}
-        </Menu>
-    </>
+    let width = WindowWidth();
 
-    if(isMobile) {
-        currentMenu = <>
-            <MobileMenu index={index} width={width}>
-                {menuItems}
-            </MobileMenu>
-        </>
+    const [index, set] = useState(0);
+    const onClick = () => {
+        set(state => (state + 1) % 2);
     }
 
-    return (
-        <>
-            <header className={header.sticky}>
-                <div className={header.bar}>
-                    <div className={header.content}>
-                        <div className={header.title}>
-                            <h1><Link href="/">JuliaViolet.dev</Link></h1>
-                            <h1 style={{textAlign: "right"}}><SpinButton onClick={onClick} buttonStyle={header.mobileMenuButton} logo={GetLogo("Bars", "1x") }/></h1>
-                        </div>
-                    </div> 
-                </div>
-                {currentMenu}
-            </header>
-        </>
-    )
+
+    return <header>
+        <div className='title'>
+            <h1>
+                <Link href="/">JuliaViolet.dev</Link>
+                <span style={{float: 'right'}}><SpinButton onClick={onClick} logo={GetLogo("Bars", "1x")}/></span>
+            </h1>                 
+        </div>
+        <div className='nav'>
+            <nav>
+                {menuItems}
+            </nav> 
+        </div>
+        <MobileMenu index={index} width={width}>
+            {menuItems}
+        </MobileMenu>
+        
+    </header>
 }

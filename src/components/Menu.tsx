@@ -1,32 +1,14 @@
-import header from "@/styles/header.module.css"
 
 import React, { useEffect } from 'react'
 import { useTransition, animated, AnimatedProps } from '@react-spring/web'
 
-export function Menu( { children }) {
-    let menu: JSX.Element = (
-        <div className={header.content}>
-            <nav className={header.menu}>
-                {children} 
-            </nav>
-        </div> 
-    );
-
-    return(
-        <div className={header.navbar}>
-            {menu}
-        </div> 
-     );
-}
 
 export function MobileMenu({ children, index, width}) {
     let menu: JSX.Element = (
-        <div className={header.menuBackground}>
-            <div className={header.content}>
-                <nav className={header.mobileMenu}>
-                    {children} 
-                </nav> 
-            </div>
+        <div className='mobile_nav'>
+            <nav>
+                {children} 
+            </nav> 
         </div>
     );
     
@@ -52,7 +34,7 @@ export function MobileMenu({ children, index, width}) {
         api.start();
     }, [index])
 
-    return( transition(
+    return (transition(
         (style, i) => {
             const Page = data[i];
             return (

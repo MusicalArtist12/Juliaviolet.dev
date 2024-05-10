@@ -1,5 +1,4 @@
 // juliaviolet.dev/Contact
-import Head from 'next/head';
 import ContactItem from '@/components/ContactItem'
 import contacts from '@/public/contactInfo.json' assert { type: 'json' }
 
@@ -16,13 +15,7 @@ export default function Page() {
         contactItems[i] = ContactItem(contacts.methods[i]);
     }
 
-    return (
-        <>
-            <Head>
-                <title>Contact Info | Juliaviolet.dev</title>
-            </Head>
-            
-            {contactItems}
-       </>
-    )
+    return <>  
+        {contactItems}
+    </>
 }

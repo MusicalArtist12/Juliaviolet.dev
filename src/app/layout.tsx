@@ -1,4 +1,5 @@
 import '@/styles/globals.css'
+import '@/styles/article.css'
 
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
@@ -27,20 +28,14 @@ const Futura = localFont({
 
 export default function RootLayout({ children } : { children: React.ReactNode }) {
     
-    return (
-        <html lang="en" className={SourceCodePro.className}>
-            <head>
-                <meta name="google-site-verification" content="r5PlHr4WDYzmUgIpNaonYMa6UIbjSNKWuVMGpRkkKVU" />
-            </head>
-            <body>                  
-                <Header/>
-                <section className='body'>
-                    {children}
-                </section>
-                
-                <Footer friends={friends.friends}/>
-            </body>
-        </html>
-    );
-
+    return <html lang="en" className={SourceCodePro.className}>
+        <body>                  
+            <Header/>
+            <section className='body'>
+                {children}
+            </section>
+            
+            <Footer friends={friends.friends.sort((a, b) => { return a.order - b.order; })}/>
+        </body>
+    </html>
 }
