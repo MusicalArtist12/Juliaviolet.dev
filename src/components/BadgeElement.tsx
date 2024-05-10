@@ -15,7 +15,7 @@ export default function BadgeElement({badges, link, colors}): JSX.Element {
         let idx = 0;
         for (let i = 0; i < badges.length; i++) {
             if (badgeIdx <= badges[i][1]) {
-                console.log("link: %s, badge id: %i, random number: %i", link, i, badgeIdx);
+                // console.log("link: %s, badge id: %i, random number: %i", link, i, badgeIdx);
                 idx = i;
             }
         }
