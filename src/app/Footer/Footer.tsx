@@ -1,22 +1,35 @@
 import '@/styles/footer.css'
 import GetLogo from "@/components/GetLogo"
 import BadgeElement from "@/components/BadgeElement"
-import friends from "@/public/friends.json" assert { type: 'json' }
+import Badges from "@/public/Badges.json" assert { type: 'json' }
 import Oneko from '@/components/Oneko' 
 
 export default function Footer() {
-    const friendSites = friends.friends.map((friend) => new URL(friend.link).host);
-    const friendList = friends.friends.sort((a, b) => a.order - b.order)
-    const badges: JSX.Element[] = []
+    const friendSites = Badges.Friends.filter((site) => site.hasOneko == true)
 
-    for(let i = 0; i < friendList.length; i++) {
-        badges[i] = <BadgeElement badges={friendList[i].badges} link={friendList[i].link} colors={friendList[i].colors} key={i}/>
-    }     
+    const friendBadges: JSX.Element[] = Badges.Friends
+        .map((badge, i) => <BadgeElement 
+            badges={badge.badges} 
+            link={badge.link} 
+            colors={badge.colors} 
+            key={i}
+        />
+    )  
+
+    const siteBadges: JSX.Element[] = Badges.Sites.map((badge, i) => 
+        <BadgeElement 
+            badges={badge.badges} 
+            link={badge.link} 
+            colors={badge.colors} 
+            key={i}
+        />
+    )  
 
     return <>
         <footer>   
             <div className="badge-collection"> 
-                {badges}
+                {friendBadges}
+                {siteBadges}
                 <Oneko startX={0} startY={0} startAlert={false} nekoSites={friendSites}/>
             </div>
             <div>
