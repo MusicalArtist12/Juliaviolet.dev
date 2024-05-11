@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react'
 import { useTransition, animated, AnimatedProps } from '@react-spring/web'
 
@@ -7,7 +6,7 @@ export default function MobileMenu({ children, index, width}): JSX.Element {
         <nav className='mobile_nav'>
             {children} 
         </nav> 
-    );
+    )
     
     let data: ((props: AnimatedProps<{ style }>) => React.ReactElement)[] = [
         ({ style }) => <animated.div style={{ ...style, display: "none"}}/>,
@@ -28,17 +27,13 @@ export default function MobileMenu({ children, index, width}): JSX.Element {
     }))
 
     useEffect(() => {
-        api.start();
+        api.start()
     }, [index])
 
-    return (transition(
-        (style, i) => {
-            const Page = data[i];
-            return (
-                <Page style={style}/>
-            )
-        }
-    ))
+    return (transition((style, i) => {
+        const Page = data[i]
+        return <Page style={style}/>
+    }))
 }
 
 

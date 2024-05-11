@@ -7,7 +7,10 @@ const Futura = localFont({
 
 export default function Article({children}): JSX.Element {
     return <>
-        <div className={`${Futura.className} article`} style={{fontSize: "var(--article-p-offset-size)"}}>
+        <div 
+            className={`${Futura.className} article`} 
+            style={{fontSize: "var(--article-p-offset-size)"}}
+        >
             {children}
             <br/>
         </div>

@@ -1,10 +1,8 @@
 import '@/styles/globals.css'
 import '@/styles/article.css'
 import '@/styles/body.css'
-
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
-
 import { Metadata } from 'next'
 import localFont from 'next/font/local'
 
@@ -18,7 +16,6 @@ const Futura = localFont({
     display: 'swap'
 })
 
-
 export const metadata: Metadata = {
     title: {
         template: '%s | Juliaviolet.dev',
@@ -27,14 +24,15 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children } : { children: React.ReactNode }) {
-    
-    return <html lang="en" className={SourceCodePro.className}>
-        <body>                  
-            <Header/>
-            <section className='body'>
-                {children}
-            </section>
-            <Footer/>
-        </body>
-    </html>
+    return <>
+        <html lang="en" className={SourceCodePro.className}>
+            <body>                  
+                <Header/>
+                <section className='body'>
+                    {children}
+                </section>
+                <Footer/>
+            </body>
+        </html>
+    </>
 }

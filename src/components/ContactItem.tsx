@@ -1,13 +1,12 @@
 import contact from "@/styles/contact.module.css"
 import GetLogo from "@/components/GetLogo"
-
-import Link from 'next/link';
+import Link from 'next/link'
 
 export default function ContactItem({name, handle, link, description = "", logo}): JSX.Element {
-    let Logo = GetLogo(logo, "2x");
+    let Logo = GetLogo(logo, "2x")
 
     if(description.length == 0) {
-        description = name;
+        description = name
     }
     
     return <>

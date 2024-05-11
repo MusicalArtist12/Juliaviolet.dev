@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 let rendered = false;
 
-export function Oneko({startX, startY, startAlert, nekoSites}): JSX.Element {
+export default function Oneko({startX, startY, startAlert, nekoSites}): JSX.Element {
     if (!rendered) {
         oneko(startX, startY, startAlert, nekoSites);
         rendered = true;   
@@ -25,6 +25,13 @@ export function Oneko({startX, startY, startAlert, nekoSites}): JSX.Element {
         }
     }
 
-    return <img className="badge" style={{"--inputcolor": "#00000000"} as any} src={source} onClick={onClick} width={88} height={31} alt='oneko'/> 
+    return <img 
+        className="badge" 
+        style={{"--inputcolor": "#00000000"} as any} 
+        src={source} onClick={onClick} 
+        width={88} 
+        height={31} 
+        alt='oneko'
+    /> 
 }
 

@@ -1,72 +1,42 @@
 :root {
- 
+    font-size: clamp(1.0rem, 0.696rem + 0.476vw, 1.125rem);
+
     --header-color:     #a06ffd;
     --footer-color:     #FC6FC4;
     --article-color:    #573499;
     --menu-color:       #8A5FD9;
     --background-color: #000000;
-
-    --header-h1-color:       #FCCAD2;
-    --header-h2-color:       #FCCAD2;
-
-    --body-h1-color:         #FC6FC4;
-    --body-h2-color:         #FC6FC4;
-    --body-h3-color:         #FCCAD2;
-    --body-h4-color:         #FCCAD2;
-
-    --article-h1-color:         #FC6FC4;
-    --article-h2-color:         #FC9DD6;
-
-
-    /*
-    --header-h1-size: 2.25rem; 
-    --header-h2-size: 1.5rem;
-
-    --body-h1-size: 1.25rem;
-    --body-h2-size: 1.00rem;
-    --body-h3-size: 1.00rem;
-    --body-h4-size: 0.875rem;
-
-    --footer-p-size: 0.85rem;
-
-    --article-h1-size: 1.75rem;
-    --article-h2-size: 1.50rem;
-
-*/
-
-    --header-h1-size: 2.25rem; 
-    --header-h2-size: 1.5rem;
-
-    --body-h1-size: 1.25rem;
-    --body-h2-size: 1.00rem;
-    --body-h3-size: 1.00rem;
-    --body-h4-size: 0.875rem;
-
-    --footer-p-size: 0.85rem;
-
-    --article-h1-size: 1.75rem;
-    --article-h2-size: 1.50rem;
-
+    --header-h1-color:  #FCCAD2;
+    --header-h2-color:  #FCCAD2;
+    --body-h1-color:    #FC6FC4;
+    --body-h2-color:    #FC6FC4;
+    --body-h3-color:    #FCCAD2;
+    --body-h4-color:    #FCCAD2;
+    --article-h1-color: #FC6FC4;
+    --article-h2-color: #FC9DD6;
     --link-color:       #FC6FC4;
     --p-light-color:    #FCCAD2;
     --p-dark-color:     #000000;
-    
-    --corner-radius:    10px;
 
-    --body-width: 80%;
-    --body-margin-vertical: 2em;
-
-    --body-gap: 1em;
-
-    --body-panel-padding: 2em;
-    --body-panel-button-padding: 0.5em;
-
+    --header-h1-size:   2.25rem; 
+    --header-h2-size:   1.5rem;
+    --body-h1-size:     1.25rem;
+    --body-h2-size:     1.00rem;
+    --body-h3-size:     1.00rem;
+    --body-h4-size:     0.875rem;
+    --footer-p-size:    0.85rem;
+    --article-h1-size:  1.75rem;
+    --article-h2-size:  1.50rem;
     --tab_size: 2em;
     --paragraph_spacing: 1em;
 
+    --corner-radius:    10px;
+    --body-width: 80%;
+    --body-margin-vertical: 2em;
+    --body-gap: 1em;
+    --body-panel-padding: 2em;
+    --body-panel-button-padding: 0.5em;
     --grid-element-width: 14em;
-
-    font-size: clamp(1.0rem, 0.696rem + 0.476vw, 1.125rem);
 }
 
 *, html {
@@ -75,22 +45,16 @@
 }
 
 @media screen and (max-width: 800px) { 
-    :root {      
+    :root {     
+        font-size: clamp(0.875rem, 0.625rem + 1.333vw, 1.125rem);
+
         --body-width: 90%;
         --body-margin-vertical: 1.25em;
         --body-panel-padding: 1.25em;
-        
-        --header-h1-size: 1.25rem; 
-        --header-h2-size: 1.25rem;
-
-        --footer-p-size: 0.5rem;
         --grid-element-width: 12em;
 
-        font-size: clamp(0.875rem, 0.625rem + 1.333vw, 1.125rem);
-        
+        --header-h1-size: 1.25rem; 
+        --header-h2-size: 1.25rem;
+        --footer-p-size: 0.5rem;
     }
-
 }
-
-
-

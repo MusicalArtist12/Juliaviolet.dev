@@ -1,4 +1,3 @@
-
 footer {
     padding: var(--body-panel-padding);
     font-size: var(--footer-p-size);
@@ -31,7 +30,6 @@ footer p > a:hover {
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-
 }
 
 .badge {
@@ -39,13 +37,10 @@ footer p > a:hover {
     image-rendering: pixelated;
     width: 88px;
     height: 31px;
-    border-radius: 0px;
-    
+    border-radius: 0px;   
 }
 
 .badge:hover {
     text-decoration: none;
     box-shadow: 5px 5px var(--inputcolor);
 }
-
-

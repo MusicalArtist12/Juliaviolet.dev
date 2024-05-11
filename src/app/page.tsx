@@ -1,9 +1,7 @@
-// juliaviolet.dev/
 import '@/styles/index.css'
-
-import Contact from './Contact/page';
-import About_Me from './About-Me/page';
-import Projects from './Projects/page';
+import Contact from './Contact/Contact'
+import About_Me from './About-Me/About_Me'
+import Projects from './Projects/Projects'
  
 export default function Page() {
     return <>

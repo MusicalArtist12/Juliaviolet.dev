@@ -4,21 +4,20 @@ import React, { useState, useEffect, useRef } from 'react'
 import { useTransition, animated, AnimatedProps } from '@react-spring/web'
 
 export default function PhotoSlideshow({Photos}): JSX.Element {
-    let PhotoArray = Photos.Photos;
-    const [index, set] = useState(0);
+    let PhotoArray = Photos.Photos
+    const [index, set] = useState(0)
     
-    const onClick = () => set(state => (state + 1) % PhotoArray.length);
+    const onClick = () => set(state => (state + 1) % PhotoArray.length)
 
-    let data: ((props: AnimatedProps<{ style }>) => React.ReactElement)[] = [];
+    let data: ((props: AnimatedProps<{ style }>) => React.ReactElement)[] = []
     
-    for(let i = 0; i < PhotoArray.length; i++){
+    for(let i = 0; i < PhotoArray.length; i++) {
         data[i] = ({ style }) => <button style={{backgroundColor: "inherit", border: "none", cursor: "pointer"}}><animated.img style={{ margin: "auto", ...style}} title={PhotoArray[i].title} src={PhotoArray[i].location}/></button>
     }
 
-    const ref = useRef<HTMLInputElement>(null);
+    const ref = useRef<HTMLInputElement>(null)
 
-
-    let width = ref.current ? ref.current.offsetWidth/2 : 0;
+    let width = ref.current ? ref.current.offsetWidth/2 : 0
 
     const [transition, api] = useTransition(index, () => ({
         from:  { 
@@ -43,19 +42,15 @@ export default function PhotoSlideshow({Photos}): JSX.Element {
     }))
 
     useEffect(() => {
-        api.start();
+        api.start()
     }, [index])
 
     return <>
         <div onClick={onClick} ref={ref}>
-            {transition(
-                (style, i) => {
-                    const Item = data[i];
-                    return (
-                        <Item style={style}/>
-                    )
-                }
-            )}
+            {transition((style, i) => {
+                const Item = data[i]
+                return <Item style={style}/>
+            })}
         </div>
     </>
 }
