@@ -3,9 +3,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import "@/styles/project-styles.css"
 
-function postElement(post) {
+function PostElement({post}): JSX.Element {
     return <>
-        <Link href={`Projects/${post.slug}`} className="body-panel link" key={post.slug}>
+        <Link href={`Projects/${post.slug}`} className="body-panel link">
             <Image src={post.photo} className='image' alt={post.title} width={800} height={800}/>
             <div className='post-title'>
                 <h1>{post.title}</h1>
@@ -16,11 +16,11 @@ function postElement(post) {
 }
 
 export default async function Projects() {
-    const posts = await getAllPostsMeta(["public", "Projects"])
+    const posts = (await getAllPostsMeta(["public", "Projects"]))
 
     return <>
         <div className='body-grid'>
-            {posts?.map(post => postElement(post))}
+            {posts?.map((post, idx) => <PostElement post={post} key={idx}/>)}
         </div>
     </>
 }

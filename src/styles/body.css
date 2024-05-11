@@ -6,20 +6,46 @@ body {
     margin: auto;
 }
 
-.inset-photo {
-    float: left;
-    align-items: center;
-    justify-content: center;
-    margin: 15px;
-    margin-left: 0px;
+
+.about-me-grid {
+    display: flex;
+    flex: auto initial;
+    width: 100%;
+    height: 100%;
+    row-gap: inherit;
+    column-gap: inherit;
+    flex-wrap: nowrap;
+    flex-direction: row;
 }
 
-@media screen and (max-width: 600px) { 
-    .inset-photo {
-        float:none;
-        margin-left: auto;
-        margin-right: auto;
+.about-me-grid .body-panel {
+    margin: auto;
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.about-me-grid .inset-photo {
+    margin: auto;
+    margin-top: 0;
+    margin-right: 0;
+}
+
+@media screen and (max-width: 800px) { 
+    .about-me-grid .inset-photo {
+        margin: auto;
+        margin-top: 0;
     }
+
+    .about-me-grid {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .about-me-grid .body-panel {
+        max-width: 100%;
+        margin: auto;
+    }
+    
 }
 
 .body {

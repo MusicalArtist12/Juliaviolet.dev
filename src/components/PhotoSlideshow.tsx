@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useTransition, animated, AnimatedProps } from '@react-spring/web'
 
-export default function PhotoSlideshow({Photos}): JSX.Element {
+export default function PhotoSlideshow({Photos, Style}): JSX.Element {
     let PhotoArray = Photos.Photos
     const [index, set] = useState(0)
     
@@ -11,9 +11,6 @@ export default function PhotoSlideshow({Photos}): JSX.Element {
 
     let data: ((props: AnimatedProps<{ style }>) => React.ReactElement)[] = []
     
-    for(let i = 0; i < PhotoArray.length; i++) {
-        data[i] = ({ style }) => <button style={{backgroundColor: "inherit", border: "none", cursor: "pointer"}}><animated.img style={{ margin: "auto", ...style}} title={PhotoArray[i].title} src={PhotoArray[i].location}/></button>
-    }
 
     const ref = useRef<HTMLInputElement>(null)
 
@@ -45,12 +42,36 @@ export default function PhotoSlideshow({Photos}): JSX.Element {
         api.start()
     }, [index])
 
+    for(let i = 0; i < PhotoArray.length; i++) {
+        data[i] = ({ style }) => <div 
+            onClick={onClick} 
+            ref={ref} 
+            style={{
+                backgroundColor: "transparent", 
+                border: "none", 
+                cursor: "pointer",
+                ...Style
+            }}
+        >
+            <animated.img 
+                className="link" 
+                style={{ 
+                    margin: "auto", 
+                    padding: 0, 
+                    ...style
+                }} 
+                title={PhotoArray[i].title} 
+                src={PhotoArray[i].location}
+                />
+        </div>
+    }
+
     return <>
-        <div onClick={onClick} ref={ref}>
+        <button style={{background: "transparent", border: "none"}}>
             {transition((style, i) => {
                 const Item = data[i]
                 return <Item style={style}/>
             })}
-        </div>
+        </button>
     </>
 }

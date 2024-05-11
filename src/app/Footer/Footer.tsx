@@ -10,7 +10,7 @@ export default function Footer() {
     const badges: JSX.Element[] = []
 
     for(let i = 0; i < friendList.length; i++) {
-        badges[i] = <BadgeElement badges={friendList[i].badges} link={friendList[i].link} colors={friendList[i].colors}/>
+        badges[i] = <BadgeElement badges={friendList[i].badges} link={friendList[i].link} colors={friendList[i].colors} key={i}/>
     }     
 
     return <>

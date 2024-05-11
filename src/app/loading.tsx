@@ -19,8 +19,8 @@ export default function Loading() {
 
     return <>
         <div style={{flexDirection: "column", display: "flex", justifyContent: "center", alignItems: "center", margin: "auto"}}>
-            {trails.map(props => (
-                <animated.h1 style={{width: "fit-content", ...props}} key={1}>Loading</animated.h1>
+            {trails.map((props, idx) => (
+                <animated.h1 style={{width: "fit-content", ...props}} key={idx}>Loading</animated.h1>
             ))}
         </div>
     </>

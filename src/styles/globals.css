@@ -58,3 +58,15 @@
         --footer-p-size: 0.5rem;
     }
 }
+
+@media screen and (min-width: 1200px) { 
+    :root {     
+        --body-width: 70%;
+    }
+}
+
+@media screen and (min-width: 1600px) { 
+    :root {     
+        --body-width: 60%;
+    }
+}
