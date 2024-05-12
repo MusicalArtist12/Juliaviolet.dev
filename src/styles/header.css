@@ -5,17 +5,17 @@ header {
     background-color: var(--header-color);
 }
 
-.title {
-    padding-top: calc(var(--body-panel-padding) / 2);
-}
-
 .nav {
-    padding-bottom: var(--body-panel-button-padding);
+    display: flex;
+    column-gap: 1em;
 }
 
-.title, .nav {
+.bar {
+    display: flex;
+    align-items: center;
     width: var(--body-width);
     margin: auto;
+    padding: var(--button-padding);    
 }
 
 header h1, header h1 * {
@@ -71,7 +71,6 @@ header h2 > a:hover {
     }
 
     .title {
-        padding-bottom: calc(var(--body-panel-padding) / 2);
         background-color: var(--header-color);
     }
 

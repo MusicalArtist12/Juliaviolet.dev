@@ -1,14 +1,14 @@
 import PhotoSlideshow from '@/components/PhotoSlideshow'
 import Article from '@/components/Article'
 import Photos from "@/public/juliaPhotos.json" assert { type: 'json' }
+import '@/styles/about-me.css'
 
 export default function About_Me() { 
     return <>  
-        <div className="about-me-grid">
-            <div className='inset-photo'>
-                <PhotoSlideshow Photos={Photos} Style={{width: "250px", height: "250px"}}/>
-            </div> 
-            <div className="body-panel">
+        <div className='grid'>
+            <PhotoSlideshow Photos={Photos} className="photo"/>
+
+            <section className="content">
                 <h1>Hi! I&apos;m Julia</h1>
                 <h3>I use She/Her pronouns</h3>
                 <Article>
@@ -32,7 +32,7 @@ export default function About_Me() {
                         a concatenation of my first and middle name.
                     </p>
                 </Article>
-            </div>
+            </section>
         </div>
     </>
 }

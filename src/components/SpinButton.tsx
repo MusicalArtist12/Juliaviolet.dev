@@ -22,7 +22,7 @@ export default function SpinButton({logo, onClick}) {
     return <>
         <animated.button 
             onClick={ClickFunction} 
-            style={{backgroundColor: "inherit", border: "none", ...spring}}
+            style={{backgroundColor: "inherit", border: "none", margin: "auto", ...spring}}
         >
             {logo}
         </animated.button>

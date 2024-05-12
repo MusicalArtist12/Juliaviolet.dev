@@ -1,6 +1,9 @@
 import '@/styles/globals.css'
 import '@/styles/article.css'
 import '@/styles/body.css'
+import '@/styles/box-shadow.css'
+
+
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
 import { Metadata } from 'next'

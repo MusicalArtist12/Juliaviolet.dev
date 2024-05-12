@@ -7,6 +7,7 @@ import SpinButton from "@/components/SpinButton"
 import GetLogo from "@/components/GetLogo"
 import MobileMenu from "@/components/MobileMenu"
 import WindowWidth from "@/components/WindowWidth"
+import Image from 'next/image'
 
 function MenuItem( {title, link}) {
     return <h2><Link href={link}>{title}</Link></h2>
@@ -29,13 +30,20 @@ export default function Header() {
 
     return <>
         <header>
-            <h1 className='title'>
-                <Link href="/">JuliaViolet.dev</Link>
-                <span style={{float: 'right'}}><SpinButton onClick={onClick} logo={GetLogo("Bars", "1x")}/></span>
-            </h1>                 
-            <nav className='nav'>
-                {menuItems}
-            </nav> 
+            <div className='bar'>
+                <Link href="/"><img src="/favicon.png" width={32} height={32} className='pixel-art' style={{display: "block", height: "3.5em", width: "3.5em", paddingRight: "1em"}}/></Link>
+                <div style={{flexGrow: 1}}>
+                    <h1 className='title'>
+                        JuliaViolet.dev
+                        <span style={{float: 'right'}}><SpinButton onClick={onClick} logo={GetLogo("Bars", "1x")}/></span>
+                    </h1>  
+        
+                    <nav className='nav'>
+                        {menuItems}
+                    </nav>    
+                </div>  
+            </div>     
+
             <MobileMenu index={index} width={width}>
                 {menuItems}
             </MobileMenu>       

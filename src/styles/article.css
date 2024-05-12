@@ -1,10 +1,13 @@
-.article {
-    font-size: var(article-p-offset-size);
+.article * {
+    color: inherit;
+    margin: 0.5em;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 .article h1 {
     clear: both;
-    padding-top: 1em;
+    padding: 0.25em;
     text-align: center;
     font-weight: normal;
     color: var(--article-h1-color);
@@ -13,7 +16,52 @@
 
 .article h2 {
     clear: both;
-    padding-top: 1em;
+    padding: 0.25em;
     color: var(--article-h2-color);
     font-size: var(--article-h2-size);
 }
+
+.article img {
+    border-radius: var(--corner-radius);
+    max-width: 40%;
+    float: left;
+    margin-right: 0.5em;
+}
+
+.article a {
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+.article a:hover {
+    text-decoration: underline;
+    color: var(--link-color);
+}
+
+.article blockquote {
+    font-style: italic;
+    border-left-width: 0.25em;
+}
+
+.article ol {
+    padding-left: 1em;
+    color: inherit;
+    list-style-type: decimal;
+}
+
+.article ul {
+    padding-left: 1em;
+    color: inherit;
+    list-style-type: initial;
+}
+
+.article hr { 
+    border: 1px solid var(--text_h1);
+    clear: both;
+}
+
+.article pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+

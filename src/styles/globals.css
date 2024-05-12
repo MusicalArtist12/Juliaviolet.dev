@@ -8,25 +8,32 @@
     --background-color: #000000;
     --header-h1-color:  #FCCAD2;
     --header-h2-color:  #FCCAD2;
+    
     --body-h1-color:    #FC6FC4;
     --body-h2-color:    #FC6FC4;
     --body-h3-color:    #FCCAD2;
     --body-h4-color:    #FCCAD2;
+
     --article-h1-color: #FC6FC4;
     --article-h2-color: #FC9DD6;
+    
     --link-color:       #FC6FC4;
     --p-light-color:    #FCCAD2;
     --p-dark-color:     #000000;
 
     --header-h1-size:   2.25rem; 
     --header-h2-size:   1.5rem;
+    
     --body-h1-size:     1.25rem;
     --body-h2-size:     1.00rem;
     --body-h3-size:     1.00rem;
     --body-h4-size:     0.875rem;
-    --footer-p-size:    0.85rem;
+
     --article-h1-size:  1.75rem;
     --article-h2-size:  1.50rem;
+    
+    --footer-p-size:    0.85rem;
+
     --tab_size: 2em;
     --paragraph_spacing: 1em;
 
@@ -34,9 +41,11 @@
     --body-width: 80%;
     --body-margin-vertical: 2em;
     --body-gap: 1em;
-    --body-panel-padding: 2em;
-    --body-panel-button-padding: 0.5em;
-    --grid-element-width: 14em;
+    
+    --content-padding: 2em;
+    --button-padding: 0.5em;
+
+    --mobile-size: 800px;
 }
 
 *, html {
@@ -51,9 +60,8 @@
         --body-width: 90%;
         --body-margin-vertical: 1.25em;
         --body-panel-padding: 1.25em;
-        --grid-element-width: 12em;
 
-        --header-h1-size: 1.25rem; 
+        --header-h1-size: 1.75rem; 
         --header-h2-size: 1.25rem;
         --footer-p-size: 0.5rem;
     }
@@ -69,4 +77,28 @@
     :root {     
         --body-width: 60%;
     }
+}
+
+body {
+    background-color: var(--background-color);
+    min-height: 100vh; /* 1 vh = 1% of viewport */
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.pixel-art {
+    image-rendering: pixelated;
+    border-radius: 0px !important;
+}
+
+.badge {
+    width: 88px;
+    height: 31px;
+    display: inline;
+}
+
+code {
+    font-family: "Source Code Pro", monospace; 
+    font-weight: lighter;
 }
