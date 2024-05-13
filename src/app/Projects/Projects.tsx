@@ -5,7 +5,7 @@ import '@/styles/projects.css'
 
 function PostElement({post}): JSX.Element {
     return <>
-        <Link href={`Projects/${post.slug}`} className="box-shadow">
+        <Link href={`Projects/${post.slug}`} className="block">
             <Image 
                 src={post.photo} 
                 alt={post.title} 

@@ -16,6 +16,10 @@ body {
         }
     }
 
+    a.block {
+        
+    }
+
     main, section {
         article {
             a {
@@ -25,19 +29,7 @@ body {
             a:hover {
                 text-decoration: underline;
             }
-        }
-
-        > a, > a:hover {
-            h1, h1:hover {
-                color: var(--font-link);
-            }
-            
-            h1 svg, h1 svg:hover {
-                color: var(--font-light);
-            }
-        }
-        
- 
+        } 
     }
 
     footer {

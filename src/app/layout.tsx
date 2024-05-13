@@ -2,7 +2,7 @@ import '@/styles/variables.css'
 import '@/styles/layout.css'
 import '@/styles/mobile-layout.css'
 import '@/styles/typography.css'
-import '@/styles/box-shadow.css'
+
 
 import Header from './Header/Header'
 import Footer from './Footer/Footer'

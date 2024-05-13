@@ -22,14 +22,21 @@ body {
 
     display: flex;
     flex-direction: column;
-    
+
+    a.block, button {
+        transition: box-shadow 0.1s ease-in-out;
+    }
+
+    a.block:hover, button:hover  {
+        box-shadow: 5px 5px var(--box-shadow-color);
+    }
 
     header > *,
     main > *,
     footer > * {
         margin: 0 auto;
-        max-width: 50rem;
-        width: 90%;
+        max-width: var(--max-width);
+        width: var(--content-width);
     }
 
     header {
@@ -48,6 +55,10 @@ body {
             display: none;
         }
 
+        button:hover {
+            box-shadow: 0px 0px;
+        }
+
         .nav {
             display: flex;
             column-gap: 1em;
@@ -59,28 +70,26 @@ body {
     }   
     
     main, section {
-        article, > a {
+        article, a.block, button  {
             display: block;
             background-color: var(--article-color);
             height: fit-content;
+            border: none;
         }
 
-        > a {
-            padding: calc(var(--body-gap) / 2);
+        a.block {
+            padding: var(--a-block-padding);
         }
 
         article {
-            padding: var(--body-gap);
+            padding: var(--article-block-padding);
         }
 
         row-gap: inherit;
         column-gap: inherit;
     }
 
-
-
     main {
-        margin: var(--body-gap);
 
         display: flex;
         flex-direction: column;
@@ -106,3 +115,4 @@ body {
         }
     }
 }
+

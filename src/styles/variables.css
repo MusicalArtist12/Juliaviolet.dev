@@ -7,24 +7,29 @@
     --menu-color:       #8A5FD9;
     --background-color: #000000;
     
-
     --font-link:     #FC6FC4;
     --font-light:    #FCCAD2;
     --font-dark:     #000000;
 
+    --box-shadow-color: #FC6FC4;
+    --a-block-padding: 0.5em;
+    --article-block-padding: 1.5em;
+
     --body-gap: 2.0em;
 
     --corner-radius: 10px;
-    --body-width: 80vw;
 
     --mobile-size: 800px;
+
+    --max-width: 70rem;
+    --content-width: 80%;
 }
 
 @media screen and (max-width: 800px) { 
     :root {     
         font-size: clamp(0.875rem, 0.625rem + 1.333vw, 1.125rem);
 
-
+        --content-width: 90%;
         --body-gap: 1.0em;
     }
 }

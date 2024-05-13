@@ -11,7 +11,7 @@ function ContactItem({method}): JSX.Element {
     }
     
     return <>
-        <Link href={method.link} className="box-shadow" style={{display: "flex", flexDirection: "row", columnGap: "0.5em", alignItems: "center"}}>
+        <Link href={method.link} className="block" style={{display: "flex", flexDirection: "row", columnGap: "0.5em", alignItems: "center"}}>
 
             <h1>{Logo}</h1> 
             <div>

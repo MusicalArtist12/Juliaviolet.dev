@@ -19,13 +19,12 @@ function BoxShadowLink({entry, children }): JSX.Element {
         <Link
             href={entry.link}               
             style={{
-                "--inputcolor": color, 
+                "--box-shadow-color": color, 
                 display: "flex",
                 alignItems: "center"
             } as any} 
             onMouseLeave={onHover} 
-            className='custom-box-shadow'
-
+            className='block'
         >
             {children}
         </Link>
@@ -54,22 +53,6 @@ function GenerateBadge({entry}): JSX.Element {
             alt={entry.link}  
         />
     </> 
-}
-
-export function DirectoryEntry({entry}): JSX.Element {
-    const nickname = entry.nickname !== undefined ?  <> * {entry.nickname}</> : <></>
-
-    return <>
-        <BoxShadowLink entry={entry} style={{display: "flex", flexDirection: "row", columnGap: "0.5em", alignItems: "center"}}> 
-
-            <GenerateBadge entry={entry}/>
-            <div>
-                <h1>{entry.name}{nickname}</h1>
-                <h2>{entry.link}</h2>
-            </div>
-
-        </BoxShadowLink>
-    </>
 }
 
 export function BadgeElement({entry}): JSX.Element {
