@@ -2,6 +2,7 @@
     color: var(--font-light);
     font-weight: normal;
     text-decoration: none;
+    font-size: inherit;
 }
 
 body {
@@ -14,10 +15,6 @@ body {
         a:hover {
             color: var(--font-dark);
         }
-    }
-
-    a.block {
-        
     }
 
     main, section {
@@ -36,5 +33,7 @@ body {
         * {
             color: var(--font-dark);
         }
+
+        text-align: center;
     }
 }

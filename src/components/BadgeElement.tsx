@@ -7,7 +7,7 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max)
 }
 
-function BoxShadowLink({entry, children }): JSX.Element {
+function StyledLinkElement({entry, children}): JSX.Element {
     const [color,setColor] = useState(entry.colors[0])
     const [index,setIndex] = useState(0)
     function onHover() {
@@ -15,23 +15,24 @@ function BoxShadowLink({entry, children }): JSX.Element {
         setColor(entry.colors[index])
     }
 
-    return <>
-        <Link
-            href={entry.link}               
-            style={{
-                "--box-shadow-color": color, 
-                display: "flex",
-                alignItems: "center"
-            } as any} 
-            onMouseLeave={onHover} 
-            className='block'
-        >
-            {children}
-        </Link>
-    </>
+    return <Link href={entry.link} onMouseLeave={onHover} style={{"--box-shadow-color": color} as any}>{children}</Link>
 }
 
-function GenerateBadge({entry}): JSX.Element {
+export function DirectoryEntry({entry}): JSX.Element {
+    const nickname = entry.nickname !== undefined ? <> * {entry.nickname}</> : <></>
+    
+    return <StyledLinkElement entry={entry}>
+            <section style={{display: "flex", flexDirection: "row", columnGap: "0.5em", alignItems: "center"}}>
+                <BadgeElement entry={entry}/>
+                <div>
+                    <h1>{entry.name} {nickname}</h1>
+                    <h2>{entry.link}</h2>
+                </div>
+            </section>   
+    </StyledLinkElement>
+}
+
+export function BadgeElement({entry}): JSX.Element {
     const [badge, setBadge] = useState(entry.badges[0][0])
 
     useEffect(() => {
@@ -45,22 +46,12 @@ function GenerateBadge({entry}): JSX.Element {
         setBadge(entry.badges[idx][0])
     }, [entry.badges])
 
-
-    return <>
+    return <StyledLinkElement entry={entry}>
         <img 
             className="badge pixel-art"
             src={badge} 
             alt={entry.link}  
         />
-    </> 
-}
-
-export function BadgeElement({entry}): JSX.Element {
-
-    return <>
-        <BoxShadowLink entry={entry}>
-            <GenerateBadge entry={entry}/>
-        </BoxShadowLink>
-    </>
+    </StyledLinkElement>
 }
 

@@ -6,11 +6,11 @@ import Link from "next/link"
 export default async function Page() {
     const Directory = await getDirectory()
 
-    //         {Directory.Friends.map((entry) => <DirectoryEntry entry={entry} key={entry.link}/>)}
-    //         {Directory.Sites.map((entry) => <DirectoryEntry entry={entry} key={entry.link}/>)}
-    return <>
 
-        <Link className="block" href="/Data/Directory.json" style={{textAlign: "center", margin: "auto"}}>View as raw JSON</Link>
-    </>
+    return <section>
+        {Directory.Friends.map((entry) => <DirectoryEntry entry={entry} key={entry.link}/>)}
+        {Directory.Sites.map((entry) => <DirectoryEntry entry={entry} key={entry.link}/>)}
+        <Link href="/Data/Directory.json" style={{textAlign: "center"}}><section>View as raw JSON</section></Link>
+    </section>
 }
 

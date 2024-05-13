@@ -12,14 +12,14 @@
     --font-dark:     #000000;
 
     --box-shadow-color: #FC6FC4;
+    
     --a-block-padding: 0.5em;
     --article-block-padding: 1.5em;
-
     --body-gap: 2.0em;
+    --main-gap: 1.0em;
 
     --corner-radius: 10px;
 
-    --mobile-size: 800px;
 
     --max-width: 70rem;
     --content-width: 80%;

@@ -11,14 +11,14 @@ function ContactItem({method}): JSX.Element {
     }
     
     return <>
-        <Link href={method.link} className="block" style={{display: "flex", flexDirection: "row", columnGap: "0.5em", alignItems: "center"}}>
-
-            <h1>{Logo}</h1> 
-            <div>
-                <h1>{method.handle}</h1>
-                <h2>{method.description}</h2>
-            </div>
-                
+        <Link href={method.link} className="block">
+            <section style={{display: "flex", flexDirection: "row", columnGap: "0.5em", alignItems: "center"}}>
+                <h1>{Logo}</h1> 
+                <div>
+                    <h1>{method.handle}</h1>
+                    <h2>{method.description}</h2>
+                </div>
+            </section>   
         </Link>
     </>
 }
@@ -31,7 +31,7 @@ export default async function Contact() {
         <ContactItem method={method} key={idx}/>
     )
 
-    return <>  
+    return <section className="column">  
         {contactItems}
-    </>
+    </section>
 }

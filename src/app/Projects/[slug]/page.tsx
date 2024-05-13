@@ -26,13 +26,13 @@ export default async function Page({ params }: Props ) {
 
     Title = data.meta.title
 
-    return <>
+    return <section>
         <article>   
             <h1>Project: {data.meta.title}</h1>
-            <h3>Writeup Date: {data.meta.publishDate}</h3>
+            <h2>Writeup Date: {data.meta.publishDate}</h2>
             <Article>
                 {data.content}
             </Article>
         </article>
-    </>
+    </section>
 }

@@ -30,7 +30,16 @@ export default function Header() {
     return <>
         <header>
             <div className='bar'>
-                <Link href="/"><img src="/favicon.png" alt="/favicon.png" width={32} height={32} className='pixel-art' style={{display: "block", height: "3.5em", width: "3.5em", paddingRight: "1em"}}/></Link>
+                <Link href="/" className='ghost'>
+                    <img 
+                        src="/favicon.png" 
+                        alt="/favicon.png" 
+                        width={32} 
+                        height={32} 
+                        className='pixel-art' 
+                        style={{display: "block", paddingRight: "1em"}}
+                    />
+                </Link>
                 <div style={{flexGrow: 1}}>
                     <h1>
                         JuliaViolet.dev

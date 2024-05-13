@@ -34,10 +34,12 @@ export default async function Footer() {
                     <p style={{fontSize: "14px", fontWeight: "bold"}}><Link href="/Directory">/Directory</Link></p>
                 </div> 
             </div>
-            
             <Oneko startX={16} startY={16} startAlert={false} nekoSites={friendSites}/>
-            <p><Link href="https://github.com/MusicLinklArtist12/Juliaviolet.dev">{GetLogo("Github", "1x")} MusicalArtist12/Juliaviolet.dev</Link> | 2023</p> 
-            <p>Made with Next.js and :3 </p>
+            <div>
+                <p><Link href="https://github.com/MusicLinklArtist12/Juliaviolet.dev">{GetLogo("Github", "1x")} MusicalArtist12/Juliaviolet.dev</Link> | 2023</p> 
+                <p>Made with Next.js and :3 </p>
+            </div>
+ 
         </footer>
     </>
 }

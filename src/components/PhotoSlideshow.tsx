@@ -27,7 +27,7 @@ function getPhotos(Photos): AnimatedPropConstructor[] {
     let data: AnimatedPropConstructor[] = photos
         .map((photo) => {
             const Constructor = ({ style }) => <>
-                <animated.button style={{display: "flex", ...style}} className={'box-shadow'}> 
+                <animated.button style={{display: "flex", border: "none", ...style}} className={'box-shadow'}> 
                     {photo}
                 </animated.button>
             </>

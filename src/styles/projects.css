@@ -1,11 +1,3 @@
-.flex {
-    display: flex;
-    row-gap: inherit;
-    column-gap: inherit;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: row;
-}
 
 .image {
     width: 15em;
