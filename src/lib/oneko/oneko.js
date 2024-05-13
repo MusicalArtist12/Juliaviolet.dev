@@ -2,6 +2,7 @@
 // oneko.js: https://github.com/adryd325/oneko.js (webring variant)
 
 let frozen = false
+const path = "/Oneko/oneko.gif"
 
 export async function freezeOneko(f) {
     frozen = f
@@ -159,7 +160,7 @@ export async function oneko(startX, startY, startAlert, nekoSites) {
         nekoEl.style.top = `${nekoPosY - 16}px`
         nekoEl.style.zIndex = 100
 
-        let nekoFile = "/oneko.gif"
+        let nekoFile = path
         const curScript = document.currentScript
         if (curScript && curScript.dataset.cat) {
             nekoFile = curScript.dataset.cat

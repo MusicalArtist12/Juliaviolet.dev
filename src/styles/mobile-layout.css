@@ -1,0 +1,26 @@
+
+@media screen and (max-width: 800px) { 
+    body {
+        header {
+            button {
+                display: inline;
+                font-size: inherit;
+            }
+    
+            .title {
+                background-color: var(--header-color);
+            }
+    
+            .mobile_nav {
+                background-color: var(--menu-color);
+                position: absolute;
+                width: 100%;
+                display: block;
+            }
+    
+            .nav {
+                display: none;
+            }
+        }
+    }
+}

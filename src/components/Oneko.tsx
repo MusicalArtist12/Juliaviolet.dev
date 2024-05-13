@@ -27,7 +27,7 @@ export default function Oneko({startX, startY, startAlert, nekoSites}): JSX.Elem
 
     return <img 
         className="pixel-art" 
-        style={{"--inputcolor": "#00000000", width: "40px", height: "31px", margin: "auto", display: "block"} as any} 
+        style={{"--inputcolor": "#00000000", width: "40px", height: "31px", display: "block"} as any} 
         src={source} onClick={onClick} 
         width={40} 
         height={31} 

@@ -1,37 +1,50 @@
 "use client"
 
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, ReactElement} from 'react'
 import { useTransition, animated, AnimatedProps } from '@react-spring/web'
+import Image from 'next/image';
 
-function getPhotos(Photos): ((props: AnimatedProps<{ style: any; }>) => ReactElement<any, string | JSXElementConstructor<any>>)[] {
-    let PhotoArray = Photos.Photos
-    let data: ((props: AnimatedProps<{ style }>) => React.ReactElement)[] = []
+type AnimatedPropConstructor = (props: AnimatedProps<{ style: any; }>) => ReactElement<any, string>
 
-    for(let i = 0; i < PhotoArray.length; i++) {
-        
-        data[i] = ({ style }) => 
-        <div>
-            <animated.img 
+function getPhotos(Photos): AnimatedPropConstructor[] {
+
+    let photos = Photos.map((photo) => <>
+            <Image
                 style={{ 
                     margin: "auto", 
-                    padding: 0, 
-                    ...style
+                    height: "100%",
+                    width: "100%",
+                    padding: 0,  
                 }} 
-                title={PhotoArray[i].title} 
-                src={PhotoArray[i].location}
-                className={'box-shadow'}
+                alt={photo.title} 
+                src={photo.location}
+                width={800}
+                height={800}
             />
-        </div>
-    }
-    
+        </>
+    )
+
+    let data: AnimatedPropConstructor[] = photos
+        .map((photo) => {
+            const Constructor = ({ style }) => <>
+                <animated.div style={{display: "flex", ...style}} className={'box-shadow'}> 
+                    {photo}
+                </animated.div>
+            </>
+
+            return Constructor
+        }
+    )
+
     return data
+
 }
 
 export default function PhotoSlideshow({Photos, className}): JSX.Element {
-    let PhotoArray = Photos.Photos
+
     const [index, set] = useState(0)
     
-    const onClick = () => set(state => (state + 1) % PhotoArray.length)
+    const onClick = () => set(state => (state + 1) % Photos.length)
 
     const ref = useRef<HTMLInputElement>(null)
 

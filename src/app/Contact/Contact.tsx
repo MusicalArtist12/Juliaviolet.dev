@@ -1,7 +1,7 @@
-import contacts from '@/public/contactInfo.json' assert { type: 'json' }
-import contact from "@/styles/contact.module.css"
+
 import GetLogo from "@/components/GetLogo"
 import Link from 'next/link'
+import { getContacts } from '@/components/Fetchers'
 
 function ContactItem({method}): JSX.Element {
     let Logo = GetLogo(method.logo, "2x")
@@ -11,26 +11,24 @@ function ContactItem({method}): JSX.Element {
     }
     
     return <>
-        <section className="box-shadow button">
-            <Link href={method.link}>
-                <div className={contact.row}>
-                    <div className={contact.logo}>
-                        <h4>{Logo}</h4> 
-                    </div>
-                    <h2>{method.handle}</h2>
-                    <h4>
-                        {method.description}
-                    </h4>
-                </div>
-            </Link>
-        </section>
+        <Link href={method.link} className="box-shadow" style={{display: "flex", flexDirection: "row", columnGap: "0.5em", alignItems: "center"}}>
+
+            <h1>{Logo}</h1> 
+            <div>
+                <h1>{method.handle}</h1>
+                <h2>{method.description}</h2>
+            </div>
+                
+        </Link>
     </>
 }
 
 
-export default function Contact() {
-    let contactItems: JSX.Element[] = contacts.methods.map((method, idx) => 
-        <ContactItem method={method}/>
+export default async function Contact() {
+    const contacts = await getContacts();
+
+    let contactItems: JSX.Element[] = contacts.contactInfo.map((method, idx) => 
+        <ContactItem method={method} key={idx}/>
     )
 
     return <>  

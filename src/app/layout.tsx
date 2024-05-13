@@ -1,8 +1,8 @@
-import '@/styles/globals.css'
-import '@/styles/article.css'
-import '@/styles/body.css'
+import '@/styles/variables.css'
+import '@/styles/layout.css'
+import '@/styles/mobile-layout.css'
+import '@/styles/typography.css'
 import '@/styles/box-shadow.css'
-
 
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
@@ -31,9 +31,9 @@ export default function RootLayout({ children } : { children: React.ReactNode })
         <html lang="en" className={SourceCodePro.className}>
             <body>                  
                 <Header/>
-                <section className='body'>
+                <main>
                     {children}
-                </section>
+                </main>
                 <Footer/>
             </body>
         </html>

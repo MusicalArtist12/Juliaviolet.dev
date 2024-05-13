@@ -1,0 +1,48 @@
+* {
+    color: var(--font-light);
+    font-weight: normal;
+    text-decoration: none;
+}
+
+body {
+    header {
+        
+        * {
+            color: var(--font-light);
+        }
+
+        a:hover {
+            color: var(--font-dark);
+        }
+    }
+
+    main, section {
+        article {
+            a {
+                color: var(--font-link);
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+        }
+
+        > a, > a:hover {
+            h1, h1:hover {
+                color: var(--font-link);
+            }
+            
+            h1 svg, h1 svg:hover {
+                color: var(--font-light);
+            }
+        }
+        
+ 
+    }
+
+    footer {
+        * {
+            color: var(--font-dark);
+        }
+    }
+}

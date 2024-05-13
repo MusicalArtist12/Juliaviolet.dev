@@ -1,16 +1,18 @@
 import PhotoSlideshow from '@/components/PhotoSlideshow'
 import Article from '@/components/Article'
-import Photos from "@/public/juliaPhotos.json" assert { type: 'json' }
 import '@/styles/about-me.css'
+import { getPhotos } from '@/components/Fetchers'
 
-export default function About_Me() { 
+export default async function About_Me() { 
+    const Photos = await getPhotos();
+
     return <>  
-        <div className='grid'>
+        <section className='grid'>
             <PhotoSlideshow Photos={Photos} className="photo"/>
 
-            <section className="content">
+            <article>
                 <h1>Hi! I&apos;m Julia</h1>
-                <h3>I use She/Her pronouns</h3>
+                <h2>I use She/Her pronouns</h2>
                 <Article>
                     <p> 
                         I&apos;m a sophomore at the <a href="https://www.uidaho.edu/">University of Idaho</a>, pursuing a bachelors degree in computer science with a minor in music.
@@ -32,7 +34,7 @@ export default function About_Me() {
                         a concatenation of my first and middle name.
                     </p>
                 </Article>
-            </section>
-        </div>
+            </article>
+        </section>
     </>
 }

@@ -7,7 +7,7 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max)
 }
 
-function BoxShadowLink({entry, children}): JSX.Element {
+function BoxShadowLink({entry, children }): JSX.Element {
     const [color,setColor] = useState(entry.colors[0])
     const [index,setIndex] = useState(0)
     function onHover() {
@@ -18,9 +18,14 @@ function BoxShadowLink({entry, children}): JSX.Element {
     return <>
         <Link
             href={entry.link}               
-            style={{"--inputcolor": color} as any} 
+            style={{
+                "--inputcolor": color, 
+                display: "flex",
+                alignItems: "center"
+            } as any} 
             onMouseLeave={onHover} 
             className='custom-box-shadow'
+
         >
             {children}
         </Link>
@@ -44,7 +49,7 @@ function GenerateBadge({entry}): JSX.Element {
 
     return <>
         <img 
-            className="badge box-shadow pixel-art"
+            className="badge pixel-art"
             src={badge} 
             alt={entry.link}  
         />
@@ -52,17 +57,17 @@ function GenerateBadge({entry}): JSX.Element {
 }
 
 export function DirectoryEntry({entry}): JSX.Element {
-    const nickname = entry.nickname !== undefined ? <code> * {entry.nickname}</code> : <></>
+    const nickname = entry.nickname !== undefined ?  <> * {entry.nickname}</> : <></>
 
     return <>
-        <BoxShadowLink entry={entry}> 
-            <section className="box-shadow button" style={{display: "flex", flexDirection: "row", columnGap: "0.5em", alignItems: "center"}}>
-                <GenerateBadge entry={entry}/>
-                <div>
-                    <h2>{entry.name}{nickname}</h2>
-                    <h4>{entry.link}</h4>
-                </div>
-            </section>
+        <BoxShadowLink entry={entry} style={{display: "flex", flexDirection: "row", columnGap: "0.5em", alignItems: "center"}}> 
+
+            <GenerateBadge entry={entry}/>
+            <div>
+                <h1>{entry.name}{nickname}</h1>
+                <h2>{entry.link}</h2>
+            </div>
+
         </BoxShadowLink>
     </>
 }

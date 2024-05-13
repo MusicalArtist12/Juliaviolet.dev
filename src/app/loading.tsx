@@ -1,10 +1,16 @@
 "use client"
 
 import { useTrail, animated } from '@react-spring/web'
+import React, { useEffect } from 'react'
+
+const nextConfig = {
+    reactStrictMode: false
+}
+
 
 export default function Loading() {
-    const trails = useTrail(3, {
-        from: { opacity: 0 },
+    const [trails, api] = useTrail(3, () => ({
+        from: { opacity: 0.0 },
         to: { opacity: 0.5},
         loop: true,
         delay: 1,
@@ -15,12 +21,13 @@ export default function Loading() {
             friction: 0,
             mass: 1
         }
-    })
+    }))
+
 
     return <>
         <div style={{flexDirection: "column", display: "flex", justifyContent: "center", alignItems: "center", margin: "auto"}}>
             {trails.map((props, idx) => (
-                <animated.h1 style={{width: "fit-content", ...props}} key={idx}>Loading</animated.h1>
+                <animated.h1 style={{width: "fit-content", color: "white !important", ...props}} key={idx}>Loading</animated.h1>
             ))}
         </div>
     </>

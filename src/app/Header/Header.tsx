@@ -1,6 +1,5 @@
 "use client"
 
-import '@/styles/header.css'
 import { useState } from 'react'
 import Link from 'next/link'
 import SpinButton from "@/components/SpinButton"
@@ -31,9 +30,9 @@ export default function Header() {
     return <>
         <header>
             <div className='bar'>
-                <Link href="/"><img src="/favicon.png" width={32} height={32} className='pixel-art' style={{display: "block", height: "3.5em", width: "3.5em", paddingRight: "1em"}}/></Link>
+                <Link href="/"><img src="/favicon.png" alt="/favicon.png" width={32} height={32} className='pixel-art' style={{display: "block", height: "3.5em", width: "3.5em", paddingRight: "1em"}}/></Link>
                 <div style={{flexGrow: 1}}>
-                    <h1 className='title'>
+                    <h1>
                         JuliaViolet.dev
                         <span style={{float: 'right'}}><SpinButton onClick={onClick} logo={GetLogo("Bars", "1x")}/></span>
                     </h1>  
