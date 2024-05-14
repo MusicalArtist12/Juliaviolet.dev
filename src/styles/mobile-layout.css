@@ -1,5 +1,11 @@
-
 @media screen and (max-width: 800px) { 
+    :root {     
+        font-size: clamp(0.875rem, 0.625rem + 1.333vw, 1.125rem);
+
+        --content-width: 90%;
+        --body-gap: 1.0em;
+    }
+
     body {
         header {
             button {
@@ -13,9 +19,12 @@
     
             .mobile_nav {
                 background-color: var(--menu-color);
+                row-gap: var(--link-block-padding);
                 position: absolute;
                 width: 100%;
-                display: block;
+                display: flex;
+                flex-direction: column;
+                padding: var(--link-block-padding) 0;
             }
     
             .nav {

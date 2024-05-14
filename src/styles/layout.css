@@ -1,3 +1,25 @@
+:root {
+    font-size: clamp(1.0rem, 0.696rem + 0.476vw, 1.125rem);
+
+    --header-color:     #a06ffd;
+    --footer-color:     #FC6FC4;
+    --article-color:    #573499;
+    --menu-color:       #8A5FD9;
+    --background-color: #000000;
+
+    --box-shadow-color: #FC6FC4;
+    
+    --link-block-padding: 0.5em;
+    --article-block-padding: 1.5em;
+    --body-gap: 2.0em;
+    --main-gap: 1.25em;
+
+    --corner-radius: 10px;
+
+    --max-width: 70rem;
+    --content-width: 80%;
+}
+
 .pixel-art {
     image-rendering: pixelated;
     border-radius: 0px !important;
@@ -43,7 +65,8 @@ body {
 
     header > *,
     main,
-    footer > * {
+    footer > *,
+    .mobile_nav > * {
         margin: 0 auto;
         max-width: var(--max-width);
         width: var(--content-width);
@@ -54,15 +77,13 @@ body {
         position: sticky;
         top: 0;
 
-        a > img {
-            padding: var(--a-block-padding);
-        }
-        
+
         .bar {
             display: flex;
             align-items: center;
-            margin: auto;
-            padding: var(--button-padding);    
+            margin: auto;   
+            row-gap: var(--main-gap);
+            column-gap: var(--main-gap); 
         }
     
         button {
@@ -112,7 +133,7 @@ body {
         }
 
         a > section {
-            padding: var(--a-block-padding);
+            padding: var(--link-block-padding);
         }
 
         article {
@@ -135,7 +156,7 @@ body {
         }
 
         .oneko {
-            padding: var(--a-block-padding);
+            padding: var(--link-block-padding);
         }
     }
 }

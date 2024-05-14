@@ -1,4 +1,3 @@
-import '@/styles/variables.css'
 import '@/styles/layout.css'
 import '@/styles/mobile-layout.css'
 import '@/styles/typography.css'

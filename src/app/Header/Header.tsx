@@ -36,8 +36,7 @@ export default function Header() {
                         alt="/favicon.png" 
                         width={32} 
                         height={32} 
-                        className='pixel-art' 
-                        style={{display: "block", paddingRight: "1em"}}
+                        className='pixel-art favicon' 
                     />
                 </Link>
                 <div style={{flexGrow: 1}}>

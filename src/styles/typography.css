@@ -1,3 +1,13 @@
+:root {
+    --font-link:     #FC6FC4;
+    --font-light:    #FCCAD2;
+    --font-dark:     #000000;
+
+    --favicon-size:   4.00em;
+    --header-h1-size: 2.25em;
+    --header-h2-size: 1.50em;
+}
+
 * {
     color: var(--font-light);
     font-weight: normal;
@@ -14,6 +24,19 @@ body {
 
         a:hover {
             color: var(--font-dark);
+        }
+
+        h1 {
+            font-size: var(--header-h1-size);
+        }
+
+        h2 {
+            font-size: var(--header-h2-size);
+        }
+
+        .favicon {
+            width: var(--favicon-size);
+            height: auto;
         }
     }
 
