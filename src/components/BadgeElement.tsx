@@ -18,21 +18,7 @@ function StyledLinkElement({entry, children}): JSX.Element {
     return <Link href={entry.link} onMouseLeave={onHover} style={{"--box-shadow-color": color} as any}>{children}</Link>
 }
 
-export function DirectoryEntry({entry}): JSX.Element {
-    const nickname = entry.nickname !== undefined ? <> * {entry.nickname}</> : <></>
-    
-    return <StyledLinkElement entry={entry}>
-            <article style={{display: "flex", flexDirection: "row", columnGap: "0.5em", alignItems: "center"}}>
-                <BadgeElement entry={entry}/>
-                <header>
-                    <h1>{entry.name} {nickname}</h1>
-                    <h2>{entry.link}</h2>
-                </header>
-            </article>   
-    </StyledLinkElement>
-}
-
-export function BadgeElement({entry}): JSX.Element {
+function Badge({entry}): JSX.Element {
     const [badge, setBadge] = useState(entry.badges[0][0])
 
     useEffect(() => {
@@ -46,12 +32,32 @@ export function BadgeElement({entry}): JSX.Element {
         setBadge(entry.badges[idx][0])
     }, [entry.badges])
 
-    return <StyledLinkElement entry={entry}>
+    return <>
         <img 
             className="badge pixel-art"
             src={badge} 
             alt={entry.link}  
         />
+    </>
+}
+
+export function DirectoryEntry({entry}): JSX.Element {
+    const nickname = entry.nickname !== undefined ? <> * {entry.nickname}</> : <></>
+
+    return <StyledLinkElement entry={entry}>
+            <article style={{display: "flex", flexDirection: "row", columnGap: "0.5em", alignItems: "center"}}>
+                <Badge entry={entry}/>
+                <header>
+                    <h1>{entry.name} {nickname}</h1>
+                    <h2>{entry.link}</h2>
+                </header>
+            </article>   
+    </StyledLinkElement>
+}
+
+export function BadgeElement({entry}): JSX.Element {
+    return <StyledLinkElement entry={entry}>
+        <Badge entry={entry}/>
     </StyledLinkElement>
 }
 

@@ -1,34 +1,34 @@
 @media screen and (max-width: 800px) { 
-    :root {     
-        font-size: clamp(0.875rem, 0.625rem + 1.333vw, 1.125rem);
-
-        --content-width: 90%;
-        --body-gap: 1.0em;
-    }
 
     body {
+        font-size: clamp(0.875rem, 0.625rem + 1.333vw, 1.125rem);
+        row-gap: 1.0em;
+        column-gap: 1.0em; 
+
+        > header > *,
+        > main,
+        > footer > *,
+        .mobile_nav > * {
+            width: 90%;
+            margin: 0 auto;
+        }
+
         header {
             button {
                 display: inline;
                 font-size: inherit;
             }
-    
-            .title {
-                background-color: var(--header-color);
-            }
-    
+            
             .mobile_nav {
-                background-color: var(--menu-color);
-                row-gap: var(--link-block-padding);
-                position: absolute;
-                width: 100%;
                 display: flex;
-                flex-direction: column;
-                padding: var(--link-block-padding) 0;
             }
     
             .nav {
                 display: none;
+            }
+
+            .bar {
+                padding: 1em 0em 1em 0em;
             }
         }
     }

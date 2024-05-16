@@ -1,12 +1,12 @@
-.pixel-art {
-    image-rendering: pixelated;
-    border-radius: 0px !important;
-}
-
 .badge {
     width: 88px;
     height: 31px;
     display: inline;
+}
+
+.pixel-art {
+    image-rendering: pixelated;
+    border-radius: 0px !important;
 }
 
 *, html {
@@ -15,32 +15,11 @@
 }
 
 body {
-    
-    row-gap: 2.0em;
-    column-gap: 2.0em;
-    background-color: var(--background-color);
-    
-    min-height: 100vh; 
     display: flex;
     flex-direction: column;
-    
-
-    a > article:hover,
-    a > img:hover, 
-    button > img:hover {
-        transition: box-shadow 0.1s ease-in-out;
-        box-shadow: 5px 5px var(--box-shadow-color);
-
-        a > section:hover,
-        a > img:hover, 
-        button > img:hover {
-            box-shadow: none;
-        }
-    }
-
-    a.ghost > *:hover {
-        box-shadow: 0px 0px;
-    }
+    row-gap: 2.0em;
+    column-gap: 2.0em; 
+    min-height: 100vh; 
 
     > header > *,
     > main,
@@ -51,116 +30,116 @@ body {
         width: 80%;
     }
 
+    > header .bar, > main {
+        row-gap: 1.25em;
+        column-gap: 1.25em; 
+    }
+
     > header {
-        background-color: var(--header-color);
         position: sticky;
         top: 0;
-
 
         .bar {
             display: flex;
             align-items: center;
             margin: auto;   
-            row-gap: 1.25em;
-            column-gap: 1.25em; 
-            padding: 2em 0em 0em 0em;
+
+            padding: 2em 0em 1em 0em;
         }
-    
+
         button {
             display: none;
         }
 
-        button:hover {
-            box-shadow: 0px 0px;
+        .nav {
+            column-gap: 1em;
+            display: flex;
         }
 
-        .nav {
-            display: flex;
-            column-gap: 1em;
-            padding: 0em 0em 1em 0em;
-        }
-    
         .mobile_nav {
+            row-gap: 0.5em;
+            position: absolute;
+            width: 100%;
             display: none;
+            flex-direction: column;
+            padding: 0.5em 0;
         }
-    }   
-    
+    }
+
     > main {
         flex-grow: 1;
         display: flex;
         flex-direction: column;
-        row-gap: 1.25em;
-        column-gap: 1.25em;
-        
-        * {
-            border-radius: 10px;
-        }
 
-        /* Used to set the layout of a page */
         > section {
             row-gap: inherit;
             column-gap: inherit;
             display: flex;
             flex-direction: column;
-            flex-grow: 1;
-            flex-wrap: wrap;
-
-            article, 
-            > a > article  {
-                display: block;
-                background-color: var(--article-color);
-                height: fit-content;
-            }
-
-            /* Elements of a page, including button links, etc... */
+            flex-grow: 0;
+            flex-wrap: nowrap;
 
             article {
+                display: block;
                 padding: 1.5em;
-                max-width: 100%;
-
-                * {
-                    max-width: 100%;
-                }
 
                 > section {
-                    blockquote, pre, code {
-                        background-color: var(--embed-block-color);
+
+                    * {
+                        margin: 1.0em 0.0em;
+                    }  
+
+                    ul, ol {
+                        padding-left: 1em;
                     }
 
-                    pre > code {
-                        background-color: rgba(0, 0, 0, 0) !important;
+                    blockquote, pre {
+                        padding: 0.5em;
+                        
                     }
-                    
+
+                    pre, blockquote {
+                        display: block;
+                        overflow: scroll;
+                        text-wrap: wrap;
+                    }
+
+                    pre {
+                        text-wrap: nowrap;
+                    }
+
+                    hr {
+                        margin: 1em 0em;
+                    }
+
                     code {
-                        border-radius: 5px;
+                        padding: 0em 0.25em;
                     }
                 }
             }
+        }
 
-            > a > article {
-                padding: 0.5em;
-            }
+        a > article {
+            padding: 0.5em;
         }
     }
 
     > footer {
-        padding: 1.5em 0;
-        background-color: var(--footer-color);
-
         display: flex;
         flex-direction: column;
-        
+        padding: 1.5em 0;
+
         .badge-collection {
-            display: flex;
             row-gap: 10px;
             column-gap: 10px;
+            display: flex;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         .oneko {
             padding: 0.5em;
         }
-
     }
-}
 
+}

@@ -27,7 +27,7 @@ export default async function Projects() {
     const posts = (await getAllPostsMeta(["public", "Projects"]))
 
     return <>
-        <section style={{flexDirection: "row", justifyContent: "center"}}>
+        <section style={{flexDirection: "row", justifyContent: "center", flexWrap: "wrap"}}>
             {posts?.map((post, idx) => <PostElement post={post} key={idx}/>)}
         </section>
     </>
