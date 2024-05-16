@@ -1,7 +1,7 @@
 import '@/styles/layout.css'
 import '@/styles/mobile-layout.css'
 import '@/styles/typography.css'
-
+import '@/styles/theme.css'
 
 import Header from './Header/Header'
 import Footer from './Footer/Footer'

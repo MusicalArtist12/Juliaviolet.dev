@@ -1,0 +1,28 @@
+:root {
+    --header-color:     rgba(160, 111, 253, 1);
+    --footer-color:     #FC6FC4;
+    --article-color:    #573499;
+    --menu-color:       #8A5FD9;
+    --background-color: #000000;
+
+    --box-shadow-color: #FC6FC4;
+
+    --font-link:       #FC6FC4;
+    --font-link-hover: #FC6FC4;
+
+    --font-light:    #FCCAD2;
+    --font-dark:     #000000;
+
+    --article-title-color: #FC6FC4;
+    --article-subtitle-color: inherit;
+
+    --article-h1-color: #FC6FC4;
+    --article-h2-color: #FC6FC4;
+    --article-h3-color: #FC6FC4;
+    --article-bold-color: #FC6FC4;
+
+    --article-link-title-color: #FC6FC4;
+    --article-link-subtitle-color: inherit;
+
+    --embed-block-color: rgba(0, 0, 35, 0.5);
+}

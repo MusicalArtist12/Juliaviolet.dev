@@ -28,8 +28,11 @@ export default async function Page({ params }: Props ) {
 
     return <section>
         <article>   
-            <h1>Project: {data.meta.title}</h1>
-            <h2>Writeup Date: {data.meta.publishDate}</h2>
+            <header>
+                <h1>Project: {data.meta.title}</h1>
+                <h2>Writeup Date: {data.meta.publishDate}</h2>
+            </header>
+
             <Article>
                 {data.content}
             </Article>

@@ -1,27 +1,24 @@
 import { getAllPostsMeta } from '@/lib/mdx/postAPI'
 import Link from 'next/link'
 import Image from 'next/image'
-import '@/styles/projects.css'
+import './projects.css'
 
 function PostElement({post}): JSX.Element {
     return <>
         <Link href={`Projects/${post.slug}`}>
-            <section>
-                <Image 
+            <article>
+                <div className='image'><Image 
                     src={post.photo} 
                     alt={post.title} 
                     width={800} 
                     height={800}
-                    style={{
-                        backgroundColor: "black"
-                    }}
-                    className='image'
                 />
-                <div>
+                </div>
+                <header>
                     <h1>{post.title}</h1>
                     <h3>{post.publishDate}</h3>
-                </div>
-            </section>
+                </header>
+            </article>
         </Link>
     </>
 }

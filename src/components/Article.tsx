@@ -7,9 +7,9 @@ const Futura = localFont({
 
 export default function Article({children}): JSX.Element {
     return <>
-        <div className={`${Futura.className}`}>
+        <section className={`${Futura.className}`}>
             {children}
             <br/>
-        </div>
+        </section>
     </>
 }

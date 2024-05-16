@@ -2,6 +2,7 @@
 import GetLogo from "@/components/GetLogo"
 import Link from 'next/link'
 import { getContacts } from '@/components/Fetchers'
+import "./contact.css"
 
 function ContactItem({method}): JSX.Element {
     let Logo = GetLogo(method.logo, "2x")
@@ -11,14 +12,14 @@ function ContactItem({method}): JSX.Element {
     }
     
     return <>
-        <Link href={method.link} className="block">
-            <section style={{display: "flex", flexDirection: "row", columnGap: "0.5em", alignItems: "center"}}>
-                <h1>{Logo}</h1> 
-                <div>
+        <Link href={method.link}>
+            <article className="contact-grid">
+                {Logo}
+                <header>
                     <h1>{method.handle}</h1>
                     <h2>{method.description}</h2>
-                </div>
-            </section>   
+                </header>
+            </article>   
         </Link>
     </>
 }

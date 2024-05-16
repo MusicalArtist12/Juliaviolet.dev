@@ -22,13 +22,13 @@ export function DirectoryEntry({entry}): JSX.Element {
     const nickname = entry.nickname !== undefined ? <> * {entry.nickname}</> : <></>
     
     return <StyledLinkElement entry={entry}>
-            <section style={{display: "flex", flexDirection: "row", columnGap: "0.5em", alignItems: "center"}}>
+            <article style={{display: "flex", flexDirection: "row", columnGap: "0.5em", alignItems: "center"}}>
                 <BadgeElement entry={entry}/>
-                <div>
+                <header>
                     <h1>{entry.name} {nickname}</h1>
                     <h2>{entry.link}</h2>
-                </div>
-            </section>   
+                </header>
+            </article>   
     </StyledLinkElement>
 }
 

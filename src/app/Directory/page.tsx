@@ -10,7 +10,8 @@ export default async function Page() {
     return <section>
         {Directory.Friends.map((entry) => <DirectoryEntry entry={entry} key={entry.link}/>)}
         {Directory.Sites.map((entry) => <DirectoryEntry entry={entry} key={entry.link}/>)}
-        <Link href="/Data/Directory.json" style={{textAlign: "center"}}><section>View as raw JSON</section></Link>
+        <Link href="/Data/Directory.json" style={{textAlign: "center"}}>
+        <article>View as raw JSON</article></Link>
     </section>
 }
 

@@ -1,6 +1,6 @@
 import PhotoSlideshow from '@/components/PhotoSlideshow'
 import Article from '@/components/Article'
-import '@/styles/about-me.css'
+import './about-me.css'
 import { getPhotos } from '@/components/Fetchers'
 
 export default async function About_Me() { 
@@ -11,8 +11,10 @@ export default async function About_Me() {
             <PhotoSlideshow Photos={Photos} className="photo"/>
 
             <article>
-                <h1>Hi! I&apos;m Julia</h1>
-                <h2>I use She/Her pronouns</h2>
+                <header>
+                    <h1>Hi! I&apos;m Julia</h1>
+                    <h2>I use She/Her pronouns</h2>
+                </header>
                 <Article>
                     <p> 
                         I&apos;m a sophomore at the <a href="https://www.uidaho.edu/">University of Idaho</a>, pursuing a bachelors degree in computer science with a minor in music.

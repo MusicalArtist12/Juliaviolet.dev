@@ -1,13 +1,3 @@
-:root {
-    --font-link:     #FC6FC4;
-    --font-light:    #FCCAD2;
-    --font-dark:     #000000;
-
-    --favicon-size:   4.00em;
-    --header-h1-size: 2.25em;
-    --header-h2-size: 1.50em;
-}
-
 * {
     color: var(--font-light);
     font-weight: normal;
@@ -16,47 +6,145 @@
 }
 
 body {
-    header {
-        
-        * {
-            color: var(--font-light);
-        }
+    font-size: clamp(1.0rem, 0.696rem + 0.476vw, 1.125rem);
 
-        a:hover {
-            color: var(--font-dark);
-        }
-
+    > header {
         h1 {
-            font-size: var(--header-h1-size);
+            font-size: 2.25em;
         }
 
         h2 {
-            font-size: var(--header-h2-size);
+            font-size: 1.5em;
+        }
+
+        h2 > a:hover {
+            color: var(--font-dark);
         }
 
         .favicon {
-            width: var(--favicon-size);
+            width: 4.0em;
             height: auto;
         }
     }
 
-    main, section {
-        article {
-            a {
-                color: var(--font-link);
-            }
-
-            a:hover {
-                text-decoration: underline;
-            }
-        } 
-    }
-
-    footer {
-        * {
-            color: var(--font-dark);
+    > main {
+        > h1 {
+            font-size: 2.0em;
+            text-align: center;
         }
 
-        text-align: center;
+        > section {
+            > article {
+                > header {
+                    > h1 {
+                        font-size: 1.75em;
+                        color: var(--article-title-color);
+                    }
+
+                    > h2 {
+                        font-size: 1.5em;
+                        color: var(--article-subtitle-color);
+                    }
+                }
+    
+                > section {
+                    * {
+                        margin: 1.0em 0.0em;
+                    }
+
+                    ul, ol {
+                        padding-left: 1em;
+                    }
+
+                    blockquote, pre {
+                        padding: 0.5em;
+                    }
+
+                    code {
+                        font: source-code-pro, monospace;
+                        font-size: 75%;
+                    }
+
+                    hr {
+                        margin: 1em 0em;
+                    }
+
+                    p {
+                        font-size: inherit;
+                    }
+
+                    strong {
+                        font-weight: bold;
+                        color: var(--article-bold-color);
+                    }
+
+                    h1 {
+                        font-size: 1.5em;
+                        text-align: center;
+                        color: var(--article-h1-color);
+                    }
+
+                    h2 {
+                        font-size: 1.25em;
+                        font-weight: bold;
+                        color: var(--article-h2-color);
+                    }
+
+                    h3 {
+                        font-size: 1.125em;
+                        font-weight: bold;
+                        color: var(--article-h3-color);
+                    }
+
+                    hr {
+                        border-width: 0px;
+                        background-color: var(--font-light);
+                        height: 1px;
+                        padding: 0;
+                    }
+
+                    a {
+                        color: var(--font-link);
+                    }
+
+                    a:hover {
+                        color: var(--font-link-hover);
+                        text-decoration: underline;
+                    }
+                }
+            }
+    
+            > a > article {
+                > header {
+                    > h1 {
+                        font-size: 1.5em;
+                        color: var(--article-link-title-color);
+                    }
+
+                    > h2 {
+                        color: var(--article-link-subtitle-color);
+                    }
+
+                }
+            }
+        }
+ 
+    }
+
+    > footer {
+        * {
+            font-size: 1.0em;
+            color: var(--font-dark);    
+        }
+        
+        > header {
+            text-align: center;
+        }
+
+    
+
+        a:hover {
+            text-decoration: underline;
+        }
     }
 }
