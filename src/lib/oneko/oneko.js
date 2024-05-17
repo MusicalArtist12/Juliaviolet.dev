@@ -51,7 +51,6 @@ export async function oneko(startX, startY, startAlert, nekoSites) {
         if (event.target.tagName === "A" && event.target.getAttribute("href")) {
             target = event.target
         } else if (
-            event.target.tagName == "IMG" &&
             event.target.parentElement.tagName === "A" &&
             event.target.parentElement.getAttribute("href")
         ) {
