@@ -85,6 +85,10 @@ body {
             flex-grow: 0;
             flex-wrap: nowrap;
 
+            * {
+                max-width: 100%;
+            }
+
             article {
                 display: block;
                 padding: 1.5em;
