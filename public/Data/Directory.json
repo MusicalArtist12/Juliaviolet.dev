@@ -62,7 +62,7 @@
             "badges": [
                 ["/88x31/philo.png", 100]
             ],
-            "link": "https://www.philo.gay/",
+            "link": "https://philo.gay/",
             "colors": ["#24affc"],
             "hasOneko": false
         },
@@ -83,7 +83,7 @@
             "badges": [
                 ["/88x31/julia.png", 100]
             ],
-            "link": "https://www.juliaviolet.dev/",
+            "link": "https://juliaviolet.dev/",
             "colors": ["#a06ffd"],
             "hasOneko": true
         }
