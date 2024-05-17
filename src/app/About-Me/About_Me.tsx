@@ -19,7 +19,7 @@ export default async function About_Me() {
                     <p> 
                         I&apos;m a sophomore at the <a href="https://www.uidaho.edu/">University of Idaho</a>, pursuing a bachelors degree in computer science with a minor in music.
                         I&apos;m interested in low-level programming, Robotics, and 3D graphics (most recently OpenGL).
-                        Though as i&apos;m writing this, web development might find a home in that list. 
+                        Though as I&apos;m writing this, web development might find a home in that list. 
                         I like to learn new skills and concepts to develop clever solutions to solve difficult problems. 
                     </p>
                     <p>
@@ -32,7 +32,7 @@ export default async function About_Me() {
                         Some of my other smaller interests include Drawing/Watercolor painting and graphic design.
                     </p>
                     <p>
-                        I&apos;m a trans girl, and i&apos;m still learning who I am. I chose the domain <a href="https://juliaviolet.dev">JuliaViolet.dev</a> since it&apos;s
+                        I&apos;m a trans girl, and I&apos;m still learning who I am. I chose the domain <a href="https://juliaviolet.dev">JuliaViolet.dev</a> since it&apos;s
                         a concatenation of my first and middle name.
                     </p>
                 </Article>
