@@ -1,41 +1,63 @@
 "use client"
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max)
 }
 
-export default function BadgeElement({badges, link, colors}): JSX.Element {
-    const [color,setColor] = useState(colors[0])
-    const [badge, setBadge] = useState(badges[0][0])
+function StyledLinkElement({entry, children}): JSX.Element {
+    const [color,setColor] = useState(entry.colors[0])
+    const [index,setIndex] = useState(0)
+    function onHover() {
+        setIndex((index + 1) % entry.colors.length)
+        setColor(entry.colors[index])
+    }
+
+    return <a href={entry.link} onMouseLeave={onHover} style={{"--box-shadow-color": color} as any}>{children}</a>
+}
+
+function Badge({entry}): JSX.Element {
+    const [badge, setBadge] = useState(entry.badges[0][0])
 
     useEffect(() => {
         const badgeIdx = getRandomInt(100)
         let idx = 0
-        for (let i = 0; i < badges.length; i++) {
-            if (badgeIdx <= badges[i][1]) {
+        for (let i = 0; i < entry.badges.length; i++) {
+            if (badgeIdx <= entry.badges[i][1]) {
                 idx = i
             }
         }
-        setBadge(badges[idx][0])
-    }, [badges])
-
-    function onHover() {
-        let idx = getRandomInt(colors.length)
-        setColor(colors[idx])
-    }
+        setBadge(entry.badges[idx][0])
+    }, [entry.badges])
 
     return <>
-        <a href={link} key={link}>
-            <img 
-                className="badge" 
-                style={{"--inputcolor": color} as any} 
-                src={badge} 
-                onMouseLeave={onHover} 
-                alt={link}
-            />
-        </a>
-        </>
+        <img 
+            className="badge pixel-art"
+            src={badge} 
+            alt={entry.link}  
+        />
+    </>
+}
+
+export function DirectoryEntry({entry}): JSX.Element {
+    const nickname = entry.nickname !== undefined ? <> * {entry.nickname}</> : <></>
+
+    return <StyledLinkElement entry={entry}>
+            <article style={{display: "flex", flexDirection: "row", columnGap: "0.5em", alignItems: "center"}}>
+                <Badge entry={entry}/>
+                <header>
+                    <h1>{entry.name} {nickname}</h1>
+                    <h2>{entry.link}</h2>
+                </header>
+            </article>   
+    </StyledLinkElement>
+}
+
+export function BadgeElement({entry}): JSX.Element {
+    return <StyledLinkElement entry={entry}>
+        <Badge entry={entry}/>
+    </StyledLinkElement>
 }
 

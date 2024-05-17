@@ -5,8 +5,14 @@ const nextConfig = {
   },
 }
    
+
+
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/
 })
 
 module.exports = withMDX(nextConfig)
+
+module.exports = {
+  reactStrictMode: false,
+}

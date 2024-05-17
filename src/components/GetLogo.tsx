@@ -19,5 +19,5 @@ const logoLookup = {
 }
 
 export default function GetLogo(id: string, size): JSX.Element {
-    return <FontAwesomeIcon icon={logoLookup[id]} size={size} />
+    return <FontAwesomeIcon icon={logoLookup[id]} size={size} className="fa-logo"/>
 }

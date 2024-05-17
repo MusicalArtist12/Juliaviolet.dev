@@ -1,0 +1,151 @@
+.badge {
+    width: 88px;
+    height: 31px;
+    display: inline;
+}
+
+.pixel-art {
+    image-rendering: pixelated;
+    border-radius: 0px !important;
+}
+
+*, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.0em;
+    column-gap: 2.0em; 
+    min-height: 100vh; 
+
+    > header > *,
+    > main,
+    > footer > *,
+    .mobile_nav > * {
+        margin: 0 auto;
+        max-width: 70rem;
+        width: 80%;
+    }
+
+    > header .bar, > main {
+        row-gap: 1.25em;
+        column-gap: 1.25em; 
+    }
+
+    > header {
+        position: sticky;
+        top: 0;
+
+        .bar {
+            display: flex;
+            align-items: center;
+            margin: auto;   
+            overflow: hidden;
+            flex-wrap: nowrap;
+
+            padding: 2em 0em 1em 0em;
+        }
+
+        .main-section {
+            flex-grow: 1;
+        }
+
+        .menu-button {
+            display: none;
+        }
+
+        .nav {
+            column-gap: 1em;
+            display: flex;
+        }
+
+        .mobile_nav {
+            row-gap: 0.5em;
+            position: absolute;
+            width: 100%;
+            display: none;
+            flex-direction: column;
+            padding: 0.5em 0;
+        }
+    }
+
+    > main {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+
+        > section {
+            row-gap: inherit;
+            column-gap: inherit;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 0;
+            flex-wrap: nowrap;
+
+            article {
+                display: block;
+                padding: 1.5em;
+
+                > section {
+
+                    * {
+                        margin: 1.0em 0.0em;
+                    }  
+
+                    ul, ol {
+                        padding-left: 1em;
+                    }
+
+                    blockquote, pre {
+                        padding: 0.5em;
+                        
+                    }
+
+                    pre, blockquote {
+                        display: block;
+                        overflow: scroll;
+                        text-wrap: wrap;
+                    }
+
+                    pre {
+                        text-wrap: nowrap;
+                    }
+
+                    hr {
+                        margin: 1em 0em;
+                    }
+
+                    code {
+                        padding: 0em 0.25em;
+                    }
+                }
+            }
+        }
+
+        a > article {
+            padding: 0.5em;
+        }
+    }
+
+    > footer {
+        display: flex;
+        flex-direction: column;
+        padding: 1.5em 0;
+
+        .badge-collection {
+            row-gap: 10px;
+            column-gap: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .oneko {
+            padding: 0.5em;
+        }
+    }
+
+}

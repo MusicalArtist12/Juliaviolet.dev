@@ -1,0 +1,13 @@
+
+.image {
+    width: 15em;
+    height: 15em;
+    background-color: var(--embed-block-color);
+    
+    * {
+        width: inherit;
+        height: inherit;
+    }
+}
+
+

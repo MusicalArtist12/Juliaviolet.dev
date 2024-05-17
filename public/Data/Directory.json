@@ -30,7 +30,8 @@
                 ["/88x31/aurumion.png", 100]
             ],
             "link": "https://aurumion.com/",
-            "colors": ["#edeb00"]
+            "colors": ["#edeb00"],
+            "hasOneko": false
         },
         {
             "name": "Brooke",
@@ -51,7 +52,8 @@
                 ["/88x31/mia.png", 100]
             ],
             "link": "https://miakizz.quest",
-            "colors": ["#FFFFFF"]
+            "colors": ["#FFFFFF"],
+            "hasOneko": false
         },
         {
             "name": "Philo",
@@ -61,7 +63,8 @@
                 ["/88x31/philo.png", 100]
             ],
             "link": "https://www.philo.gay/",
-            "colors": ["#24affc"]
+            "colors": ["#24affc"],
+            "hasOneko": false
         },
         {
             "name": "Vivi",
@@ -71,7 +74,8 @@
                 ["/88x31/vivi.png", 100]
             ],
             "link": "https://www.vhafener.com/",
-            "colors": ["#FFFFFF"]
+            "colors": ["#FFFFFF"],
+            "hasOneko": false
         },
         {
             "name": "Julia",
@@ -80,12 +84,13 @@
                 ["/88x31/julia.png", 100]
             ],
             "link": "https://www.juliaviolet.dev/",
-            "colors": ["#a06ffd"]
+            "colors": ["#a06ffd"],
+            "hasOneko": true
         }
     ],
     "Sites": [
         {
-            "name": "Estradiol - Alyx",
+            "name": "Estradiol!",
             "badges": [
                 ["/88x31/estradiol.gif", 100]
             ],
@@ -93,7 +98,7 @@
             "colors": ["#5eb3a0"]
         },
         {
-            "name" : "Arch Linux",
+            "name" : "I use Arch btw",
             "badges": [
                 ["/88x31/archlinux.gif", 100]
             ],

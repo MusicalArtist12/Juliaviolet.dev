@@ -10,7 +10,7 @@ export default function MobileMenu({ children, index, width}): JSX.Element {
     
     let data: ((props: AnimatedProps<{ style }>) => React.ReactElement)[] = [
         ({ style }) => <animated.div style={{ ...style, display: "none"}}/>,
-        ({ style }) => <animated.div style={{ ...style}}>{menu}</animated.div>,
+        ({ style }) => <animated.div style={{ ...style, width: "100%"}}>{menu}</animated.div>,
     ]
 
     const [transition, api] = useTransition(index, () => ({

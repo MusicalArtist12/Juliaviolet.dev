@@ -1,0 +1,22 @@
+.grid {
+    display: grid;
+    grid-template-columns: 30% auto;
+    align-content: start;
+    row-gap: inherit;
+    column-gap: inherit;
+
+}
+
+@media screen and (max-width: 800px) { 
+    .grid {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 12em auto;
+    }
+    .photo {
+        width: 12em;
+        height: 12em;
+        margin: auto;
+    }
+}
+

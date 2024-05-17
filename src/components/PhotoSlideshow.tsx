@@ -1,20 +1,54 @@
 "use client"
 
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, ReactElement} from 'react'
 import { useTransition, animated, AnimatedProps } from '@react-spring/web'
+import Image from 'next/image';
 
-export default function PhotoSlideshow({Photos, Style}): JSX.Element {
-    let PhotoArray = Photos.Photos
+type AnimatedPropConstructor = (props: AnimatedProps<{ style: any; }>) => ReactElement<any, string>
+
+function getPhotos(Photos): AnimatedPropConstructor[] {
+
+    let photos = Photos.map((photo) => <>
+            <Image
+                style={{ 
+                    margin: "auto", 
+                    height: "100%",
+                    width: "100%",
+                    padding: 0,  
+                }} 
+                alt={photo.title} 
+                src={photo.location}
+                width={800}
+                height={800}
+            />
+        </>
+    )
+
+    let data: AnimatedPropConstructor[] = photos
+        .map((photo) => {
+            const Constructor = ({ style }) => <>
+                <animated.button style={{display: "flex", border: "none", ...style}} className={'box-shadow'}> 
+                    {photo}
+                </animated.button>
+            </>
+
+            return Constructor
+        }
+    )
+
+    return data
+
+}
+
+export default function PhotoSlideshow({Photos, className}): JSX.Element {
+
     const [index, set] = useState(0)
     
-    const onClick = () => set(state => (state + 1) % PhotoArray.length)
-
-    let data: ((props: AnimatedProps<{ style }>) => React.ReactElement)[] = []
-    
+    const onClick = () => set(state => (state + 1) % Photos.length)
 
     const ref = useRef<HTMLInputElement>(null)
 
-    let width = ref.current ? ref.current.offsetWidth/2 : 0
+    let width = ref.current ? ref.current.offsetWidth : 50
 
     const [transition, api] = useTransition(index, () => ({
         from:  { 
@@ -26,12 +60,12 @@ export default function PhotoSlideshow({Photos, Style}): JSX.Element {
             width: "100%"
         },
         leave: { 
-            x: -width,
+            x: 0,
             width: "0%"
         },
         config: { 
-            tension: 210,
-            friction: 20,
+            tension: 110,
+            friction: 10,
             clamp: true
         },
         exitBeforeEnter: true,
@@ -42,36 +76,14 @@ export default function PhotoSlideshow({Photos, Style}): JSX.Element {
         api.start()
     }, [index])
 
-    for(let i = 0; i < PhotoArray.length; i++) {
-        data[i] = ({ style }) => <div 
-            onClick={onClick} 
-            ref={ref} 
-            style={{
-                backgroundColor: "transparent", 
-                border: "none", 
-                cursor: "pointer",
-                ...Style
-            }}
-        >
-            <animated.img 
-                className="link" 
-                style={{ 
-                    margin: "auto", 
-                    padding: 0, 
-                    ...style
-                }} 
-                title={PhotoArray[i].title} 
-                src={PhotoArray[i].location}
-                />
-        </div>
-    }
+    const data = getPhotos(Photos);
 
     return <>
-        <button style={{background: "transparent", border: "none"}}>
+        <div onClick={onClick} ref={ref} className={className}>
             {transition((style, i) => {
                 const Item = data[i]
                 return <Item style={style}/>
             })}
-        </button>
+        </div>
     </>
 }

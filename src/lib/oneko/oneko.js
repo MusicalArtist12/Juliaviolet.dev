@@ -2,6 +2,7 @@
 // oneko.js: https://github.com/adryd325/oneko.js (webring variant)
 
 let frozen = false
+const path = "/Oneko/oneko.gif"
 
 export async function freezeOneko(f) {
     frozen = f
@@ -48,30 +49,32 @@ export async function oneko(startX, startY, startAlert, nekoSites) {
     function onClick(event) {
         let target
         if (event.target.tagName === "A" && event.target.getAttribute("href")) {
-        target = event.target
+            target = event.target
         } else if (
-        event.target.tagName == "IMG" &&
-        event.target.parentElement.tagName === "A" &&
-        event.target.parentElement.getAttribute("href")
+            event.target.tagName == "IMG" &&
+            event.target.parentElement.tagName === "A" &&
+            event.target.parentElement.getAttribute("href")
         ) {
-        target = event.target.parentElement
+            target = event.target.parentElement
         } else {
-        return
+            return
         }
-        let newLocation
+            let newLocation
         try {
-        newLocation = new URL(target.href)
+            newLocation = new URL(target.href)
         } catch (e) {
-        return
+            return
         }
         if (!nekoSites.includes(newLocation.host) || newLocation.pathname != "/")
-        return
-        newLocation.searchParams.append("catx", Math.floor(nekoPosX))
-        newLocation.searchParams.append("caty", Math.floor(nekoPosY))
-        newLocation.searchParams.append("catdx", Math.floor(mousePosX))
-        newLocation.searchParams.append("catdy", Math.floor(mousePosY))
-        event.preventDefault()
-        window.location.href = newLocation.toString()
+            return;
+
+        newLocation.searchParams.append("catx", Math.floor(nekoPosX));
+        newLocation.searchParams.append("caty", Math.floor(nekoPosY));
+        newLocation.searchParams.append("catdx", Math.floor(mousePosX));
+        newLocation.searchParams.append("catdy", Math.floor(mousePosY));
+        event.preventDefault();
+        window.location.href = newLocation.toString();
+        
     }
 
     document.addEventListener("click", onClick)
@@ -159,7 +162,7 @@ export async function oneko(startX, startY, startAlert, nekoSites) {
         nekoEl.style.top = `${nekoPosY - 16}px`
         nekoEl.style.zIndex = 100
 
-        let nekoFile = "/oneko.gif"
+        let nekoFile = path
         const curScript = document.currentScript
         if (curScript && curScript.dataset.cat) {
             nekoFile = curScript.dataset.cat

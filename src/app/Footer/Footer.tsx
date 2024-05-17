@@ -1,28 +1,22 @@
-import '@/styles/footer.css'
 import GetLogo from "@/components/GetLogo"
-import BadgeElement from "@/components/BadgeElement"
-import Badges from "@/public/Badges.json" assert { type: 'json' }
+import {BadgeElement} from "@/components/BadgeElement"
 import Oneko from '@/components/Oneko' 
+import Link from 'next/link'
+import { getDirectory } from '@/components/Fetchers'
 
-export default function Footer() {
-    const friendSites = Badges.Friends.filter((site) => site.hasOneko == true)
+export default async function Footer() {
+    const Directory = await getDirectory()
 
-    const friendBadges: JSX.Element[] = Badges.Friends
-        .map((badge, i) => <BadgeElement 
-            badges={badge.badges} 
-            link={badge.link} 
-            colors={badge.colors} 
-            key={i}
-        />
+    const friendSites = Directory.Friends
+        .filter((site) => site.hasOneko == true)
+        .map((site) => new URL(site.link).host)
+
+    const friendBadges: JSX.Element[] = Directory.Friends
+        .map((badge, i) => <BadgeElement entry={badge} key={i}/>
     )  
 
-    const siteBadges: JSX.Element[] = Badges.Sites.map((badge, i) => 
-        <BadgeElement 
-            badges={badge.badges} 
-            link={badge.link} 
-            colors={badge.colors} 
-            key={i}
-        />
+    const siteBadges: JSX.Element[] = Directory.Sites.map((badge, i) => 
+        <BadgeElement entry={badge} key={i}/>
     )  
 
     return <>
@@ -30,12 +24,22 @@ export default function Footer() {
             <div className="badge-collection"> 
                 {friendBadges}
                 {siteBadges}
-                <Oneko startX={0} startY={0} startAlert={false} nekoSites={friendSites}/>
+                <div style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignContent: "center",
+                    height: "31px",
+                    width: "88px"
+                }}>
+                    <p style={{fontSize: "14px", fontWeight: "bold", "text-wrap": "nowrap"} as any}><Link href="/Directory">/Directory</Link></p>
+                </div> 
             </div>
-            <div>
-                <p><a href="https://github.com/MusicalArtist12/Juliaviolet.dev">{GetLogo("Github", "1x")} MusicalArtist12/Juliaviolet.dev</a> | 2023</p> 
-                <p>Made with Next.js, React.js, React-Spring, and &lt;3 </p>
-            </div>
+            <Oneko startX={16} startY={16} startAlert={false} nekoSites={friendSites}/>
+            <header>
+                <p><Link href="https://github.com/MusicLinklArtist12/Juliaviolet.dev">{GetLogo("Github", "1x")} MusicalArtist12/Juliaviolet.dev</Link> | 2023</p> 
+                <p>Made with Next.js and :3 </p>
+            </header>
+ 
         </footer>
     </>
 }

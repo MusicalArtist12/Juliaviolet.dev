@@ -1,0 +1,8 @@
+.contact-grid {
+    display: grid;
+    grid-template-columns: 3.5em auto;
+
+    > .fa-logo {
+        margin: auto;
+    }
+}

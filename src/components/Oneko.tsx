@@ -12,26 +12,26 @@ export default function Oneko({startX, startY, startAlert, nekoSites}): JSX.Elem
     }
 
     let f = false;
-    const [source,setSource] = useState("/88x31/oneko_enabled.png")
+    const [source,setSource] = useState("/Oneko/oneko_enabled.png")
     function onClick() {
         f = !f
         freezeOneko(f)
         
         if (f) {
-            setSource("/88x31/oneko_sleep.png")
+            setSource("/Oneko/oneko_sleep.png")
         }
         else {
-            setSource("/88x31/oneko_enabled.png")
+            setSource("/Oneko/oneko_enabled.png")
         }
     }
 
     return <img 
-        className="badge" 
-        style={{"--inputcolor": "#00000000"} as any} 
+        className="pixel-art oneko" 
+        style={{width: "40px", height: "31px", display: "block"} as any} 
         src={source} onClick={onClick} 
-        width={88} 
+        width={40} 
         height={31} 
         alt='oneko'
-    /> 
+    />
 }
 

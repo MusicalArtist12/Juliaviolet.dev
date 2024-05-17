@@ -1,9 +1,0 @@
-.image {
-    background-color: black;
-    width: 100%;
-    height: 100%;
-}
-
-.post-title {
-    padding: var(--body-panel-button-padding);
-}
