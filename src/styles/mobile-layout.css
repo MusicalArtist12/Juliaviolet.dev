@@ -14,17 +14,17 @@
         }
 
         header {
-            button {
+            .menu-button {
                 display: inline;
                 font-size: inherit;
             }
             
-            .mobile_nav {
-                display: flex;
-            }
-    
             .nav {
                 display: none;
+            }
+
+            .mobile_nav {
+                display: flex;
             }
 
             .bar {

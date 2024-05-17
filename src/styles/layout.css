@@ -43,11 +43,17 @@ body {
             display: flex;
             align-items: center;
             margin: auto;   
+            overflow: hidden;
+            flex-wrap: nowrap;
 
             padding: 2em 0em 1em 0em;
         }
 
-        button {
+        .main-section {
+            flex-grow: 1;
+        }
+
+        .menu-button {
             display: none;
         }
 

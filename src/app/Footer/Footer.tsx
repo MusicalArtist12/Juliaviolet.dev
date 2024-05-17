@@ -31,7 +31,7 @@ export default async function Footer() {
                     height: "31px",
                     width: "88px"
                 }}>
-                    <p style={{fontSize: "14px", fontWeight: "bold"}}><Link href="/Directory">/Directory</Link></p>
+                    <p style={{fontSize: "14px", fontWeight: "bold", "text-wrap": "nowrap"} as any}><Link href="/Directory">/Directory</Link></p>
                 </div> 
             </div>
             <Oneko startX={16} startY={16} startAlert={false} nekoSites={friendSites}/>

@@ -39,16 +39,17 @@ export default function Header() {
                         className='pixel-art favicon' 
                     />
                 </Link>
-                <div style={{flexGrow: 1}}>
+                <div className='main-section'>
                     <h1>
                         JuliaViolet.dev
-                        <span style={{float: 'right'}}><SpinButton onClick={onClick} logo={GetLogo("Bars", "1x")}/></span>
                     </h1>  
-        
                     <nav className='nav'>
                         {menuItems}
                     </nav>    
                 </div>  
+                <h1 className='menu-button'>
+                    <SpinButton onClick={onClick} logo={GetLogo("Bars", "2x")}/>
+                </h1>
             </div>     
 
             <MobileMenu index={index} width={width}>
