@@ -66,13 +66,15 @@ export async function oneko(startX, startY, startAlert, nekoSites) {
             return
         }
         if (!nekoSites.includes(newLocation.host) || newLocation.pathname != "/")
-            return
-            newLocation.searchParams.append("catx", Math.floor(nekoPosX))
-            newLocation.searchParams.append("caty", Math.floor(nekoPosY))
-            newLocation.searchParams.append("catdx", Math.floor(mousePosX))
-            newLocation.searchParams.append("catdy", Math.floor(mousePosY))
-            event.preventDefault()
-            window.location.href = newLocation.toString()
+            return;
+
+        newLocation.searchParams.append("catx", Math.floor(nekoPosX));
+        newLocation.searchParams.append("caty", Math.floor(nekoPosY));
+        newLocation.searchParams.append("catdx", Math.floor(mousePosX));
+        newLocation.searchParams.append("catdy", Math.floor(mousePosY));
+        event.preventDefault();
+        window.location.href = newLocation.toString();
+        
     }
 
     document.addEventListener("click", onClick)

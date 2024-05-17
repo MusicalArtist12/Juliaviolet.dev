@@ -15,7 +15,7 @@ function StyledLinkElement({entry, children}): JSX.Element {
         setColor(entry.colors[index])
     }
 
-    return <Link href={entry.link} onMouseLeave={onHover} style={{"--box-shadow-color": color} as any}>{children}</Link>
+    return <a href={entry.link} onMouseLeave={onHover} style={{"--box-shadow-color": color} as any}>{children}</a>
 }
 
 function Badge({entry}): JSX.Element {
