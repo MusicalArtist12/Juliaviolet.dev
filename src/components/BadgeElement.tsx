@@ -43,15 +43,15 @@ function Badge({entry}): JSX.Element {
 
 export function DirectoryEntry({entry}): JSX.Element {
     const nickname = entry.nickname !== undefined ? <> * {entry.nickname}</> : <></>
+    const callsign = entry.callsign !== undefined ? <> * {entry.callsign}</> : <></>
 
     let badgeURL = new URL(entry.link);
 
-    
     return <StyledLinkElement entry={entry}>
             <article style={{display: "flex", flexDirection: "row", columnGap: "0.5em", alignItems: "center"}}>
                 <Badge entry={entry}/>
                 <header style={{flexGrow: "1"}}>
-                    <h1>{entry.name} {nickname}</h1>
+                    <h1>{entry.name} {nickname} {callsign}</h1>
                     <h2>{badgeURL.hostname}</h2>
                 </header>
             </article>   
