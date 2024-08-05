@@ -113,6 +113,14 @@
             ],
             "link": "https://eightyeightthirty.one",
             "colors": ["#b147ba", "#4776ba", "#44939e", "#ba5823"]
+        },
+        {
+            "name": "makea.fish",
+            "badges": [
+                ["/88x31/makeafish.png", 100]
+            ],
+            "link": "https://makea.fish",
+            "colors": ["#FFFFFF"]
         }
     ]
 }

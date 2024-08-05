@@ -28,7 +28,7 @@ export default function Header() {
     </>
 
     return <>
-        <header>
+        <header style={{zIndex: 1}}>
             <div className='bar'>
                 <Link href="/" className='ghost'>
                     <img 

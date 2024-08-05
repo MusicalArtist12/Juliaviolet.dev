@@ -1,16 +1,9 @@
 { "contactInfo": [
     {
-        "name": "Twitter",
-        "handle": "@MusicalArtist12",
-        "link": "https://twitter.com/MusicalArtist12",
-        "description":"Twitter, until it dies",
-        "logo": "Twitter"
-    },
-    {
         "name":"Bluesky",
         "handle":"@Juliaviolet.dev",
         "link":"https://bsky.app/profile/juliaviolet.dev",
-        "description":"Bluesky, for when Twitter dies",
+        "description":"Bluesky",
         "logo": "Bluesky"
     },
     {
