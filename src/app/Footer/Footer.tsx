@@ -1,5 +1,4 @@
 import GetLogo from "@/components/GetLogo"
-import {BadgeElement} from "@/components/BadgeElement"
 import Oneko from '@/components/Oneko' 
 import Link from 'next/link'
 import { getDirectory } from '@/components/Fetchers'
@@ -11,28 +10,11 @@ export default async function Footer() {
         .filter((site) => site.hasOneko == true)
         .map((site) => new URL(site.link).host)
 
-    const friendBadges: JSX.Element[] = Directory.Friends
-        .map((badge, i) => <BadgeElement entry={badge} key={i}/>
-    )  
-
-    const siteBadges: JSX.Element[] = Directory.Sites.map((badge, i) => 
-        <BadgeElement entry={badge} key={i}/>
-    )  
 
     return <>
         <footer>   
             <div className="badge-collection"> 
-                {friendBadges}
-                {siteBadges}
-                <div style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignContent: "center",
-                    height: "31px",
-                    width: "88px"
-                }}>
-                    <Link style={{fontSize: "14px", fontWeight: "bold", "text-wrap": "nowrap"} as any} href="/Directory">/Directory</Link>
-                </div> 
+
             </div>
             <Oneko startX={16} startY={16} startAlert={false} nekoSites={friendSites}/>
             <header>
