@@ -41,7 +41,7 @@ export interface PhotoInfo {
     title: string
 }
 
-export async function getDirectory(): Promise<[]> {
+export async function getDirectory(): Promise<Directory> {
     let DB = await fs.readFile(process.cwd() + "/public/Data/Directory.json", 'utf-8')
 
     return JSON.parse(DB)

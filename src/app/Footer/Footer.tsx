@@ -6,6 +6,11 @@ import { getDirectory } from '@/components/Fetchers'
 export default async function Footer() {
     const Directory = await getDirectory()
 
+    const friendSites = Directory.friends
+        .filter((site) => site.hasOneko == true)
+        .map((site) => new URL(site.link).host)
+
+
     return <>
         <footer>   
             <div className="badge-collection"> 
