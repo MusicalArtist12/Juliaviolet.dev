@@ -3,8 +3,7 @@
     display: grid;
     grid-template: 1fr / 1fr;
     place-items: center;
-    
-}
+}  
 
 .cardBase > * {
     grid-column: 1 / 1;
@@ -16,8 +15,6 @@
 }
 
 .card {
-
-
     background-color: black;
     width: 350px;
     height: 250px;
@@ -50,8 +47,13 @@
     --posy: 0px;
 }
 
-.glare:hover {
-    background: rgb(255,255,255);
-    background: radial-gradient(circle at left var(--posx) top var(--posy), rgba(200,200,200,1) 0%, rgba(130,130,130,1) 100%);    z-index: 0;
-
+.glare {
+    background: rgb(200,200,200);
+    background: radial-gradient(
+        circle at left var(--posx) top var(--posy), 
+        rgba(255,255,255,0.25) 0%, 
+        rgba(100,100,100,0.25) 100%
+    );    
+    z-index: 0;
+    box-shadow: 0px 0px 10px black;
 }

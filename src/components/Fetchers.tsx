@@ -10,7 +10,7 @@ export interface Contact {
 
 export interface BadgeInfo {
     path: string,
-    rarity: number | undefined
+    rarity: number
 }
 
 export interface DirInfo {
