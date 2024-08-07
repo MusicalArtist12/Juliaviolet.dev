@@ -6,10 +6,9 @@ import { getDirectory } from '@/components/Fetchers'
 export default async function Footer() {
     const Directory = await getDirectory()
 
-    const friendSites = Directory.friends
-        .filter((site) => site.hasOneko == true)
+    const friendSites = Directory
+        .filter((site) => site.hasOneko == true && site.type == "friend")
         .map((site) => new URL(site.link).host)
-
 
     return <>
         <footer>   

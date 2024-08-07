@@ -13,7 +13,8 @@ export interface BadgeInfo {
     rarity: number | undefined
 }
 
-export interface FriendInfo {
+export interface DirInfo {
+    type: "friend" | "site",
     name: string,
     nickname: string | undefined,
     callsign: string | undefined,
@@ -24,24 +25,12 @@ export interface FriendInfo {
     hasOneko: boolean | undefined
 }
 
-export interface SiteInfo {
-    name: string,
-    badges: BadgeInfo[],
-    link: string,
-    colors: string[]
-}
-
-export interface Directory {
-    friends: FriendInfo[],
-    sites: SiteInfo[]
-}
-
 export interface PhotoInfo {
     location: string,
     title: string
 }
 
-export async function getDirectory(): Promise<Directory> {
+export async function getDirectory(): Promise<DirInfo[]> {
     let DB = await fs.readFile(process.cwd() + "/public/Data/Directory.json", 'utf-8')
 
     return JSON.parse(DB)
@@ -50,7 +39,7 @@ export async function getDirectory(): Promise<Directory> {
 export async function getPhotos(): Promise<PhotoInfo[]> {
     let DB = await fs.readFile(process.cwd() + "/public/Data/juliaPhotos.json", 'utf-8')
 
-    return JSON.parse(DB).Photos
+    return JSON.parse(DB)
 }
 
 export async function getContacts() {

@@ -31,8 +31,6 @@
     --font-light:    #FCCAD2;
 }
 
-
-
 * {
     color: var(--font-light);
     font-weight: normal;

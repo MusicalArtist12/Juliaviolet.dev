@@ -1,0 +1,57 @@
+.cardBase {
+    z-index: 0;
+    display: grid;
+    grid-template: 1fr / 1fr;
+    place-items: center;
+    
+}
+
+.cardBase > * {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+}
+
+.cardBase:hover {
+    z-index: 10;
+}
+
+.card {
+
+
+    background-color: black;
+    width: 350px;
+    height: 250px;
+    display: flex;
+
+    > * {
+        margin: 10px;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .border {
+        width: 100%;
+        background-color: var(--backgroundColor);
+        padding: 10px;
+        border-radius: 5px;;
+    }
+
+
+}
+
+.glare {
+    mix-blend-mode: hard-light;
+    display: absolute;
+    width: 350px;
+    height: 250px;
+    --posx: 0px;
+    --posy: 0px;
+}
+
+.glare:hover {
+    background: rgb(255,255,255);
+    background: radial-gradient(circle at left var(--posx) top var(--posy), rgba(200,200,200,1) 0%, rgba(130,130,130,1) 100%);    z-index: 0;
+
+}

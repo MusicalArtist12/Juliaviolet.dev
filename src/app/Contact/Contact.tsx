@@ -28,7 +28,7 @@ function ContactItem({method}): JSX.Element {
 export default async function Contact() {
     const contacts = await getContacts();
 
-    let contactItems: JSX.Element[] = contacts.contactInfo.map((method, idx) => 
+    let contactItems: JSX.Element[] = contacts.map((method, idx) => 
         <ContactItem method={method} key={idx}/>
     )
 

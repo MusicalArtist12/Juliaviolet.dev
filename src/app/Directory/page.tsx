@@ -1,15 +1,7 @@
-
 import { getDirectory } from '@/components/Fetchers'
-
-import Link from "next/link"
+import Directory from "./directory"
 
 export default async function Page() {
-    const Directory = await getDirectory()
-
-    
-
-    return <section>
-
-    </section>
+    return <Directory Directory={await getDirectory()}/>
 }
 

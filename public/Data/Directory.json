@@ -1,126 +1,134 @@
-{ 
-    "friends": [
-        {
-            "name": "Ari",
-            "nickname": "Adryd",
-            "callsign": "REDACTED",
-            "badges": [
-                {"path": "/88x31/adryd.png", "rarity": 90},
-                {"path": "/88x31/adryd_alt.png", "rarity": 10}
-            ],
-            "badgeText": "Adryd",
-            "link": "https://adryd.com/",
-            "colors": ["#282737"],
-            "hasOneko": true
-        },
-        {
-            "name": "Ava",
-            "badges": [
-                {"path": "/88x31/ava.png"}
-            ],
-            "badgeText": "Ava",
-            "link": "https://avasilver.dev",
-            "colors": ["#9d00db"],
-            "hasOneko": true
-        },
-        {
-            "name" : "Nathan",
-            "nickname": "Auion",
-            "badges": [
-                {"path": "/88x31/aurumion.png"}
-            ],
-            "link": "https://aurumion.com/",
-            "colors": ["#edeb00"],
-            "hasOneko": true
-        },
-        {
-            "name": "Brooke",
-            "nickname": "Breq",
-            "callsign": "K9BRQ",
-            "badges": [
-                {"path": "/88x31/breq.png", "rarity": 90}, 
-                {"path": "https://breq.dev/badges/breqalt.png", "rarity": 10}
-            ],
-            "link": "https://breq.dev",
-            "colors": ["#ffda00", "#1bb3ff", "#ff42a1"],
-            "hasOneko": true
-        },
-        {
-            "name": "Mia",
-            "nickname": "Miakizz",
-            "badges": [
-                {"path": "/88x31/mia.png"}
-            ],
-            "link": "https://miakizz.quest",
-            "colors": ["#FFFFFF"],
-            "hasOneko": false
-        },
-        {
-            "name": "Philo",
-            "nickname": "flamingspork",
-            "callsign": "KC1TGK",
-            "badges": [
-                {"path": "/88x31/philo.png"}
-            ],
-            "link": "https://philo.gay/",
-            "colors": ["#24affc"],
-            "hasOneko": false
-        },
-        {
-            "name": "Vivi",
-            "nickname": "spokesey",
-            "callsign": "K9VIV",
-            "badges": [
-                {"path": "/88x31/vivi.png"}
-            ],
-            "link": "https://www.vhafener.com/",
-            "colors": ["#FFFFFF"],
-            "hasOneko": false
-        },
-        {
-            "name": "Julia",
-            "nickname": "MusicalArtist12",
-            "callsign": "KK7TTO",
-            "badges": [
-                {"path": "/88x31/julia.png"}
-            ],
-            "link": "https://juliaviolet.dev/",
-            "colors": ["#a06ffd"],
-            "hasOneko": true
-        }
-    ],
-    "sites": [
-        {
-            "name": "Estradiol!",
-            "badges": [
-                {"path": "/88x31/estradiol.gif"}
-            ],
-            "link": "https://alyx.sh/",
-            "colors": ["#5eb3a0"]
-        },
-        {
-            "name" : "I use Arch btw",
-            "badges": [
-                {"path": "/88x31/archlinux.gif"}
-            ],
-            "link": "https://archlinux.org",
-            "colors": ["#3fb8e6"]
-        },
-        {
-            "name" : "eightyeightbythirty.one",
-            "badges": [
-                {"path": "/88x31/88x31.png"}
-            ],
-            "link": "https://eightyeightthirty.one",
-            "colors": ["#b147ba", "#4776ba", "#44939e", "#ba5823"]
-        },
-        {
-            "name": "makea.fish",
-            "badges": [
-                {"path": "/88x31/makeafish.png"}
-            ],
-            "link": "https://makea.fish",
-            "colors": ["#FFFFFF"]
-        }
-    ]
-}
+[
+    {
+        "type": "friend",
+        "name": "Ari",
+        "nickname": "Adryd",
+        "callsign": "REDACTED",
+        "badges": [
+            {"path": "/88x31/adryd.png", "rarity": 90},
+            {"path": "/88x31/adryd_alt.png", "rarity": 10}
+        ],
+        "badgeText": "Adryd",
+        "link": "https://adryd.com/",
+        "colors": ["#282737"],
+        "hasOneko": true
+    },
+    {
+        "type": "friend",
+        "name": "Ava",
+        "badges": [
+            {"path": "/88x31/ava.png"}
+        ],
+        "badgeText": "Ava",
+        "link": "https://avasilver.dev",
+        "colors": ["#9d00db"],
+        "hasOneko": true
+    },
+    {
+        "type": "friend",
+        "name" : "Nathan",
+        "nickname": "Auion",
+        "badges": [
+            {"path": "/88x31/aurumion.png"}
+        ],
+        "link": "https://aurumion.com/",
+        "colors": ["#edeb00"],
+        "hasOneko": true
+    },
+    {
+        "type": "friend",
+        "name": "Brooke",
+        "nickname": "Breq",
+        "callsign": "K9BRQ",
+        "badges": [
+            {"path": "/88x31/breq.png", "rarity": 90}, 
+            {"path": "https://breq.dev/badges/breqalt.png", "rarity": 10}
+        ],
+        "link": "https://breq.dev",
+        "colors": ["#ffda00", "#1bb3ff", "#ff42a1"],
+        "hasOneko": true
+    },
+    {
+        "type": "friend",
+        "name": "Mia",
+        "nickname": "Miakizz",
+        "badges": [
+            {"path": "/88x31/mia.png"}
+        ],
+        "link": "https://miakizz.quest",
+        "colors": ["#FFFFFF"],
+        "hasOneko": false
+    },
+    {
+        "type": "friend",
+        "name": "Philo",
+        "nickname": "flamingspork",
+        "callsign": "KC1TGK",
+        "badges": [
+            {"path": "/88x31/philo.png"}
+        ],
+        "link": "https://philo.gay/",
+        "colors": ["#24affc"],
+        "hasOneko": false
+    },
+    {
+        "type": "friend",
+        "name": "Vivi",
+        "nickname": "spokesey",
+        "callsign": "K9VIV",
+        "badges": [
+            {"path": "/88x31/vivi.png"}
+        ],
+        "link": "https://www.vhafener.com/",
+        "colors": ["#FFFFFF"],
+        "hasOneko": false
+    },
+    {
+        "type": "friend",
+        "name": "Julia",
+        "nickname": "MusicalArtist12",
+        "callsign": "KK7TTO",
+        "badges": [
+            {"path": "/88x31/julia.png"}
+        ],
+        "link": "https://juliaviolet.dev/",
+        "colors": ["#a06ffd"],
+        "hasOneko": true
+    },
+    {
+        "type": "site",
+        "name": "Estradiol!",
+        "badges": [
+            {"path": "/88x31/estradiol.gif"}
+        ],
+        "link": "https://alyx.sh/",
+        "colors": ["#5eb3a0"]
+    },
+    {
+        "type": "site",
+        "name" : "I use Arch btw",
+        "badges": [
+            {"path": "/88x31/archlinux.gif"}
+        ],
+        "link": "https://archlinux.org",
+        "colors": ["#3fb8e6"]
+    },
+    {
+        "type": "site",
+        "name" : "eightyeightbythirty.one",
+        "badges": [
+            {"path": "/88x31/88x31.png"}
+        ],
+        "link": "https://eightyeightthirty.one",
+        "colors": ["#b147ba", "#4776ba", "#44939e", "#ba5823"]
+    },
+    {
+        "type": "site",
+        "name": "makea.fish",
+        "badges": [
+            {"path": "/88x31/makeafish.png"}
+        ],
+        "link": "https://makea.fish",
+        "colors": ["#FFFFFF"]
+    }
+]

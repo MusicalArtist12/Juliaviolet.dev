@@ -1,4 +1,4 @@
-{ "contactInfo": [
+[
     {
         "name":"Bluesky",
         "handle":"@Juliaviolet.dev",
@@ -55,5 +55,5 @@
         "description":"Technician - Amateur Radio",
         "logo": "Radio"
     }
-]}
+]
 
