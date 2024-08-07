@@ -9,7 +9,7 @@ function CardBase({entry, posx, posy}: {entry: DirInfo, posx: number, posy: numb
     const [ rectposx, setrectposx ] = useState<number>(0)
     const [ rectposy, setrectposy ] = useState<number>(0)
 
-    const cardRef = useRef(null)
+    const cardRef = useRef<HTMLInputElement>(null)
 
     const [{ xys }, api] = useSpring(() => (
         {
@@ -33,6 +33,10 @@ function CardBase({entry, posx, posy}: {entry: DirInfo, posx: number, posy: numb
         })
 
     const handleMouseMove = e => {
+        if (cardRef.current == null) {
+            return
+        }
+
         const rect = cardRef.current.getBoundingClientRect()
         api.start({
             xys: calc(e.clientX, e.clientY, rect),
@@ -40,12 +44,16 @@ function CardBase({entry, posx, posy}: {entry: DirInfo, posx: number, posy: numb
     }
 
     useEffect(() => {
+        if (cardRef.current == null) {
+            return
+        }
+
         const rect = cardRef.current.getBoundingClientRect()
         setrectposx(rect.left)
         setrectposy(rect.top)  
     })
 
-    const [ badge, setBadge ] = useState<BadgeInfo>((): BadgeInfo => {
+    const [ badge, _ ] = useState<BadgeInfo>((): BadgeInfo => {
         if (entry.badges.length > 1) {
             let total = 0
             entry.badges.forEach((badge, i, array) => {
@@ -54,16 +62,13 @@ function CardBase({entry, posx, posy}: {entry: DirInfo, posx: number, posy: numb
     
             const maxWeight = entry.badges[entry.badges.length - 1].rarity
             const randomNumber =  Math.floor(Math.random() * maxWeight)
-    
-            console.log(`random: ${randomNumber}`)
-
-            entry.badges.forEach((badge) => {
-                console.log(badge.rarity)
-                if (randomNumber <= badge.rarity) {
-                    console.log(badge.path)
-                    return badge
+   
+            for (let i = 0; i < entry.badges.length; i++) {
+                if (randomNumber <= entry.badges[i].rarity) {
+                    console.log(entry.badges[i])
+                    return entry.badges[i]
                 }
-            })
+            }
         }    
 
         return entry.badges[0]
