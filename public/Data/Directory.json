@@ -56,7 +56,7 @@
             {"path": "/88x31/mia.png"}
         ],
         "link": "https://miakizz.quest",
-        "colors": ["#FFFFFF"],
+        "colors": ["#DDDDDD"],
         "hasOneko": false
     },
     {
@@ -80,7 +80,7 @@
             {"path": "/88x31/vivi.png"}
         ],
         "link": "https://www.vhafener.com/",
-        "colors": ["#FFFFFF"],
+        "colors": ["#DDDDDD"],
         "hasOneko": false
     },
     {
@@ -129,6 +129,6 @@
             {"path": "/88x31/makeafish.png"}
         ],
         "link": "https://makea.fish",
-        "colors": ["#FFFFFF"]
+        "colors": ["#DDDDDD"]
     }
 ]

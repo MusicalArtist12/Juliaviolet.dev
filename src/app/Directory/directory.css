@@ -1,59 +1,81 @@
-.cardBase {
-    z-index: 0;
+.layeredEffectBase {
     display: grid;
     grid-template: 1fr / 1fr;
     place-items: center;
-}  
+    width: 100%;
+    height: 100%;
+    row-gap: inherit;
+    column-gap: inherit;
+}
 
-.cardBase > * {
+.layeredEffectBase > * {
     grid-column: 1 / 1;
     grid-row: 1 / 1;
 }
 
-.cardBase:hover {
-    z-index: 10;
-}
-
-.card {
+.cardBase {
     background-color: black;
+    z-index: 0;
     width: 350px;
     height: 250px;
+}
+
+.cardBase:hover {
+    z-index: 100;
+    box-shadow: 0px 0px 1px white;
+}
+
+.cardBody {
+    background-color: var(--backgroundColor);
+    width: 330px;
+    height: 230px;
+    border: 10px;
+}
+
+.cardContent {
     display: flex;
-
-    > * {
-        margin: 10px;
-    }
-
-    img {
-        width: 100%;
-    }
-
-    .border {
-        width: 100%;
-        background-color: var(--backgroundColor);
-        padding: 10px;
-        border-radius: 5px;;
-    }
-
-
+    flex-direction: column;
+    width: 300px;
+    height: 200px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .glare {
-    mix-blend-mode: hard-light;
-    display: absolute;
-    width: 350px;
-    height: 250px;
+    width: 100%;
+    height: 100%;
     --posx: 0px;
     --posy: 0px;
-}
 
-.glare {
+    --gradientParams: rgba(255,255,255,0.25) 0%, rgba(100,100,100,0.25) 100%;
+    --gradientParamsHover: rgba(255,255,255,0.35) 0%, rgba(100,100,100,0.25) 50%;
+    --blendingMode: hard-light;
+
+
     background: rgb(200,200,200);
+
+    mix-blend-mode: var(--blendingMode);
     background: radial-gradient(
         circle at left var(--posx) top var(--posy), 
-        rgba(255,255,255,0.25) 0%, 
-        rgba(100,100,100,0.25) 100%
+        var(--gradientParams)
     );    
-    z-index: 0;
-    box-shadow: 0px 0px 10px black;
+    
+    box-shadow: 0px 0px 20px black;
+}
+
+.glare:hover {
+    
+    background: radial-gradient(
+        circle at left var(--posx) top var(--posy), 
+        var(--gradientParamsHover)
+    );    
+    
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    mask-image: url(/88x31/mask.png);
+    mask-repeat: no-repeat;   
+    mask-mode: alpha
 }

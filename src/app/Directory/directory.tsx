@@ -5,9 +5,39 @@ import { BadgeInfo, DirInfo } from '@/components/Fetchers'
 import { useRef, useState, useEffect } from 'react'
 import { useSpring, animated } from '@react-spring/web'
 
-function CardBase({entry, posx, posy}: {entry: DirInfo, posx: number, posy: number}): JSX.Element {
+function GlareEffect({parentRef, posx, posy, gradientParams, gradientParamsHover, blendingMode, style}: {
+    parentRef: any, 
+    posx: number, 
+    posy: number, 
+    gradientParams?: string,
+    gradientParamsHover?: string,
+    blendingMode?: string,
+    style?: any
+}): JSX.Element {
     const [ rectposx, setrectposx ] = useState<number>(0)
     const [ rectposy, setrectposy ] = useState<number>(0)
+
+    useEffect(() => {
+        if (parentRef.current == null) {
+            return
+        }
+
+        const rect = parentRef.current.getBoundingClientRect()
+        setrectposx(rect.left)
+        setrectposy(rect.top)  
+    })
+
+
+    return <div className='glare' style={{
+        "--gradientParams": gradientParams ? `${gradientParams}` : null,
+        "--gradientParamsHover": gradientParamsHover ? `${gradientParamsHover}` : null,
+        "--posx": `${posx - rectposx}px`,
+        "--posy": `${posy - rectposy}px`,
+        ...style
+    } as any}/>
+}
+
+function CardBase({entry, posx, posy}: {entry: DirInfo, posx: number, posy: number}): JSX.Element {
 
     const cardRef = useRef<HTMLInputElement>(null)
 
@@ -43,17 +73,8 @@ function CardBase({entry, posx, posy}: {entry: DirInfo, posx: number, posy: numb
         })
     }
 
-    useEffect(() => {
-        if (cardRef.current == null) {
-            return
-        }
 
-        const rect = cardRef.current.getBoundingClientRect()
-        setrectposx(rect.left)
-        setrectposy(rect.top)  
-    })
-
-    const [ badge, _ ] = useState<BadgeInfo>((): BadgeInfo => {
+    const [ badge, _setBadge ] = useState<BadgeInfo>((): BadgeInfo => {
         if (entry.badges.length > 1) {
             let total = 0
             entry.badges.forEach((badge, i, array) => {
@@ -61,11 +82,10 @@ function CardBase({entry, posx, posy}: {entry: DirInfo, posx: number, posy: numb
             })
     
             const maxWeight = entry.badges[entry.badges.length - 1].rarity
-            const randomNumber =  Math.floor(Math.random() * maxWeight)
+            const randomNumber = Math.floor(Math.random() * maxWeight)
    
             for (let i = 0; i < entry.badges.length; i++) {
                 if (randomNumber <= entry.badges[i].rarity) {
-                    console.log(entry.badges[i])
                     return entry.badges[i]
                 }
             }
@@ -74,38 +94,80 @@ function CardBase({entry, posx, posy}: {entry: DirInfo, posx: number, posy: numb
         return entry.badges[0]
     })
 
+    const [ background, _setBackground ] = useState<string>((): string => {
+        if (entry.colors.length > 1) {
+            const randomNumber = Math.floor(Math.random() * entry.colors.length)
 
+            return entry.colors[randomNumber]
+        }
 
+        return entry.colors[0]
+    })
+
+    // https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-002-hisuian_voltorb-ph.png check this out for a good glare pattern
+    
     return <div ref={cardRef} style={{ display: "flex"}}>
-        <animated.div className='cardBase' style={{ transform: xys.to(trans) }} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
-            <div className='card'>
-                <div className='border' style={{
-                    "--backgroundColor": entry.colors[0]
-                } as any}>
-                    <img className="pixel-art" src={badge.path}/>
+        <animated.div className='layeredEffectBase cardBase' style={{ transform: xys.to(trans) }} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+            <div className='layeredEffectBase cardBody' style={{ "--backgroundColor": background} as any}>
+                <GlareEffect style={{zIndex: 3}} parentRef={cardRef} posx={posx} posy={posy} blendingMode='soft-light'                          
+                    gradientParams='rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.0) 50%' 
+                    gradientParamsHover='rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.0) 100%'
+                />
+                <div className='mask'>
+                    <GlareEffect parentRef={cardRef} posx={posx} posy={posy} blendingMode='hard-light'                         
+                        gradientParams='rgba(255,255,255,1.0) 0%, rgba(255,255,255,0.1) 50%' 
+                        gradientParamsHover='rgba(255,255,255,1.0) 0%, rgba(100,100,100,0.0) 100%'
+                    />
+                </div>
+                <div className='cardContent'>
+                    <img className='pixel-art' src={badge.path} style={{zIndex: 2}}/>
                 </div>
             </div>
-            <div className='glare' style={{
-                "--posx": `${posx - rectposx}px`,
-                "--posy": `${posy - rectposy}px`
-            } as any}/>
+  
+
+
         </animated.div>
     </div>
+    
+    /*
+    return <div ref={cardRef} style={{ display: "flex"}}>
+        <animated.div className='layeredEffectBase cardBase' style={{ transform: xys.to(trans) }} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+            <div className='layeredEffectBase cardBody' style={{ "--backgroundColor": background} as any}>
+                <div className='cardContent'>
+                        <img className='pixel-art' src={badge.path}/>
+                    </div>
+                <div className='mask'>
+                    <GlareEffect parentRef={cardRef} posx={posx} posy={posy} 
+                        blendingMode='soft-light' 
+                        gradientParams='rgba(255,255,255,0.0) 0%, rgba(100,100,100,0.0) 50%' 
+                        gradientParamsHover='rgba(255,255,255,1.0) 0%, rgba(100,100,100,0.0) 100%'
+                    />
+                </div>
+            </div>
+
+        </animated.div>
+    </div>
+    */
 }
 
 function Cards({Directory}): JSX.Element {
     const [ posx, setposx ] = useState<number>(0)
     const [ posy, setposy ] = useState<number>(0)
+    const baseRef = useRef<HTMLInputElement>(null)
 
     const setGlare = e => {
         setposx(e.clientX)
         setposy(e.clientY)
     }
 
-    return <section onMouseMove={setGlare} style={{flexDirection: 'row', flexWrap: 'wrap',  justifyContent: "center"}}>
-        {Directory.map((x, index) => {
-            return <CardBase entry={x} key={index} posx={posx} posy={posy}/>
-        })}
+    // <GlareEffect parentRef={baseRef} posx={posx} posy={posy} gradientParams="rgba(255,255,255,0.2) 0%, rgba(0,0,0,0) 10%"/>
+
+    return <section className='layeredEffectBase' onMouseMove={setGlare} ref={baseRef} >
+        <section style={{display: "flex", flexDirection: 'row', flexWrap: 'wrap', justifyContent: "center", columnGap: "inherit", rowGap: "inherit"}}>
+            {Directory.map((x, index) => {
+                return <CardBase entry={x} key={index} posx={posx} posy={posy}/>
+            })}
+        </section>
     </section>
 }
 
