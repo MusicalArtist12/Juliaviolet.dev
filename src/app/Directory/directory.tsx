@@ -109,20 +109,17 @@ function CardBase({entry, posx, posy}: {entry: DirInfo, posx: number, posy: numb
     return <div ref={cardRef} style={{ display: "flex"}}>
         <animated.div className='layeredEffectBase cardBase' style={{ transform: xys.to(trans) }} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
             <div className='layeredEffectBase cardBody' style={{ "--backgroundColor": background} as any}>
-                <GlareEffect style={{zIndex: 3}} parentRef={cardRef} posx={posx} posy={posy} blendingMode='soft-light'                          
-                    gradientParams='rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.0) 50%' 
-                    gradientParamsHover='rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.0) 100%'
-                />
                 <div className='mask'>
-                    <GlareEffect parentRef={cardRef} posx={posx} posy={posy} blendingMode='hard-light'                         
-                        gradientParams='rgba(255,255,255,1.0) 0%, rgba(255,255,255,0.1) 50%' 
-                        gradientParamsHover='rgba(255,255,255,1.0) 0%, rgba(100,100,100,0.0) 100%'
+                    <GlareEffect parentRef={cardRef} posx={posx} posy={posy} blendingMode='soft-light'                         
+                        gradientParams='rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 20%, rgba(255,255,255,0.0) 35%, rgba(255,255,255,0.5) 100%'
+                        gradientParamsHover='rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 20%, rgba(255,255,255,0.0) 35%, rgba(255,255,255,0.5) 100%'
                     />
                 </div>
                 <div className='cardContent'>
                     <img className='pixel-art' src={badge.path} style={{zIndex: 2}}/>
                 </div>
             </div>
+
   
 
 
