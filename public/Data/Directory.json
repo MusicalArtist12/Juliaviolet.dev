@@ -67,17 +67,6 @@
             "hasOneko": false
         },
         {
-            "name": "Vivi",
-            "nickname": "spokesey",
-            "callsign": "K9VIV",
-            "badges": [
-                ["/88x31/vivi.png", 100]
-            ],
-            "link": "https://www.vhafener.com/",
-            "colors": ["#FFFFFF"],
-            "hasOneko": false
-        },
-        {
             "name": "Julia",
             "nickname": "MusicalArtist12",
             "callsign": "KK7TTO",
