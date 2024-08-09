@@ -74,7 +74,21 @@ function CardBase({entry, posx, posy}: {entry: DirInfo, posx: number, posy: numb
     }
 
 
-    const [ badge, _setBadge ] = useState<BadgeInfo>((): BadgeInfo => {
+    const [ badge, setBadge ] = useState<BadgeInfo>(entry.badges[0])
+    const [ background, setBackground ] = useState<string>(entry.colors[0])
+    const [ isFoil, setFoil ] = useState<boolean>(false);
+
+    useEffect(() => {
+        let randomNumber = Math.floor(Math.random() * 2)
+        setFoil(randomNumber == 0 ? false : true)
+
+        if (entry.colors.length > 1) {
+            randomNumber = Math.floor(Math.random() * entry.colors.length)
+            console.log(`${entry.colors[randomNumber]}`)
+
+            setBackground(entry.colors[randomNumber])
+        }
+
         if (entry.badges.length > 1) {
             let total = 0
             entry.badges.forEach((badge, i, array) => {
@@ -82,36 +96,16 @@ function CardBase({entry, posx, posy}: {entry: DirInfo, posx: number, posy: numb
             })
     
             const maxWeight = entry.badges[entry.badges.length - 1].rarity
-            const randomNumber = Math.floor(Math.random() * maxWeight)
+            randomNumber = Math.floor(Math.random() * maxWeight)
    
             for (let i = 0; i < entry.badges.length; i++) {
                 if (randomNumber <= entry.badges[i].rarity) {
                     console.log(`${entry.badges[i]}`)
-                    return entry.badges[i]
+                    setBadge(entry.badges[i])
                 }
             }
-        }    
-
-        return entry.badges[0]
-    })
-
-    const [ background, _setBackground ] = useState<string>((): string => {
-        if (entry.colors.length > 1) {
-            const randomNumber = Math.floor(Math.random() * entry.colors.length)
-            console.log(`${entry.colors[randomNumber]}`)
-
-            return entry.colors[randomNumber]
         }
-
-        return entry.colors[0]
-    })
-
-    const [ isFoil, _setFoil ] = useState<boolean>((): boolean => {
-        const randomNumber = Math.floor(Math.random() * 2)
-        return (randomNumber == 0 ? false : true)
-        //return true
-    });
-
+    }, [])
 
     // https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-002-hisuian_voltorb-ph.png check this out for a good glare pattern
     
