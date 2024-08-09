@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import './directory.css'
 import { BadgeInfo, DirInfo } from '@/components/Fetchers'
@@ -86,6 +86,7 @@ function CardBase({entry, posx, posy}: {entry: DirInfo, posx: number, posy: numb
    
             for (let i = 0; i < entry.badges.length; i++) {
                 if (randomNumber <= entry.badges[i].rarity) {
+                    console.log(`${entry.badges[i]}`)
                     return entry.badges[i]
                 }
             }
@@ -97,6 +98,7 @@ function CardBase({entry, posx, posy}: {entry: DirInfo, posx: number, posy: numb
     const [ background, _setBackground ] = useState<string>((): string => {
         if (entry.colors.length > 1) {
             const randomNumber = Math.floor(Math.random() * entry.colors.length)
+            console.log(`${entry.colors[randomNumber]}`)
 
             return entry.colors[randomNumber]
         }
