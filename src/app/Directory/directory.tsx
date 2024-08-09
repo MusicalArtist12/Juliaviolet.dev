@@ -28,13 +28,13 @@ function GlareEffect({parentRef, posx, posy, gradientParams, gradientParamsHover
     })
 
 
-    return <div className='glare' style={{
+    return <section className='glare' style={{
         "--gradientParams": gradientParams ? `${gradientParams}` : null,
         "--gradientParamsHover": gradientParamsHover ? `${gradientParamsHover}` : null,
         "--posx": `${posx - rectposx}px`,
         "--posy": `${posy - rectposy}px`,
         ...style
-    } as any}/>
+    } as any}></section>
 }
 
 function CardBase({entry, posx, posy}: {entry: DirInfo, posx: number, posy: number}): JSX.Element {
@@ -104,24 +104,46 @@ function CardBase({entry, posx, posy}: {entry: DirInfo, posx: number, posy: numb
         return entry.colors[0]
     })
 
+    const [ isFoil, _setFoil ] = useState<boolean>((): boolean => {
+        const randomNumber = Math.floor(Math.random() * 2)
+        return (randomNumber == 0 ? false : true)
+        //return true
+    });
+
+
     // https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-002-hisuian_voltorb-ph.png check this out for a good glare pattern
     
     return <div ref={cardRef} style={{ display: "flex"}}>
         <animated.div className='layeredEffectBase cardBase' style={{ transform: xys.to(trans) }} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
-            <div className='layeredEffectBase cardBody' style={{ "--backgroundColor": background} as any}>
+            
+            <GlareEffect parentRef={cardRef} posx={posx} posy={posy}
+                blendingMode='soft-light'
+                gradientParams='rgba(180,180,180,0.5) 0%, rgba(0,0,0,0.0) 100%'
+                gradientParamsHover='rgba(180,180,180,0.5) 0%, rgba(0,0,0,0.0) 100%'
+                style={{zIndex: 1}}
+            />
+            <div className='layeredEffectBase cardBackground' style={{ "--backgroundColor": background, zIndex: isFoil ? 2 : 0} as any}>
                 <div className='mask'>
                     <GlareEffect parentRef={cardRef} posx={posx} posy={posy} blendingMode='soft-light'                         
-                        gradientParams='rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 20%, rgba(255,255,255,0.0) 35%, rgba(255,255,255,0.5) 100%'
-                        gradientParamsHover='rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 20%, rgba(255,255,255,0.0) 35%, rgba(255,255,255,0.5) 100%'
-                    />
+                        gradientParams='rgba(255,255,255,1) 0%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0.0) 35%, rgba(255,255,255,0.1) 100%'
+                        gradientParamsHover='rgba(255,255,255,1) 0%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0.0) 35%, rgba(255,255,255,0.1) 100%'
+                        style={{display: isFoil ? "block" : "none"}}
+                    />  
                 </div>
-                <div className='cardContent'>
-                    <img className='pixel-art' src={badge.path} style={{zIndex: 2}}/>
+                <div className='cardContent' style={{zIndex: 1}}>
+                    <div className='layeredEffectBase'>
+                        <GlareEffect parentRef={cardRef} posx={posx} posy={posy}
+                            blendingMode='hard-light'
+                            gradientParams='rgba(180,180,180,1.0) 0%, rgba(100.0,100.0,100.0,0.8) 30%'
+                            gradientParamsHover='rgba(180,180,180,1.0) 0%, rgba(100,100,100.0,0.8) 30%'
+                            style={{zIndex: 4, borderRadius: 0 }}
+                        />
+                        <img src={badge.path} className='pixel-art' style={{width: "100%"}}/>
+                    </div>
+                    <div>
+                    </div>
                 </div>
             </div>
-
-  
-
 
         </animated.div>
     </div>

@@ -73,18 +73,6 @@
     },
     {
         "type": "friend",
-        "name": "Vivi",
-        "nickname": "spokesey",
-        "callsign": "K9VIV",
-        "badges": [
-            {"path": "/88x31/vivi.png"}
-        ],
-        "link": "https://www.vhafener.com/",
-        "colors": ["#DDDDDD"],
-        "hasOneko": false
-    },
-    {
-        "type": "friend",
         "name": "Julia",
         "nickname": "MusicalArtist12",
         "callsign": "KK7TTO",
