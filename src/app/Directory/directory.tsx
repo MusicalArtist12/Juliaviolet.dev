@@ -121,8 +121,8 @@ function CardBase({entry, posx, posy}: {entry: DirInfo, posx: number, posy: numb
             <div className='layeredEffectBase cardBackground' style={{ "--backgroundColor": background, zIndex: isFoil ? 2 : 0} as any}>
                 <div className='mask'>
                     <GlareEffect parentRef={cardRef} posx={posx} posy={posy} blendingMode='soft-light'                         
-                        gradientParams='rgba(255,255,255,1) 0%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0.0) 35%, rgba(255,255,255,0.1) 100%'
-                        gradientParamsHover='rgba(255,255,255,1) 0%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0.0) 35%, rgba(255,255,255,0.1) 100%'
+                        gradientParams='rgba(255,255,255,1) 0%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0.0) 35%, rgba(100,100,100,0.5) 100%'
+                        gradientParamsHover='rgba(255,255,255,1) 0%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0.0) 35%, rgba(100,100,100,0.5) 100%'
                         style={{display: isFoil ? "block" : "none"}}
                     />  
                 </div>
