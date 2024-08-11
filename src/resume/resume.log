@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024/Arch Linux) (preloaded format=xelatex 2024.5.20)  16 JUN 2024 10:33
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024/Arch Linux) (preloaded format=xelatex 2024.6.28)  11 AUG 2024 13:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -410,10 +410,10 @@ Package rerunfilecheck Info: File `resume.out' has not changed.
 Here is how much of TeX's memory you used:
  11092 strings out of 476772
  225262 string characters out of 5803394
- 1936839 words of memory out of 5000000
+ 1937839 words of memory out of 5000000
  32992 multiletter control sequences out of 15000+600000
  561373 words of font info for 72 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  79i,5n,93p,301b,320s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on resume.xdv (1 page, 23456 bytes).
+Output written on resume.xdv (1 page, 24188 bytes).
