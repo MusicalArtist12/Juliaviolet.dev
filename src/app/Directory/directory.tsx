@@ -5,16 +5,17 @@ import { BadgeInfo, DirInfo } from '@/components/Fetchers'
 import { useRef, useState, useEffect } from 'react'
 import { useSpring, animated } from '@react-spring/web'
 
-function GlareEffect({parentRef, posx, posy, gradientParams, gradientParamsHover, blendingMode, style}: {
-    parentRef: any, 
+function GlareEffect({parentRef, posx, posy, gradientParams, gradientParamsHover, blendingMode, style, gradientSize}: {
+    parentRef: React.RefObject<HTMLInputElement>, 
     posx: number, 
     posy: number, 
     gradientParams?: string,
     gradientParamsHover?: string,
-    blendingMode?: string,
-    style?: any
+    blendingMode?: 'normal' | 'multiply' | 'screen' | 'overlay' | 'darken' | 'lighten' | 'color-dodge' | 'color-burn' | 'hard-light' | 'soft-light' | 'difference' | 'exclusion' |  'hue' | 'saturation' | 'color' | 'luminosity',
+    style?: React.CSSProperties,
+    gradientSize?: number
 }): JSX.Element {
-    const [ rectposx, setrectposx ] = useState<number>(0)
+    const [ rectposx , setrectposx ] = useState<number>(0)
     const [ rectposy, setrectposy ] = useState<number>(0)
 
     useEffect(() => {
@@ -27,12 +28,13 @@ function GlareEffect({parentRef, posx, posy, gradientParams, gradientParamsHover
         setrectposy(rect.top)  
     })
 
-
     return <section className='glare' style={{
         "--gradientParams": gradientParams ? `${gradientParams}` : null,
         "--gradientParamsHover": gradientParamsHover ? `${gradientParamsHover}` : null,
         "--posx": `${posx - rectposx}px`,
         "--posy": `${posy - rectposy}px`,
+        "--gradientSize": `${gradientSize}px`,
+        "--blendingMode": blendingMode ? blendingMode : null,
         ...style
     } as any}></section>
 }
@@ -81,6 +83,7 @@ function CardBase({entry, posx, posy}: {entry: DirInfo, posx: number, posy: numb
     useEffect(() => {
         let randomNumber = Math.floor(Math.random() * 2)
         setFoil(randomNumber == 0 ? false : true)
+        //setFoil(true)
 
         if (entry.colors.length > 1) {
             randomNumber = Math.floor(Math.random() * entry.colors.length)
@@ -100,15 +103,17 @@ function CardBase({entry, posx, posy}: {entry: DirInfo, posx: number, posy: numb
    
             for (let i = 0; i < entry.badges.length; i++) {
                 if (randomNumber <= entry.badges[i].rarity) {
-                    console.log(`${entry.badges[i]}`)
+                    console.log(`${entry.name}`)
+                    console.log(randomNumber)
                     setBadge(entry.badges[i])
+                    break;
                 }
             }
         }
     }, [])
 
     // https://cdn.malie.io/file/malie-io/art/foils/png/en_US/SWSH/SWSH10-ASR/en_US-SWSH10-002-hisuian_voltorb-ph.png check this out for a good glare pattern
-    
+
     return <div ref={cardRef} style={{ display: "flex"}}>
         <animated.div className='layeredEffectBase cardBase' style={{ transform: xys.to(trans) }} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
             
@@ -117,15 +122,25 @@ function CardBase({entry, posx, posy}: {entry: DirInfo, posx: number, posy: numb
                 gradientParams='rgba(180,180,180,0.5) 0%, rgba(0,0,0,0.0) 100%'
                 gradientParamsHover='rgba(180,180,180,0.5) 0%, rgba(0,0,0,0.0) 100%'
                 style={{zIndex: 1}}
+                gradientSize={500}
             />
-            <div className='layeredEffectBase cardBackground' style={{ "--backgroundColor": background, zIndex: isFoil ? 2 : 0} as any}>
-                <div className='mask'>
-                    <GlareEffect parentRef={cardRef} posx={posx} posy={posy} blendingMode='soft-light'                         
-                        gradientParams='rgba(255,255,255,1) 0%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0.0) 35%, rgba(100,100,100,0.5) 100%'
-                        gradientParamsHover='rgba(255,255,255,1) 0%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0.0) 35%, rgba(100,100,100,0.5) 100%'
-                        style={{display: isFoil ? "block" : "none"}}
+            <div className='layeredEffectBase cardBackground' style={{ "--backgroundColor": background, zIndex: 0} as any}>
+
+                <div className='mask' style={{display: isFoil ? "block" : "none", zIndex: 1}}>
+                    <GlareEffect parentRef={cardRef} posx={posx} posy={posy} blendingMode='screen'                         
+                        gradientParams='rgba(180,180,180,0.5) 0%, rgba(0,0,0,0.0) 100%'
+                        gradientParamsHover='rgba(0,0,255,1.0) 8%, rgba(40,255,19,1.0) 32%, rgba(252,255,0,1.0) 40%, rgba(255,0,0,1.0) 53%, rgba(124,0,101,1.0) 73%, rgba(150,150,150,1.0) 100%'
+                        gradientSize={600}
                     />  
                 </div>
+                <GlareEffect parentRef={cardRef} posx={posx} posy={posy}
+                    blendingMode='soft-light'
+                    gradientParams='rgba(180,180,180,0.5) 0%, rgba(100.0,100.0,100.0,0.8) 30%'
+                    gradientParamsHover='rgba(180,180,180,0.5) 0%, rgba(100,100,100.0,0.8) 30%'
+                    style={{zIndex: 4, borderRadius: 0 }}
+                    gradientSize={200}
+                />
+
                 <div className='cardContent' style={{zIndex: 1}}>
                     <div className='layeredEffectBase'>
                         <GlareEffect parentRef={cardRef} posx={posx} posy={posy}
@@ -133,6 +148,7 @@ function CardBase({entry, posx, posy}: {entry: DirInfo, posx: number, posy: numb
                             gradientParams='rgba(180,180,180,1.0) 0%, rgba(100.0,100.0,100.0,0.8) 30%'
                             gradientParamsHover='rgba(180,180,180,1.0) 0%, rgba(100,100,100.0,0.8) 30%'
                             style={{zIndex: 4, borderRadius: 0 }}
+                            gradientSize={200}
                         />
                         <img src={badge.path} className='pixel-art' style={{width: "100%"}}/>
                     </div>
