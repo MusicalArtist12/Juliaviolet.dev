@@ -5,8 +5,10 @@ import Projects from './Projects/Projects'
 export default function Page() {
     return <>
         <About_Me/>
+        <hr/>
         <h1 className='break'>Projects</h1>  
         <Projects/>
+        <hr/>
         <h1 className='break'>Contact</h1>
         <Contact/>
     </>

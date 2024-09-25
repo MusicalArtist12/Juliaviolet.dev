@@ -31,7 +31,7 @@ export default function Oneko({startX, startY, startAlert, nekoSites}): JSX.Elem
         src={source} onClick={onClick} 
         width={40} 
         height={31} 
-        alt='oneko'
+        alt=' '
     />
 }
 

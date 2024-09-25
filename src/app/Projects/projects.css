@@ -1,13 +1,20 @@
 
-.image {
-    width: 15em;
-    height: 15em;
-    background-color: var(--embed-block-color);
+body {
+    .image {
+        width: 15em;
+        height: 15em;
+        background-color: var(--embed-block-color);
+        
+        * {
+            width: inherit;
+            height: inherit;
+        }
+    }
     
-    * {
-        width: inherit;
-        height: inherit;
+    section.grid {
+        justify-content: center;
+        flex-wrap: wrap !important;
+        flex-direction: row !important;
+        display: flex;
     }
 }
-
-

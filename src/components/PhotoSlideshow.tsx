@@ -1,5 +1,6 @@
 "use client"
 
+
 import React, { useState, useEffect, useRef, ReactElement} from 'react'
 import { useTransition, animated, AnimatedProps } from '@react-spring/web'
 import Image from 'next/image';
@@ -16,7 +17,7 @@ function getPhotos(Photos): AnimatedPropConstructor[] {
                     width: "100%",
                     padding: 0,  
                 }} 
-                alt={photo.title} 
+                alt={`Image: ${photo.title}`} 
                 src={photo.location}
                 width={800}
                 height={800}

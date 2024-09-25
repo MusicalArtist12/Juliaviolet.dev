@@ -9,7 +9,7 @@ function PostElement({post}): JSX.Element {
             <article>
                 <div className='image'><Image 
                     src={post.photo} 
-                    alt={post.title} 
+                    alt=" "
                     width={800} 
                     height={800}
                 />
@@ -27,7 +27,7 @@ export default async function Projects() {
     const posts = (await getAllPostsMeta(["public", "Projects"]))
 
     return <>
-        <section style={{flexDirection: "row", justifyContent: "center", flexWrap: "wrap"}}>
+        <section className="grid">
             {posts?.map((post, idx) => <PostElement post={post} key={idx}/>)}
         </section>
     </>

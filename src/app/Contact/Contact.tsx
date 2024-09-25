@@ -16,8 +16,8 @@ function ContactItem({method}): JSX.Element {
             <article className="contact-grid">
                 {Logo}
                 <header>
-                    <h1>{method.handle}</h1>
-                    <h2>{method.description}</h2>
+                    <h1>{method.description}</h1>
+                    <h2>{method.handle}</h2>
                 </header>
             </article>   
         </Link>

@@ -1,0 +1,21 @@
+body.noJS {
+    height: 100%;
+    
+    > header .bar {
+        .menu-button {
+            display: none;
+        }
+        
+        .ghost {
+            display: none;
+        }
+    }   
+
+
+    > footer {
+        .oneko {
+            display: none !important;
+        }
+    }
+    
+}

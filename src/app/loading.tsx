@@ -7,7 +7,6 @@ const nextConfig = {
     reactStrictMode: false
 }
 
-
 export default function Loading() {
     const [trails, api] = useTrail(3, () => ({
         from: { opacity: 0.0 },
@@ -22,7 +21,6 @@ export default function Loading() {
             mass: 1
         }
     }))
-
 
     return <>
         <div style={{flexDirection: "column", display: "flex", justifyContent: "center", alignItems: "center", margin: "auto"}}>

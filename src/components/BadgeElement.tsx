@@ -36,7 +36,7 @@ function Badge({entry}): JSX.Element {
         <img 
             className="badge pixel-art"
             src={badge} 
-            alt={entry.link}  
+            alt={`'${entry.name}' `}   
         />
     </>
 }

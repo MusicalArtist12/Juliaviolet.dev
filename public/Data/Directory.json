@@ -76,6 +76,16 @@
             "link": "https://juliaviolet.dev/",
             "colors": ["#a06ffd"],
             "hasOneko": true
+        },
+        {
+            "name": "Jedidiah",
+            "nickname": "Qilow",
+            "badges": [
+                ["/88x31/jedi.png", 100]
+            ],
+            "link": "https://qilow.carrd.co/",
+            "colors": ["#fbdd00"],
+            "hasOneko": false
         }
     ],
     "Sites": [

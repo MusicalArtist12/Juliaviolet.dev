@@ -1,6 +1,6 @@
 @media screen and (max-width: 800px) { 
 
-    body {
+    body.hasJS {
         font-size: clamp(0.875rem, 0.625rem + 1.333vw, 1.125rem);
         row-gap: 1.0em;
         column-gap: 1.0em; 
@@ -32,4 +32,5 @@
             }
         }
     }
+
 }

@@ -4,7 +4,26 @@
     align-content: start;
     row-gap: inherit;
     column-gap: inherit;
+}
 
+.hasJS {
+    .noJS.photo {
+        display: none;
+    }
+}
+
+
+
+.noJS {
+    .photo {
+        display: none;
+    }
+
+    .noJS.photo {
+        display: block;
+        width: 20em;
+        height: auto;
+    }
 }
 
 @media screen and (max-width: 800px) { 
@@ -18,5 +37,11 @@
         height: 12em;
         margin: auto;
     }
-}
+
+    .noJS.photo {
+        max-width: 12em;
+        height: auto;
+        margin: auto;
+    }
+} 
 

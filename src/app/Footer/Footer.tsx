@@ -22,8 +22,6 @@ export default async function Footer() {
     return <>
         <footer>   
             <div className="badge-collection"> 
-                {friendBadges}
-                {siteBadges}
                 <div style={{
                     display: "flex",
                     justifyContent: "center",
@@ -31,8 +29,10 @@ export default async function Footer() {
                     height: "31px",
                     width: "88px"
                 }}>
-                    <Link style={{fontSize: "14px", fontWeight: "bold", "text-wrap": "nowrap"} as any} href="/Directory">/Directory</Link>
+                    <Link style={{fontSize: "14px", fontWeight: "bold", TextWrap: "nowrap"} as any} href="/Directory">/Directory</Link>
                 </div> 
+                {friendBadges}
+                {siteBadges}
             </div>
             <Oneko startX={16} startY={16} startAlert={false} nekoSites={friendSites}/>
             <header>

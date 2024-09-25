@@ -33,8 +33,8 @@ export async function oneko(startX, startY, startAlert, nekoSites) {
         .map((keyvaluepair) => keyvaluepair.split("="))
 
         function posFind(string) {
-        const result = searchParams.find((a) => a[0] == string)
-        if (result && result[1]) return parseInt(result[1])
+            const result = searchParams.find((a) => a[0] == string)
+            if (result && result[1]) return parseInt(result[1])
         }
 
         nekoPosX = posFind("catx") || startX

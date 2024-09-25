@@ -14,8 +14,24 @@
     padding: 0;
 }
 
-body {
-    
+hr {
+    display: none;
+}
+
+section {
+    article {
+        img {
+            max-width: 40em;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+    }
+}
+
+
+body { 
     display: flex;
     flex-direction: column;
     row-gap: 2.0em;
@@ -91,7 +107,6 @@ body {
             }
 
             article {
-                display: block;
                 padding: 1.5em;
 
                 > section {
@@ -143,9 +158,8 @@ body {
         .badge-collection {
             row-gap: 10px;
             column-gap: 10px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 88px);
         }
 
         .oneko {

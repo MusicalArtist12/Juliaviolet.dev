@@ -9,7 +9,6 @@ export default function Article({children}): JSX.Element {
     return <>
         <section className={`${Futura.className}`}>
             {children}
-            <br/>
         </section>
     </>
 }
