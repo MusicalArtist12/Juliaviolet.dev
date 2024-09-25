@@ -11,7 +11,7 @@ body {
         }
     }
     
-    section.grid {
+    section.flex {
         justify-content: center;
         flex-wrap: wrap !important;
         flex-direction: row !important;

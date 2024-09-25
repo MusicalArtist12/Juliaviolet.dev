@@ -12,8 +12,6 @@
     }
 }
 
-
-
 .noJS {
     .photo {
         display: none;
@@ -32,6 +30,7 @@
         grid-template-columns: 100%;
         grid-template-rows: 12em auto;
     }
+    
     .photo {
         width: 12em;
         height: 12em;

@@ -2,19 +2,18 @@ import PhotoSlideshow from '@/components/PhotoSlideshow'
 import Article from '@/components/Article'
 import './about-me.css'
 import { getPhotos } from '@/components/Fetchers'
-import { Suspense } from 'react'
 import Image from 'next/image';
 
 
 export default async function About_Me() { 
     const Photos = await getPhotos();
 
-
     return <>  
         <section className='grid'>
             <PhotoSlideshow Photos={Photos} className="photo"/>
-            <Image src={Photos[0].location} className="noJS photo" alt="Image of Julia" width={500} height={500}/>
-            
+            <noscript>
+                <Image src={Photos[0].location} className="noJS photo" alt="Image of Julia" width={500} height={500}/>
+            </noscript>
             <article>
                 <header>
                     <h1>Hi! I&apos;m Julia</h1>
