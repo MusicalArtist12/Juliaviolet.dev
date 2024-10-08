@@ -1,20 +1,32 @@
 
 body {
     .image {
-        width: 15em;
-        height: 15em;
-        background-color: var(--embed-block-color);
+        /* aspect-ratio: 1; */
+        /* background-color: var(--embed-block-color); */
+        position: relative;
         
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        border-color: black;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: calc(var(--border-radius) + 2px);
+
+
         * {
-            width: inherit;
-            height: inherit;
+            position: relative;
+            padding: auto;
         }
     }
     
-    section.flex {
+    section.project-grid {
+        display: grid;
+        align-items: end;
         justify-content: center;
-        flex-wrap: wrap !important;
-        flex-direction: row !important;
-        display: flex;
+        grid-template-columns: repeat(auto-fit, 18em);
+    
     }
 }

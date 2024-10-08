@@ -3,56 +3,49 @@
         "name":"Bluesky",
         "handle":"@Juliaviolet.dev",
         "link":"https://bsky.app/profile/juliaviolet.dev",
-        "description":"Bluesky",
         "logo": "Bluesky"
     },
     {
         "name":"Discord",
         "handle":"@MusicalArtist12",
         "link":"https://discord.com/users/394188060125822987",
-        "description":"",
         "logo":"Discord"
     },
     {
         "name":"Instagram",
         "handle":"@MusicalArtist.12",
         "link":"https://www.instagram.com/musicalartist.12/",
-        "description":"Instagram, for the few people that want it",
+        "description":"for the few people that want it",
         "logo":"Instagram"
     },
     {
         "name":"Github",
         "handle":"@MusicalArtist12",
         "link":"https://github.com/MusicalArtist12",
-        "description":"Github, for the nerds",
         "logo":"Github"
     },
     {
         "name":"Email",
         "handle":"Julia.Violet@outlook.com",
         "link":"mailto:julia.violet@outlook.com",
-        "description":"",
         "logo":"Email"
     },
     {
-        "name":"",
+        "name":"Resume",
         "handle":"/Resume.pdf",
         "link":"Resume.pdf",
-        "description":"For those who need it",
         "logo":"Resume"
     },
     {
-        "name":"",
+        "name":".ssh/authorized_keys.txt",
         "handle":"Public Keys",
         "link":"authorized_keys.txt",
-        "description":".ssh/authorized_keys.txt",
         "logo":"Git"
     },
     {
         "name":"Callsign",
         "handle":"KK7TTO",
         "link":"https://wireless2.fcc.gov/UlsApp/UlsSearch/license.jsp?licKey=4964279",
-        "description":"Technician - Amateur Radio",
         "logo": "Radio"
     }
 ]}

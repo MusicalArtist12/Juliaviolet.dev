@@ -7,16 +7,13 @@ import "./contact.css"
 function ContactItem({method}): JSX.Element {
     let Logo = GetLogo(method.logo, "2x")
 
-    if(method.description.length == 0) {
-        method.description = method.name
-    }
     
     return <>
         <Link href={method.link}>
             <article className="contact-grid">
                 {Logo}
                 <header>
-                    <h1>{method.description}</h1>
+                    <h1>{method.name}</h1>
                     <h2>{method.handle}</h2>
                 </header>
             </article>   

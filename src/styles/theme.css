@@ -29,6 +29,8 @@
     --box-shadow-color: #FC6FC4;
 
     --font-light:    #FCCAD2;
+
+    --border-radius: 10px;
 }
 
 
@@ -55,6 +57,7 @@ body {
 
     a > article:hover,
     a > img:hover, 
+    a > div:hover,
     button > img:hover {
         transition: box-shadow 0.1s ease-in-out;
         box-shadow: 5px 5px var(--box-shadow-color);
@@ -101,7 +104,7 @@ body {
     
     > main {
         * {
-            border-radius: 10px;
+            border-radius: var(--border-radius);
         }
 
         > h1 {
@@ -110,22 +113,50 @@ body {
         }
 
         /* Used to set the layout of a page */
-        > section {
+        section {
 
             /* Elements of a page, including button links, etc... */
 
-            article {
-                background-color: var(--block-background);
-
+            article.content {
                 > header {
                     > h1 {
-                        font-size: clamp(1.5rem, 1.393rem + 0.476vw, 1.75rem);
+                        font-size: 2.5em;
                         color: var(--block-title-color);
                     }
 
                     > h2 {
-                        font-size: clamp(0.7rem, 0.786rem + 0.952vw, 1.5rem);
+                        font-size: 1.5em;
                         color: var(--block-subtitle-color);
+                    }
+
+                    > h3 {
+                        font-size: 1.25em;
+                    }
+                }
+
+                div.background {
+                    background-color: var(--embed-block-color);
+                    
+                }
+            }
+
+            article {
+                text-align: left;
+                background-color: var(--block-background);
+
+                > header {
+                    > h1 {
+                        font-size: 1.5em;
+                        color: var(--block-title-color);
+                    }
+
+                    > h2 {
+                        font-size: 1.25em;
+                        color: var(--block-subtitle-color);
+                    }
+
+                    > h3 {
+                        font-size: 1em;
                     }
                 }
 
@@ -144,8 +175,13 @@ body {
                         font-size: 75%;
                     }
 
-                    p {
-                        font-size: inherit;
+                    p, hr, a, ul, ol {
+                        font-size: 1.5rem;
+                        line-height: 2.5rem;
+                    }
+
+                    ul, ol {
+                        line-height: 1.5rem; 
                     }
 
                     strong {
@@ -154,19 +190,19 @@ body {
                     }
 
                     h1 {
-                        font-size: 1.5em;
+                        font-size: 1.7em;
                         text-align: center;
                         color: var(--block-h1-color);
                     }
 
                     h2 {
-                        font-size: 1.25em;
+                        font-size: 1.5em;
                         font-weight: bold;
                         color: var(--block-h2-color);
                     }
 
                     h3 {
-                        font-size: 1.125em;
+                        font-size: 1.3em;
                         font-weight: bold;
                         color: var(--block-h3-color);
                     }
@@ -191,12 +227,10 @@ body {
             > a > article {
                 > header {
                     > h1 {
-                        font-size: clamp(1rem, 0.893rem + 0.476vw, 1.25rem);
                         color: var(--block-link-title-color);
                     }
 
                     > h2 {
-                        font-size: clamp(1rem, 0.893rem + 0.476vw, 1.25rem);
                         color: var(--block-link-subtitle-color);
                     }
 

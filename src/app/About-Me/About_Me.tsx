@@ -3,17 +3,15 @@ import Article from '@/components/Article'
 import './about-me.css'
 import { getPhotos } from '@/components/Fetchers'
 import Image from 'next/image';
+import Favicon from '@/components/Favicon';
 
 
 export default async function About_Me() { 
     const Photos = await getPhotos();
 
     return <>  
-        <section className='grid'>
+        <section className='about-me-grid'>
             <PhotoSlideshow Photos={Photos} className="photo"/>
-            <noscript>
-                <Image src={Photos[0].location} className="noJS photo" alt="Image of Julia" width={500} height={500}/>
-            </noscript>
             <article>
                 <header>
                     <h1>Hi! I&apos;m Julia</h1>
@@ -39,6 +37,7 @@ export default async function About_Me() {
                         I&apos;m a trans girl, and I&apos;m still learning who I am. I chose the domain <a href="https://juliaviolet.dev">JuliaViolet.dev</a> since it&apos;s
                         a concatenation of my first and middle name.
                     </p>
+                    <Favicon style={{width: "3em"}}/>
                 </Article>
             </article>
         </section>

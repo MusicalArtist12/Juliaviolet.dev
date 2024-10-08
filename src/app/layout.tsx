@@ -31,7 +31,7 @@ export default function RootLayout({ children } : { children: React.ReactNode })
 
     return <>
         <html lang="en" className={SourceCodePro.className}>
-            <Script src="checkJS.js"/>
+            <Script src="/checkJS.js"/>
             <body id="main" className={'noJS'}>                  
                 <Header/>
                 <hr/>

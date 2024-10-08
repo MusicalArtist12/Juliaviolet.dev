@@ -11,6 +11,9 @@ interface metaData {
     photo: string;
     publishDate: string;
     slug: string;
+    link?: string | undefined;
+    githubLink?: string | undefined;
+    people?: string[] | undefined;
 }
 
 interface PostInfo {

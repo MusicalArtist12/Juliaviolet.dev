@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
-import { faTwitter, faDiscord, faInstagram, faGithub, faGit} from '@fortawesome/free-brands-svg-icons'
-import { faCloud, faEnvelope, faBars, faFile, faCodeBranch, faCodeCommit, faRadio} from '@fortawesome/free-solid-svg-icons'
+import { faTwitter, faDiscord, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faCloud, faEnvelope, faBars, faFile, faCodeBranch, faRadio, faLink, faUser } from '@fortawesome/free-solid-svg-icons'
 
 config.autoAddCss = false
 
@@ -16,7 +16,9 @@ const logoLookup = {
     "Bars": faBars,
     "Resume": faFile,
     "Git": faCodeBranch,
-    "Radio": faRadio
+    "Radio": faRadio,
+    "Link": faLink,
+    "User": faUser
 }
 
 export default function GetLogo(id: string, size): JSX.Element {

@@ -1,8 +1,9 @@
 ---
 title: 'Server'
-subtitle: ''
+subtitle: 'No, you cannot have a link'
 photo: '/ProjectPhotos/server.png'
 publishDate: 'April 16, 2024'
+
 ---
 
 # Design Overview

@@ -1,4 +1,4 @@
-.grid {
+.about-me-grid {
     display: grid;
     grid-template-columns: 30% auto;
     align-content: start;
@@ -6,21 +6,13 @@
     column-gap: inherit;
 }
 
-.hasJS {
-    .noJS.photo {
-        display: none;
-    }
-}
-
 .noJS {
     .photo {
         display: none;
     }
 
-    .noJS.photo {
+    .about-me-grid {
         display: block;
-        width: 20em;
-        height: auto;
     }
 }
 

@@ -9,7 +9,7 @@ function PostElement({post}): JSX.Element {
             <article>
                 <div className='image'><Image 
                     src={post.photo} 
-                    alt=" "
+                    alt={post.subtitle}
                     width={800} 
                     height={800}
                 />
@@ -27,8 +27,10 @@ export default async function Projects() {
     const posts = (await getAllPostsMeta(["public", "Projects"]))
 
     return <>
-        <section className="flex">
-            {posts?.map((post, idx) => <PostElement post={post} key={idx}/>)}
+        <section className="project-grid">
+            {posts?.sort((a, b) => {
+                return Date.parse(b.publishDate) - Date.parse(a.publishDate)
+            }).map((post, idx) => <PostElement post={post} key={idx}/>)}
         </section>
     </>
 }

@@ -6,7 +6,7 @@ import SpinButton from "@/components/SpinButton"
 import GetLogo from "@/components/GetLogo"
 import MobileMenu from "@/components/MobileMenu"
 import WindowWidth from "@/components/WindowWidth"
-import Image from 'next/image'
+import Favicon from '@/components/Favicon'
 
 function MenuItem( {title, link}) {
     return <h2><Link href={link}>{title}</Link></h2>
@@ -41,18 +41,9 @@ export default function Header() {
     return <>
         <header style={{zIndex: 1}}>
             <div className='bar'>
-                <Link href="/" className='ghost'>
-                    <img 
-                        src="/favicon.png" 
-                        alt=" " 
-                        width={32} 
-                        height={32} 
-                        className='pixel-art favicon' 
-                    />
-                </Link>
+                <Favicon/>
                 <div className='main-section'>
-                    
-                    <h1><Link  href="/" >JuliaViolet.dev</Link></h1>
+                    <h1><Link  href="/" >Juliaviolet.dev</Link></h1>
                     <hr/>  
                     <nav className='nav'>
                         {menuItems}
@@ -60,7 +51,6 @@ export default function Header() {
                 </div>  
                 {button}
             </div>     
-
             <MobileMenu index={index} width={width}>
                 {menuItems}
             </MobileMenu>       
