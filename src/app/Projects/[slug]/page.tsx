@@ -21,10 +21,6 @@ async function getData(slug: string) {
     } 
 }
 
-export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
-    return { title: Title }
-}
-
 export default async function Page({ params }: Props ) {   
     const data = await getData(params.slug)
     const Directory = await getDirectory()
