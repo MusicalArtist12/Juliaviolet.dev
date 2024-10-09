@@ -39,7 +39,7 @@ export default async function Page({ params }: Props ) {
                 return <BadgeElement entry={friendEntry} key={idx}/>
             }
             else {
-                return <div className='background'>{person}</div>
+                return <div className='background' key={idx}>{person}</div>
             }
         }) 
     : null
