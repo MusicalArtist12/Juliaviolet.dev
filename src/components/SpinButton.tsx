@@ -12,11 +12,11 @@ export default function SpinButton({logo, onClick}) {
     }))
 
     const ClickFunction = () => {
+        onClick()
         api.start({
             from: { transform: 'rotateZ(0deg)' },
             to: { transform: 'rotateZ(180deg)' }
         })
-        onClick()
     }
     
     return <>

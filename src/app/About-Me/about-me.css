@@ -17,10 +17,11 @@
 }
 
 @media screen and (max-width: 800px) { 
-    .grid {
+    .about-me-grid {
         display: grid;
         grid-template-columns: 100%;
         grid-template-rows: 12em auto;
+        grid-auto-flow: column;
     }
     
     .photo {
