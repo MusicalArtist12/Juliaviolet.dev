@@ -1,7 +1,7 @@
 ---
 title: 'Server'
 subtitle: 'No, you cannot have a link'
-photo: '/ProjectPhotos/server.png'
+photos: ['/ProjectPhotos/server.png']
 publishDate: 'April 16, 2024'
 
 ---

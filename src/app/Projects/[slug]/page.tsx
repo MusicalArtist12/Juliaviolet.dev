@@ -6,6 +6,8 @@ import Favicon from '@/components/Favicon'
 import GetLogo from "@/components/GetLogo"
 import { getDirectory } from '@/components/Fetchers'
 import {BadgeElement} from "@/components/BadgeElement"
+import Image from 'next/image'
+import PhotoSlideshow from '@/components/PhotoSlideshow'
 
 type Props = {
     params: { slug: string }
@@ -56,9 +58,19 @@ export default async function Page({ params }: Props ) {
         </a> 
     : null
 
-    return <section>
-        <article className='content'>   
-            <header>
+
+    let Photos = data.meta.photos.map((x) => {
+        return { location: x, title: data.meta.subtitle }
+    })
+
+
+    return <>
+
+
+        <section className='about-me-grid'>
+            <PhotoSlideshow Photos={Photos}/>
+            
+            <header className='content'>
                 <h1>{data.meta.title}</h1>
                 <h2>{data.meta.subtitle}</h2>
                 <h3>{data.meta.publishDate}</h3>
@@ -67,20 +79,24 @@ export default async function Page({ params }: Props ) {
                         {githubLink}
                         {projectLink}
                     </div> 
-                : null}
+                    : null}
                 {associatedPeople != null ? 
                     <div className='list'>
                         {associatedPeople}
                     </div>
                 : null}
             </header>
-        </article>
+        </section>
+
         <hr/>
-        <article  className='content'>
-            <Article>
-                {data.content}
-            </Article>
-            <Favicon style={{width: "3em"}}/>
-        </article>
-    </section>
+
+        <section>
+            <article  className='content'>
+                <Article>
+                    {data.content}
+                </Article>
+                <Favicon style={{width: "3em"}}/>
+            </article>
+        </section>
+    </>
 }

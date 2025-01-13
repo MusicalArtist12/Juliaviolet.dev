@@ -117,49 +117,49 @@ body {
 
             /* Elements of a page, including button links, etc... */
 
-            article.content {
-                > header {
-                    > h1 {
-                        font-size: 2.5em;
-                        color: var(--block-title-color);
-                    }
-
-                    > h2 {
-                        font-size: 1.5em;
-                        color: var(--block-subtitle-color);
-                    }
-
-                    > h3 {
-                        font-size: 1.25em;
-                    }
-                }
-
+            article.content, header.content {
                 div.background {
                     background-color: var(--embed-block-color);
-                    
                 }
             }
 
-            article {
+            header.content {
+                > h1 {
+                    font-size: 2.5em;
+                    color: var(--block-title-color);
+                }
+
+                > h2 {
+                    font-size: 1.5em;
+                    color: var(--block-subtitle-color);
+                }
+
+                > h3 {
+                    font-size: 1.25em;
+                }
+            }
+            
+            article > header {
+                > h1 {
+                    font-size: 1.5em;
+                    color: var(--block-title-color);
+                }
+
+                > h2 {
+                    font-size: 1.25em;
+                    color: var(--block-subtitle-color);
+                }
+
+                > h3 {
+                    font-size: 1em;
+                }
+            }
+
+            article, header {
                 text-align: left;
                 background-color: var(--block-background);
 
-                > header {
-                    > h1 {
-                        font-size: 1.5em;
-                        color: var(--block-title-color);
-                    }
-
-                    > h2 {
-                        font-size: 1.25em;
-                        color: var(--block-subtitle-color);
-                    }
-
-                    > h3 {
-                        font-size: 1em;
-                    }
-                }
-
+                
                 > section {
                     blockquote, pre, code {
                         background-color: var(--embed-block-color);

@@ -1,7 +1,7 @@
 ---
 title: 'TTYtris'
-subtitle: ''
-photo: '/ProjectPhotos/ttytris.png'
+subtitle: 'B2B T-Spin Triples my beloved'
+photos: ['/ProjectPhotos/ttytris.png']
 publishDate: 'January 13, 2025'
 
 ---

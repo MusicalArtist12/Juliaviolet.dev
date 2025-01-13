@@ -1,6 +1,5 @@
 import PhotoSlideshow from '@/components/PhotoSlideshow'
 import Article from '@/components/Article'
-import './about-me.css'
 import { getPhotos } from '@/components/Fetchers'
 import Image from 'next/image';
 import Favicon from '@/components/Favicon';
@@ -9,14 +8,20 @@ import Favicon from '@/components/Favicon';
 export default async function About_Me() { 
     const Photos = await getPhotos();
 
-    return <>  
+    return <> 
+
+
         <section className='about-me-grid'>
-            <PhotoSlideshow Photos={Photos} className="photo"/>
+            <PhotoSlideshow Photos={Photos}/>
+            <header className='content'>
+                <h1>Welcome!</h1>
+                <h2>My name is Julia</h2>
+            </header>
+        </section>
+
+        <section> 
             <article>
-                <header>
-                    <h1>Hi! I&apos;m Julia</h1>
-                    <h2>I use She/Her pronouns</h2>
-                </header>
+                
                 <Article>
                     <p> 
                         I&apos;m a sophomore at the <a href="https://www.uidaho.edu/">University of Idaho</a>, pursuing a bachelors degree in computer science with a minor in music.

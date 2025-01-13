@@ -8,7 +8,7 @@ import { compileMDX } from 'next-mdx-remote/rsc'
 interface metaData {
     title: string;
     subtitle: string;
-    photo: string;
+    photos: string[];
     publishDate: string;
     slug: string;
     link?: string | undefined;

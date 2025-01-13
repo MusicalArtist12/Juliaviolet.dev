@@ -8,7 +8,7 @@ function PostElement({post}): JSX.Element {
         <Link href={`Projects/${post.slug}`}>
             <article>
                 <div className='image'><Image 
-                    src={post.photo} 
+                    src={post.photos[0]} 
                     alt={post.subtitle}
                     width={800} 
                     height={800}

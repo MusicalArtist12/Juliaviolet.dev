@@ -102,32 +102,30 @@ body {
             flex-grow: 0;
             flex-wrap: nowrap;
 
-            * {
-                max-width: 100%;
-            }
+
 
             article.content {
-                text-align: center;
-                
-                header {
-                    > * {
-                        padding: 0.25em 0em 0.em 0em;
-                    }
-                    
-                    div.list {
-                        display: grid;
-                        grid-auto-flow: column;
-                        grid-column-gap: 10px;
-                        justify-content: center;
-                        align-items: flex-start;
-                        padding: 0.5em 0em;
+                text-align: left;
+            }
 
-                        div {
-                            padding: 0.25em 0.5em;
-                            text-align: center;
-                        }
+            header.content {
+                padding: 1em;
+      
+                div.list {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    column-gap: 10px;
+                    row-gap: 10px;
+                    justify-content: left;
+                    align-items: flex-start;
+                    padding: 0.5em 0em;
+
+                    div {
+                        padding: 0.25em 0.5em;
+                        text-align: left;
                     }
-                }      
+                }
             }
                 
 
@@ -199,5 +197,55 @@ body {
             padding: 0.5em;
         }
     }
+}
+
+.about-me-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: end;
+    justify-content: center;
+    row-gap: inherit;
+    column-gap: inherit;
+}
+
+.photo-slideshow, .photo-slideshow-single  {
+    display: block;
+
+    width: 15em;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    position: relative;
+}
+
+.photo-slideshow img, .photo-slideshow-single img {
+    padding: 0px;
+    margin: 0px;
+    max-width: 15em;
+    
 
 }
+
+.noJS {
+    .photo-slideshow {
+        display: none;
+        width: 0;
+    }
+
+    .photo-slideshow-single {
+        display: block;
+        height: 15em;
+
+    }
+
+    .photo-slideshow-single img {
+        margin: auto;
+    }
+
+    .about-me-grid {
+        display: flex;
+        flex-direction: row;
+    }
+}
+

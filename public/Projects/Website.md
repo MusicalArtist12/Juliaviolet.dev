@@ -1,7 +1,7 @@
 ---
 title: 'This Website'
 subtitle: 'Its this one!'
-photo: '/ProjectPhotos/website.png'
+photos: ['/ProjectPhotos/website.png']
 publishDate: 'August 11, 2023'
 githubLink: 'https://github.com/MusicalArtist12/Juliaviolet.dev'
 ---
