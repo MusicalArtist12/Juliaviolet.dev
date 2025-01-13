@@ -26,7 +26,7 @@ The photo below was from 2019, and I clearly didn't know what a `<div>` was.
 <img src="/ProjectPhotos/bad_website.png" />
 
 
-# Technical description
+# Technical Description
 
 ## Stack
 
