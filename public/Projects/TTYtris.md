@@ -20,7 +20,7 @@ I've chosen to follow Tetris guidelines as I wanted to create a version that pla
 
 # Techniques
 
-First, I've chosen to use the C precompiler to keep the code base clean and simple. Without it everything would have to go into a single, 1800 line long file. I made some use of `#defines` mainly to define integer outputs.
+First, I've chosen to use the C precompiler to keep the code base clean and simple. Without it everything would have to go into a single, 1800 line long file. I made some use of `#defines` mainly to add meaning to functions that return an integer.
 
 To create each individual piece, I used a 5x5 sprite system, stored as a `int sprite[25]`. I chose to use integers instead of chars since it allowed me to both use multi-byte characters in the display and to allowed me to use a bit patterns to represent each rotation. This idea of using layers is later used during frame generation, as I can put the placed blocks on one layer, the current block on a second, and the background on a third. This can then be sent to the `outputsprite()` function which takes a sprite and its 2d size, and five strings (remember, no multidimensional arrays) to output the sprite. 
 
