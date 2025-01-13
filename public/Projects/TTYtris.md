@@ -16,7 +16,7 @@ The langauge used to create TTYtris is a stripped down version of C used to teac
 
 To me, I saw this as a challenge. But since Tetris was originally created in 1980's Soviet Russia, I knew it had to be possible.
 
-I've chosen to follow tetris guidelines as I wanted to create a faithful recreation of a modern version of tetris. I'm using the Super Rotation System and 7-Bag queue generation. I score B2B's for tetrises and t-spin line clears, as well as give a bonus for combos. It follows a 40 line format, which I chose as I felt that something like marathon wouldn't be as interesting without gravity.
+I've chosen to follow Tetris guidelines as I wanted to create a version that plays similar to other modern stackers. I'm using the Super Rotation System and 7-Bag queue generation. I score B2B's for tetrises and t-spin line clears, as well as give a bonus for combos. It follows a 40 line format, which I chose as I felt that something like marathon wouldn't be as interesting without gravity.
 
 # Techniques
 
