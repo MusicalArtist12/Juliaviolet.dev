@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /*.md$
+Disallow: /*.png$
 
 Sitemap: https://www.juliaviolet.dev/sitemap.xml
