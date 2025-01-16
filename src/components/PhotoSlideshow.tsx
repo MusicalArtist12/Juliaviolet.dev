@@ -35,20 +35,8 @@ function getPhotos(Photos): AnimatedPropConstructor[] {
 
 export default function PhotoSlideshow({Photos} : {Photos: {location, title}[] } ): JSX.Element {
 
-    if (Photos.length == 1) {
-        return <>
-            <div className="photo-slideshow-single">
-                <Image
-                    alt={`Image: ${Photos[0].title}`} 
-                    src={Photos[0].location}
-                    fill={true}
-                />
-            </div>
-        </>
-    }
 
     const data = getPhotos(Photos);
-
 
     const [index, set] = useState(0)
     
@@ -91,6 +79,17 @@ export default function PhotoSlideshow({Photos} : {Photos: {location, title}[] }
         api.start()
     }, [index])
 
+    if (Photos.length == 1) {
+        return <>
+            <div className="photo-slideshow-single">
+                <Image
+                    alt={`Image: ${Photos[0].title}`} 
+                    src={Photos[0].location}
+                    fill={true}
+                />
+            </div>
+        </>
+    }
 
     return <>
         <div onClick={onClick} ref={ref} className="photo-slideshow">
