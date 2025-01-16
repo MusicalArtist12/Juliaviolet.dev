@@ -21,7 +21,6 @@ export default function Header() {
         set(state => (state + 1) % 2)
     }
 
-
     const menuItems = <>
         <MenuItem title={"/About Me"} link={"/About-Me"} onClick={onClick}/>
         <MenuItem title={"/Projects"} link={"/Projects"} onClick={onClick}/>

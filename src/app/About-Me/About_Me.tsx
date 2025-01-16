@@ -1,3 +1,4 @@
+
 import PhotoSlideshow from '@/components/PhotoSlideshow'
 import Article from '@/components/Article'
 import { getPhotos } from '@/components/Fetchers'
@@ -9,9 +10,8 @@ export default async function About_Me() {
     const Photos = await getPhotos();
 
     return <> 
-
-
         <section className='about-me-grid'>
+
             <PhotoSlideshow Photos={Photos}/>
             <header className='content'>
                 <h1>Welcome!</h1>

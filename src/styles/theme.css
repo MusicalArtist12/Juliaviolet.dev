@@ -58,7 +58,7 @@ body {
     a > article:hover,
     a > img:hover, 
     a > div:hover,
-    button > img:hover {
+    button img:hover {
         transition: box-shadow 0.1s ease-in-out;
         box-shadow: 5px 5px var(--box-shadow-color);
 
