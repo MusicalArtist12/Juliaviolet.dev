@@ -15,8 +15,11 @@ type Props = {
  
 // or Dynamic metadata
 export async function generateMetadata({ params }) {
+    const slug = (await params).slug
+    const data = await import(`@/public/Projects/${slug}.md`)
+    
     return {
-      title: await params.slug,
+      title: data.frontmatter.title,
     }
   }
 
@@ -28,7 +31,6 @@ export default async function Page({ params } : Props ) {
     
     const frontmatter: metaData = data.frontmatter;
     const Post = data.default;
-    
  
     let associatedPeople = frontmatter.people !== undefined ? 
         frontmatter.people.map((person, idx) => {
