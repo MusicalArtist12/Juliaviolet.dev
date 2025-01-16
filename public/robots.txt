@@ -2,5 +2,9 @@ User-agent: *
 Allow: /
 Disallow: /*.md$
 Disallow: /*.png$
+Disallow: /*.json$
+Disallow: /*.ico$
+Disallow: /*.json$
+Disallow: /*.pdf$
 
 Sitemap: https://www.juliaviolet.dev/sitemap.xml
