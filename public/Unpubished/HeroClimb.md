@@ -23,13 +23,15 @@ I had four key roles in the development of Hero Climb. The User interface, versi
 
 The user interface is the largest contribution I made to Hero Climb. While the major composite classes were used or inherited by almost everything I made, the project can be broken down into two halves. The menu interface and the in-game HUD.
 
-### Composite 
+### Menu/HUD
 
-I chose to use a composite/leaf system, since Godot
+I chose to use a composite/leaf system, since Godot also uses a composite system with its `Node`s. I created the base class `MenuElement` that `MenuLeaf` and `MenuComposite` both inherit from. a `MenuComposite` has many leaves. Really, the idea is that each menu context is abstracted out into a `MenuComposite` (Such as the main menu, pause menu, and HUD), and they each contain one or more leaves. From there, we can inherit `MenuComposite` creating `MenuStack` which allows for individual menus be layered (the base pause menu is "under" the settings menu). Going back is as simple as popping from the stack, and clicking a button that opens up a menu pushes onto the stack.
 
-### Menus
+The in-game HUD is a composite, allowing for items to be dynamically added and removed (such as the controls on mobile).
 
-### HUD
+### Assets
+
+
 
 ## Difficulty
 

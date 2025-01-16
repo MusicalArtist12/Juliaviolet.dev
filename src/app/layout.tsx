@@ -8,15 +8,9 @@ import Footer from './Footer/Footer'
 import { Metadata } from 'next'
 import localFont from 'next/font/local'
 import Script from 'next/script'
-import { useSearchParams } from 'next/navigation'
 
 const SourceCodePro = localFont({
     src: "../lib/fonts/SourceCodePro-Regular.otf",
-    display: 'swap'
-})
-
-const Futura = localFont({
-    src: "../lib/fonts/Futura-Light.ttf",
     display: 'swap'
 })
 
@@ -25,6 +19,10 @@ export const metadata: Metadata = {
         template: '%s | Juliaviolet.dev',
         default: 'Juliaviolet.dev',
     },
+    keywords: ['developer', 'Julia', 'Violet', 'Juliaviolet'],
+    authors: [{name: "Julia Abdel-Monem"}],
+    creator: 'Julia Abdel-Monem',
+    manifest: 'https://juliaviolet.dev/manifest.json'
 }
 
 export default function RootLayout({ children } : { children: React.ReactNode }) {

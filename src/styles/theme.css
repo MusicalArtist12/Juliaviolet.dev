@@ -137,6 +137,12 @@ body {
                 > h3 {
                     font-size: 1.25em;
                 }
+
+
+                a div {
+                    background-color: var(--embed-block-color);
+                }
+  
             }
             
             article > header {

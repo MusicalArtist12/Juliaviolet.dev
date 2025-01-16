@@ -1,9 +1,12 @@
-import { getAllPostsMeta } from '@/lib/mdx/postAPI'
 import Link from 'next/link'
 import Image from 'next/image'
+import metaData from './metadata'
 import './projects.css'
 
-function PostElement({post}): JSX.Element {
+import fs from 'fs'
+import path from 'path'
+
+function PostElement({post} : {post: metaData}): JSX.Element {
     return <>
         <Link href={`Projects/${post.slug}`}>
             <article>
@@ -23,9 +26,26 @@ function PostElement({post}): JSX.Element {
     </>
 }
 
-export default async function Projects() {
-    const posts = (await getAllPostsMeta(["public", "Projects"]))
+export const getAllPostMetadata = async () => {
+    const rootDirectory = path.join(process.cwd(), "public/Projects")
+    
+    const fileArray = fs.readdirSync(rootDirectory)
 
+    let postArray: metaData[] = []
+
+    for (const slug of fileArray) {
+        const { frontmatter } = await import(`@/public/Projects/${slug}`)
+        // console.log(frontmatter )
+
+        postArray.push({slug: slug.replace('.md', ""), ...frontmatter})
+    }
+
+    return postArray
+}
+
+export default async function Projects() {
+    const posts: metaData[] = await getAllPostMetadata();
+  
     return <>
         <section className="project-grid">
             {posts?.sort((a, b) => {

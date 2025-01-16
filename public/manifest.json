@@ -1,0 +1,12 @@
+{
+    "name": "Juliaviolet.dev",
+    "icons": [
+        {
+            "src": "/favicon.png",
+            "sizes": "19x17",
+            "type": "image/png" 
+        }
+    ],
+    "author": "Julia Abdel-Monem",
+    "default_locale": "en"
+}

@@ -130,9 +130,12 @@ body {
                         
                         height: 31px;
 
-                        overflow: scroll;
                         text-wrap: nowrap;
                     }
+                }
+
+                a div {
+                    padding: 0.25em 0.5em;
                 }
             }
                 
