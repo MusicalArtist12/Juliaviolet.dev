@@ -3,7 +3,7 @@ title: 'TTYtris'
 subtitle: 'B2B T-Spin Triples my beloved'
 photos: ['/ProjectPhotos/ttytris.png']
 publishDate: 'January 13, 2025'
-
+githubLink: 'https://github.com/MusicalArtist12/ttytris'
 ---
 
 # Purpose

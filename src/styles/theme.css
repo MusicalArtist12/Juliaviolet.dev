@@ -55,6 +55,7 @@ body {
     font-size: clamp(1.0rem, 0.696rem + 0.476vw, 1.125rem);
     background-color: var(--background);
 
+    a > section:hover,
     a > article:hover,
     a > img:hover, 
     a > div:hover,
@@ -62,8 +63,11 @@ body {
         transition: box-shadow 0.1s ease-in-out;
         box-shadow: 5px 5px var(--box-shadow-color);
 
+        /* only use the largest context */
         a > section:hover,
+        a > article:hover,
         a > img:hover, 
+        a > div:hover,
         button > img:hover {
             box-shadow: none;
         }
