@@ -10,9 +10,7 @@ people: [ 'Breq', 'Julia' ]
 
 # Overview and Motivation
 
-So, my friend [Brooke](https://breq.dev) made a really cool web app that stores ham radio callsigns with various information. It's pretty neat, and you can find her writeup [here](https://breq.dev/projects/rolodex). 
-
-However, upon using it, I kept wishing that I could store repeater information with their associated callsign, since my HT only shows 7 characters per repeater entry. So I forked the repo and got to work.
+So, my friend [Brooke](https://breq.dev) made a really cool web app that stores ham radio callsigns with various information. It's pretty neat, and you can find her writeup [here](https://breq.dev/projects/rolodex). However, upon using it, I kept wishing that I could store repeater information with their associated callsign, since my HT only shows 7 characters per repeater entry. So I forked the repo and got to work.
 
 # Description
 
