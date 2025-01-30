@@ -1,22 +1,10 @@
 { "contactInfo": [
-    {
-        "name":"Bluesky",
-        "handle":"@Juliaviolet.dev",
-        "link":"https://bsky.app/profile/juliaviolet.dev",
-        "logo": "Bluesky"
-    },
+
     {
         "name":"Discord",
         "handle":"@MusicalArtist12",
         "link":"https://discord.com/users/394188060125822987",
         "logo":"Discord"
-    },
-    {
-        "name":"Instagram",
-        "handle":"@MusicalArtist.12",
-        "link":"https://www.instagram.com/musicalartist.12/",
-        "description":"for the few people that want it",
-        "logo":"Instagram"
     },
     {
         "name":"Github",
@@ -37,16 +25,29 @@
         "logo":"Resume"
     },
     {
-        "name":".ssh/authorized_keys.txt",
-        "handle":"Public Keys",
-        "link":"authorized_keys.txt",
-        "logo":"Git"
-    },
-    {
         "name":"Callsign",
         "handle":"KK7TTO",
         "link":"https://wireless2.fcc.gov/UlsApp/UlsSearch/license.jsp?licKey=4964279",
         "logo": "Radio"
+    },
+    {
+        "name":"Instagram",
+        "handle":"@MusicalArtist.12",
+        "link":"https://www.instagram.com/musicalartist.12/",
+        "description":"for the few people that want it",
+        "logo":"Instagram"
+    },
+    {
+        "name":"Bluesky",
+        "handle":"@Juliaviolet.dev",
+        "link":"https://bsky.app/profile/juliaviolet.dev",
+        "logo": "Bluesky"
+    },
+    {
+        "name":".ssh/authorized_keys.txt",
+        "handle":"Public Keys",
+        "link":"authorized_keys.txt",
+        "logo":"Git"
     }
 ]}
 

@@ -32,7 +32,6 @@ The in-game HUD is a composite, allowing for items to be dynamically added and r
 ### Assets
 
 
-
 ## Difficulty
 
 Taran and I spent a week creating a difficulty handler that set values all over the entire game. The big challenge here was figuring out what numbers made the most sense to make the game feel challenging for each level. Taran handled the getters and setters for each of the individual game handlers, and I worked on the handler itself and the state pattern we decided on.
