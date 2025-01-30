@@ -33,7 +33,7 @@ export default async function About_Me() {
                         Some of my other smaller interests include Drawing/Watercolor painting and graphic design.
                     </p>
                     <p>
-                        I've documented a few of the projects I've worked on <Link href={'/Projects'}>here</Link>, and you can find my contact info <Link href={'/Contact'}>here</Link>.
+                        I&apos;ve documented a few of the projects I&apos;ve worked on <Link href={'/Projects'}>here</Link>, and you can find my contact info <Link href={'/Contact'}>here</Link>.
                     </p>
                     <Favicon style={{width: "3em"}}/>
                 </Article>

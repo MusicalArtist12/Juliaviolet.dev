@@ -1,0 +1,16 @@
+.onion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+    grid-template-rows: masonry;
+    
+    > div {
+        min-height: 12em;
+        position: relative;
+
+        > img {
+            width: 100%;
+            
+        }
+    }
+
+}

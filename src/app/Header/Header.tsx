@@ -25,6 +25,8 @@ export default function Header() {
         <MenuItem title={"/About Me"} link={"/About-Me"} onClick={onClick}/>
         <MenuItem title={"/Projects"} link={"/Projects"} onClick={onClick}/>
         <MenuItem title={"/Contact"} link={"/Contact"} onClick={onClick}/>
+        <MenuItem title={"/Onion"} link={"/Onion"} onClick={onClick}/>
+        <MenuItem title={"/Directory"} link={"/Directory"} onClick={onClick}/>
     </>
 
     return <>

@@ -1,5 +1,6 @@
 
 body {
+    
     .image {
         /* aspect-ratio: 1; */
         /* background-color: var(--embed-block-color); */
@@ -15,6 +16,8 @@ body {
         border-style: solid;
         border-radius: calc(var(--border-radius) + 2px);
         
+        
+
         img {
             max-width: 100%;
             max-height: 100%;    
@@ -23,6 +26,7 @@ body {
         * {
             position: relative;
             padding: auto;
+            
         }
     }
     
@@ -30,7 +34,7 @@ body {
         display: grid;
         align-items: end;
         justify-content: center;
-        grid-template-columns: repeat(auto-fit, 18em);
+        grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
     
     }
 }

@@ -62,6 +62,7 @@ body {
             margin: auto;   
             overflow: hidden;
             flex-wrap: nowrap;
+            text-wrap: nowrap;
 
             padding: 2em 0em 1em 0em;
         }

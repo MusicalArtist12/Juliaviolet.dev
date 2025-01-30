@@ -1,0 +1,32 @@
+{
+    "juliaPhotos": [
+        {
+            "location": "/JuliaPhotos/julia-1.png",
+            "title": "Taken June 12, 2023"
+        },
+        {
+            "location": "/JuliaPhotos/picrew-1.png",
+            "title": "Source: https://picrew.me/en/image_maker/59454"
+        },
+        {
+            "location": "/JuliaPhotos/picrew-2.png",
+            "title": "Source: https://picrew.me/en/image_maker/9971"
+        },
+        {
+            "location": "/JuliaPhotos/picrew-3.png",
+            "title": "Source: https://picrew.me/en/image_maker/257476"
+        }
+    ],
+    "onionPhotos": [
+        { "location": "/OnionPhotos/onion1.jpg" },
+        { "location": "/OnionPhotos/onion2.jpg" },
+        { "location": "/OnionPhotos/onion3.jpg" },
+        { "location": "/OnionPhotos/onion4.jpg" },
+        { "location": "/OnionPhotos/onion5.jpg" },
+        { "location": "/OnionPhotos/onion6.jpg" },
+        { "location": "/OnionPhotos/onion7.jpg" },
+        { "location": "/OnionPhotos/onion8.jpg" },
+        { "location": "/OnionPhotos/onion10.jpg" },
+        { "location": "/OnionPhotos/onion11.jpg" }
+    ]
+}

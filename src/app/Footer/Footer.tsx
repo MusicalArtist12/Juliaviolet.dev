@@ -22,15 +22,6 @@ export default async function Footer() {
     return <>
         <footer>   
             <div className="badge-collection"> 
-                <div style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignContent: "center",
-                    height: "31px",
-                    width: "88px"
-                }}>
-                    <Link style={{fontSize: "14px", fontWeight: "bold", TextWrap: "nowrap"} as any} href="/Directory">/Directory</Link>
-                </div> 
                 {friendBadges}
                 {siteBadges}
             </div>
