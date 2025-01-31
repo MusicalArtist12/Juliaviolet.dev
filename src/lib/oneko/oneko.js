@@ -2,7 +2,7 @@
 // oneko.js: https://github.com/adryd325/oneko.js (webring variant)
 
 let frozen = false
-const path = "/Oneko/oneko.gif"
+const path = "/Oneko/oneko-onion-Sheet.gif"
 
 export async function freezeOneko(f) {
     frozen = f
@@ -83,69 +83,53 @@ export async function oneko(startX, startY, startAlert, nekoSites) {
     let idleAnimation = null
     let idleAnimationFrame = 0
 
-    const nekoSpeed = 10
+    const nekoSpeed = 20
     const spriteSets = {
-        idle: [[-3, -3]],
-        alert: [[-7, -3]],
+        idle: [[-10, 0]],
+        alert: [[-12, 0]],
         scratchSelf: [
-            [-5, 0],
-            [-6, 0],
-            [-7, 0],
+            [-8, 0],
+            [-8, -1],
+            [-8, -2],
         ],
-        scratchWallN: [
+        tired: [
+            [-11, 0]
+        ],
+        sleeping: [
+            [-9, 0],
+            [-9, -1],
+        ],
+        N: [
             [0, 0],
             [0, -1],
         ],
-        scratchWallS: [
-            [-7, -1],
-            [-6, -2],
+        NE: [
+            [-1, 0],
+            [-1, -1],
         ],
-        scratchWallE: [
-            [-2, -2],
-            [-2, -3],
-        ],
-        scratchWallW: [
-            [-4, 0],
-            [-4, -1],
-        ],
-        tired: [
-            [-3, -2]
-        ],
-        sleeping: [
+        E: [
             [-2, 0],
             [-2, -1],
         ],
-        N: [
-            [-1, -2],
-            [-1, -3],
-        ],
-        NE: [
-            [0, -2],
-            [0, -3],
-        ],
-        E: [
+        SE: [
             [-3, 0],
             [-3, -1],
         ],
-        SE: [
-            [-5, -1],
-            [-5, -2],
-        ],
         S: [
-            [-6, -3],
-            [-7, -2],
+            [-4, 0],
+            [-4, -1],
         ],
         SW: [
-            [-5, -3],
-            [-6, -1],
+            [-5, 0],
+            [-5, -1],
         ],
         W: [
-            [-4, -2],
-            [-4, -3],
+            [-6, 0],
+            [-6, -1],
         ],
         NW: [
-            [-1, 0],
-            [-1, -1],
+            [-7, 0],
+            [-7, -1],
         ],
     }
 
@@ -160,6 +144,7 @@ export async function oneko(startX, startY, startAlert, nekoSites) {
         nekoEl.style.left = `${nekoPosX - 16}px`
         nekoEl.style.top = `${nekoPosY - 16}px`
         nekoEl.style.zIndex = 100
+        nekoEl.style.scale = 2
 
         let nekoFile = path
         const curScript = document.currentScript
