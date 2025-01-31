@@ -4,6 +4,9 @@
 let frozen = false
 const path = "/Oneko/oneko-onion-Sheet.gif"
 
+let scale = 2
+
+
 export async function freezeOneko(f) {
     frozen = f
 }
@@ -47,18 +50,11 @@ export async function oneko(startX, startY, startAlert, nekoSites) {
     }
 
     function onClick(event) {
-        let target
-        if (event.target.tagName === "A" && event.target.getAttribute("href")) {
-            target = event.target
-        } else if (
-            event.target.parentElement.tagName === "A" &&
-            event.target.parentElement.getAttribute("href")
-        ) {
-            target = event.target.parentElement
-        } else {
+        const target = event.target.closest("A");
+        if (target === null || !target.getAttribute("href")) {
             return
         }
-            let newLocation
+        let newLocation
         try {
             newLocation = new URL(target.href)
         } catch (e) {
@@ -83,7 +79,7 @@ export async function oneko(startX, startY, startAlert, nekoSites) {
     let idleAnimation = null
     let idleAnimationFrame = 0
 
-    const nekoSpeed = 20
+    const nekoSpeed = (10 * scale)
     const spriteSets = {
         idle: [[-10, 0]],
         alert: [[-12, 0]],
@@ -143,8 +139,8 @@ export async function oneko(startX, startY, startAlert, nekoSites) {
         nekoEl.style.imageRendering = "pixelated"
         nekoEl.style.left = `${nekoPosX - 16}px`
         nekoEl.style.top = `${nekoPosY - 16}px`
-        nekoEl.style.zIndex = 100
-        nekoEl.style.scale = 2
+        nekoEl.style.zIndex = 2147483647
+        nekoEl.style.scale = scale
 
         let nekoFile = path
         const curScript = document.currentScript
@@ -213,18 +209,20 @@ export async function oneko(startX, startY, startAlert, nekoSites) {
         idleAnimation == null
         ) {
         let avalibleIdleAnimations = ["sleeping", "scratchSelf"]
-        if (nekoPosX < 32) {
-            avalibleIdleAnimations.push("scratchWallW");
-        }
-        if (nekoPosY < 32) {
-            avalibleIdleAnimations.push("scratchWallN");
-        }
-        if (nekoPosX > window.innerWidth - 32) {
-            avalibleIdleAnimations.push("scratchWallE");
-        }
-        if (nekoPosY > window.innerHeight - 32) {
-            avalibleIdleAnimations.push("scratchWallS");
-        }
+        
+        // i don't have these made for onion
+        //if (nekoPosX < 32) {
+        //    avalibleIdleAnimations.push("scratchWallW");
+        //}
+        //if (nekoPosY < 32) {
+        //    avalibleIdleAnimations.push("scratchWallN");
+        //}
+        //if (nekoPosX > window.innerWidth - 32) {
+        //    avalibleIdleAnimations.push("scratchWallE");
+        //}
+        //if (nekoPosY > window.innerHeight - 32) {
+        //    avalibleIdleAnimations.push("scratchWallS");
+        //}
         idleAnimation =
             avalibleIdleAnimations[
             Math.floor(Math.random() * avalibleIdleAnimations.length)
@@ -242,10 +240,10 @@ export async function oneko(startX, startY, startAlert, nekoSites) {
                 resetIdleAnimation();
             }
             break;
-        case "scratchWallN":
-        case "scratchWallS":
-        case "scratchWallE":
-        case "scratchWallW":
+        // case "scratchWallN":
+        // case "scratchWallS":
+        // case "scratchWallE":
+        // case "scratchWallW":
         case "scratchSelf":
             setSprite(idleAnimation, idleAnimationFrame);
             if (idleAnimationFrame > 9) {
