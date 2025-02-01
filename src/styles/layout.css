@@ -94,6 +94,12 @@ body {
         flex-grow: 1;
         display: flex;
         flex-direction: column;
+        
+        > img {
+            width: 100%;
+            display: block;
+            height: auto;
+        }
 
         > section {
             row-gap: inherit;
@@ -186,6 +192,30 @@ body {
                 }
             }
         }
+        > section.grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+            grid-template-rows: masonry;
+            
+            > a {
+
+                display: block;
+                position: relative;
+                border: none;
+                margin: 0;
+                padding: 0;
+                background-color: #00000000;
+
+
+                > img {
+                    width: 100%;
+                    display: block;
+                    height: auto;
+
+                }
+        
+            }
+        }
 
         
         a > article {
@@ -226,12 +256,55 @@ body {
     }
 }
 
+/* server-side rendering*/
 .photo-slideshow-parent {
     height: 15em;
     aspect-ratio: 1 / 1;
     position: relative;
+
+
 }
 
+.photo-slideshow-buttons-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+}
+
+.photo-slideshow-buttons {
+    margin: 0px auto 4px auto;
+    padding: 0px;
+
+    position: relative;
+
+    width: min-content;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    background-color: #00000088;
+
+    
+    > button {
+        position: relative;
+        color: #ffffff88 !important;
+        font-size: 8px;
+        background: none;
+        border: none;
+        text-wrap: nowrap;
+
+        padding: 0px;
+        margin: 0px 2px;
+    }
+    > button.selected {
+        color: var(--font-link) !important;
+    }
+}
+
+/* the */
 .photo-slideshow, .photo-slideshow-single  {
 
     position: absolute;
@@ -239,19 +312,23 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
+    width: 100%;
 
     border: none;
     background: none;
     display: flex;
     
     div {
-        position: relative;
-
+        position: absolute;
+        height: auto;
         img {
             margin: auto 0px 0px 0px;
-            position: relative;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
             width: 100%;
-            height: max-content !important;
+            height: auto;
         }
     }
 

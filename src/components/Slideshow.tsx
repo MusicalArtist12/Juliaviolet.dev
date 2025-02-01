@@ -11,7 +11,9 @@ function getPhotos(Photos): AnimatedPropConstructor[] {
             <Image
                 alt={`Image: ${photo.title}`} 
                 src={photo.location}
-                fill={true}
+                width={0}
+                height={0}
+                sizes='100vw'
                 loading='eager'
             />
         </>
@@ -38,6 +40,9 @@ export default function Slideshow({Photos} : {Photos: {location, title}[] } ): J
 
     const data = getPhotos(Photos);
 
+    let buttons: JSX.Element[] = [];
+
+
     const [index, set] = useState(0)
     
     const onClick = () => set(state => (state + 1) % Photos.length)
@@ -46,6 +51,10 @@ export default function Slideshow({Photos} : {Photos: {location, title}[] } ): J
 
     let width = ref.current ? ref.current.offsetWidth : 50
     let height = ref.current ? ref.current.offsetHeight : 50
+
+    data.forEach((_, i) => {
+        buttons[i] = <button onClick={() => set(i)} className={i == index ? 'selected' : ''}>⬤</button>
+    })
 
     const [transition, api] = useTransition(index, () => ({
         from:  { 
@@ -87,6 +96,12 @@ export default function Slideshow({Photos} : {Photos: {location, title}[] } ): J
                     return <Item style={style}/>
                 })}
             </button>
+            <div className='photo-slideshow-buttons-container'>
+                <div className='photo-slideshow-buttons'>
+                    {buttons}
+                </div>
+            </div>
+
         </>
     }
     else {

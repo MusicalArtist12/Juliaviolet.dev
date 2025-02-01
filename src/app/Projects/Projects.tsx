@@ -13,8 +13,9 @@ function PostElement({post} : {post: metaData}): JSX.Element {
                 <div className='image'><Image 
                     src={post.photos[0]} 
                     alt={post.subtitle}
-                    width={800} 
-                    height={800}
+                    width={0} 
+                    height={0}
+                    sizes={'100vw, 12em'}
                 />
                 </div>
                 <header>
@@ -47,7 +48,7 @@ export default async function Projects() {
     const posts: metaData[] = await getAllPostMetadata();
   
     return <>
-        <section className="project-grid">
+        <section className="grid">
             {posts?.sort((a, b) => {
                 return Date.parse(b.publishDate) - Date.parse(a.publishDate)
             }).map((post, idx) => <PostElement post={post} key={idx}/>)}

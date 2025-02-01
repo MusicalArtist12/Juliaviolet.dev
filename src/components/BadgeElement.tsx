@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image';
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max)
@@ -33,10 +34,13 @@ function Badge({entry}): JSX.Element {
     }, [entry.badges])
 
     return <>
-        <img 
+        <Image
             className="badge pixel-art"
             src={badge} 
-            alt={`'${entry.name}' `}   
+            alt={`'${entry.name}' `}
+            width={0}
+            height={0}
+            unoptimized={true}
         />
     </>
 }
