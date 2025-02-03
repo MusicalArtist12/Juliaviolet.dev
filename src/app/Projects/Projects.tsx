@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import metaData from './metadata'
+import metaData from '../../components/metadata'
 import './projects.css'
 
 import fs from 'fs'
@@ -8,22 +8,27 @@ import path from 'path'
 
 function PostElement({post} : {post: metaData}): JSX.Element {
     return <>
+        {post.header ?
         <Link href={`Projects/${post.slug}`}>
             <article>
-                <div className='image'><Image 
-                    src={post.photos[0]} 
-                    alt={post.subtitle}
-                    width={0} 
-                    height={0}
-                    sizes={'100vw, 12em'}
-                />
+                <div className='image'>
+                    {post.header.photos ? 
+                    <Image 
+                        src={post.header.photos[0]} 
+                        alt={post.header.subtitle || ""}
+                        width={0} 
+                        height={0}
+                        sizes={'100vw, 12em'}
+                    />
+                    : null}
                 </div>
                 <header>
-                    <h1>{post.title}</h1>
-                    <h3>{post.publishDate}</h3>
+                    <h1>{post.header.title}</h1>
+                    <h3>{post.header.publishDate}</h3>
                 </header>
             </article>
         </Link>
+        : null}
     </>
 }
 
@@ -50,7 +55,7 @@ export default async function Projects() {
     return <>
         <section className="grid">
             {posts?.sort((a, b) => {
-                return Date.parse(b.publishDate) - Date.parse(a.publishDate)
+                return b.header?.publishDate && a.header?.publishDate ? Date.parse(b.header.publishDate) - Date.parse(a.header.publishDate) : 0
             }).map((post, idx) => <PostElement post={post} key={idx}/>)}
         </section>
     </>

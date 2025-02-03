@@ -1,10 +1,19 @@
 ---
-title: 'Hero Climb'
-subtitle: 'Presented by Tappa Tappa Keyboard'
-photos: ['/ProjectPhotos/HeroClimb.png']
-publishDate: 'January 13, 2025'
-githubLink: 'https://github.com/theIntethesis/Hero-Climb'
-people: [ 'Jason Culbertson', 'Julia', 'Ferris Hammes-Buehler', 'Taran Haug', 'Gavin Haynes' ]
+header: {
+    title: 'Hero Climb',
+    subtitle: 'Presented by Tappa Tappa Keyboard',
+    photos: ['/ProjectPhotos/HeroClimb.png'],
+    publishDate: 'January 13, 2025',
+    githubLink: 'https://github.com/theIntethesis/Hero-Climb',
+    people: [ 
+        'Jason Culbertson', 
+        'Julia', 
+        'Ferris Hammes-Buehler', 
+        'Taran Haug', 
+        'Gavin Haynes' 
+    ]
+}
+
 ---
 
 # Overview

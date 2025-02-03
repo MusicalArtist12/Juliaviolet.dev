@@ -29,7 +29,7 @@ export default async function Contact() {
         <ContactItem method={method} key={idx}/>
     )
 
-    return <section className="column">  
+    return <section className="column" style={{maxWidth: "50em", width: "100%", margin: "0px auto"}}>  
         {contactItems}
     </section>
 }

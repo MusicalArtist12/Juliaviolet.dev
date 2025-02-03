@@ -1,11 +1,14 @@
 ---
-title: 'Repeater Cards'
-subtitle: 'Made for a Callsign Rolodex'
-photos: ['/ProjectPhotos/rolodex.png']
-publishDate: 'October 7, 2024'
-link: 'https://rolodex.breq.dev'
-githubLink: 'https://github.com/breqdev/callsign-rolodex'
-people: [ 'Breq', 'Julia' ]
+header: {
+    title: 'Repeater Cards',
+    subtitle: 'Made for a Callsign Rolodex',
+    photos: ['/ProjectPhotos/rolodex.png'],
+    publishDate: 'October 7, 2024',
+    link: 'https://rolodex.breq.dev',
+    githubLink: 'https://github.com/breqdev/callsign-rolodex',
+    people: [ 'Breq', 'Julia' ]
+}
+
 ---
 
 # Overview and Motivation

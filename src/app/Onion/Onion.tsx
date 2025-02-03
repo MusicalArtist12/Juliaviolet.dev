@@ -1,19 +1,14 @@
-
-import { getOnionPhotos } from '@/components/Fetchers'
-import Image from 'next/image';
-import Link from 'next/link';
+import Article from '@/components/Article'
+import metaData from '@/components/metadata'
 
 
 export default async function Onion() {
-    const Photos = await getOnionPhotos(); 
+    const data = await import(`@/public/Pages/Onion.md`) as any
+    
+    const frontmatter: metaData = data.frontmatter;
+    const Post = data.default;
 
     return <>
-        <section className="grid">
-            {
-                Photos.map((x, idx) => {
-                    return <Link key={idx} href={`Onion/${idx.toString()}`}><Image width={0} height={0} sizes={"100vw, 12em, 6em"} src={x.location} alt={""}/></Link>
-                })
-            }
-        </section>
+        <Article slug='Onion' Post={Post} frontmatter={frontmatter} noRaw={true}/>
     </>
 }

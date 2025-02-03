@@ -1,8 +1,10 @@
 ---
-title: 'Server'
-subtitle: 'No, you cannot have a link'
-photos: ['/ProjectPhotos/server.png']
-publishDate: 'April 16, 2024'
+header: {
+    title: 'Server',
+    subtitle: 'No, you cannot have a link',
+    photos: ['/ProjectPhotos/server.png'],
+    publishDate: 'April 16, 2024'
+}
 
 ---
 
