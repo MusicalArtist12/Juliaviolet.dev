@@ -1,34 +1,34 @@
 :root {
-    
-    --header-background:     rgba(160, 111, 253, 1);
-    --mobile-menu-background:       #8A5FD9;
-    --background: #000000;
-    --block-background:    #573499;
-    --footer-background:     #FC6FC4;
 
-    --nav-hover-color: #000000;
-    
-    --block-title-color: #FC6FC4;
+    --header-background:     #8B60F0;
+    --mobile-menu-background:       #8B60F0;
+    --background: #0D0917;
+    --block-background:    #563B94;
+    --footer-background:     #8B60F0;
+
+    --nav-hover-color: #0D0917;
+
+    --block-title-color: #E97DF0;
     --block-subtitle-color: inherit;
 
-    --block-h1-color: #FC6FC4;
-    --block-h2-color: #FC6FC4;
-    --block-h3-color: #FC6FC4;
-    --block-bold-color: #FC6FC4;
+    --block-h1-color: #E97DF0;
+    --block-h2-color: #E97DF0;
+    --block-h3-color: #E97DF0;
+    --block-bold-color: #E97DF0;
 
-    --font-link:       #FC6FC4;
-    --font-link-hover: #FC6FC4;
+    --font-link:       #E97DF0;
+    --font-link-hover: #E97DF0;
 
     --embed-block-color: rgba(0, 0, 35, 0.5);
 
-    --block-link-title-color: #FC6FC4;
+    --block-link-title-color: #E97DF0;
     --block-link-subtitle-color: inherit;
 
-    --footer-text-color:     #000000;
+    --footer-text-color:     #0D0917;
 
-    --box-shadow-color: #FC6FC4;
+    --box-shadow-color: #E97DF0;
 
-    --font-light:    #FCCAD2;
+    --font-light:    #E4D6FF;
 
     --border-radius: 10px;
 }
@@ -44,7 +44,7 @@
 
 
 body.noJS {
-    > header {        
+    > header {
         h2 {
             font-size: 1.25em;
         }
@@ -57,7 +57,7 @@ body {
 
     a > section:hover,
     a > article:hover,
-    a > img:hover, 
+    a > img:hover,
     a > div:hover,
     button img:hover {
         transition: box-shadow 0.1s ease-in-out;
@@ -66,7 +66,7 @@ body {
         /* only use the largest context */
         a > section:hover,
         a > article:hover,
-        a > img:hover, 
+        a > img:hover,
         a > div:hover,
         button > img:hover {
             box-shadow: none;
@@ -104,8 +104,8 @@ body {
         .mobile_nav {
             background-color: var(--mobile-menu-background);
         }
-    }   
-    
+    }
+
     > main {
         * {
             border-radius: var(--border-radius);
@@ -146,9 +146,9 @@ body {
                 a div {
                     background-color: var(--embed-block-color);
                 }
-  
+
             }
-            
+
             article > header {
                 > h1 {
                     font-size: 1.5em;
@@ -169,7 +169,7 @@ body {
                 text-align: left;
                 background-color: var(--block-background);
 
-                
+
                 > section {
                     blockquote, pre, code {
                         background-color: var(--embed-block-color);
@@ -191,7 +191,7 @@ body {
                     }
 
                     ul, ol {
-                        line-height: 1.5rem; 
+                        line-height: 1.5rem;
                     }
 
                     strong {
@@ -254,9 +254,9 @@ body {
 
         * {
             font-size: clamp(0.8rem, 0.714rem + 0.381vw, 1rem);
-            color: var(--footer-text-color);    
+            color: var(--footer-text-color);
         }
-        
+
         > header {
             text-align: center;
         }
@@ -266,4 +266,3 @@ body {
         }
     }
 }
-

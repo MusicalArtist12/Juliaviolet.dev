@@ -1,24 +1,26 @@
-@media screen and (max-width: 900px) { 
+@media screen and (max-width: 900px) {
 
     body.hasJS {
         font-size: clamp(0.875rem, 0.625rem + 1.333vw, 1.125rem);
         row-gap: 1.0em;
-        column-gap: 1.0em; 
+        column-gap: 1.0em;
 
         > header > *,
         > main,
         > footer > *,
         .mobile_nav > * {
-            width: 90%;
+            width: 95%;
             margin: 0 auto;
         }
 
         header {
+
             .menu-button {
                 display: inline;
                 font-size: inherit;
             }
-            
+
+
             .nav {
                 display: none;
             }
@@ -29,8 +31,20 @@
 
             .bar {
                 padding: 1em 0em 1em 0em;
+
             }
         }
     }
+}
 
+@media screen and (max-width: 325px) {
+    body.hasJS {
+        header {
+            .main-section {
+                h1 {
+                    display: none;
+                }
+            }
+        }
+    }
 }

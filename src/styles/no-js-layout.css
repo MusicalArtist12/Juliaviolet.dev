@@ -1,11 +1,15 @@
 body.noJS {
     height: 100%;
-    
+
     > header .bar {
         .menu-button {
             display: none;
         }
-    }   
+    }
+
+    .photo-slideshow-parent {
+        display: none;
+    }
 
 
     > footer {
@@ -13,5 +17,5 @@ body.noJS {
             display: none !important;
         }
     }
-    
+
 }
