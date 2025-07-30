@@ -12,7 +12,7 @@
 *, html {
     margin: 0;
     padding: 0;
-    
+
 
 }
 
@@ -30,15 +30,16 @@ section {
             display: block;
         }
     }
+    padding: 0px 5px;
 }
 
 
-body { 
+body {
     display: flex;
     flex-direction: column;
     row-gap: 2.0em;
-    column-gap: 2.0em; 
-    min-height: 100vh; 
+    column-gap: 2.0em;
+    min-height: 100vh;
 
 
     > header > *,
@@ -52,7 +53,7 @@ body {
 
     > header .bar, > main {
         row-gap: 1.25em;
-        column-gap: 1.25em; 
+        column-gap: 1.25em;
     }
 
     > header {
@@ -62,7 +63,7 @@ body {
         .bar {
             display: flex;
             align-items: center;
-            margin: auto;   
+            margin: auto;
             overflow: hidden;
             flex-wrap: nowrap;
             text-wrap: nowrap;
@@ -98,7 +99,7 @@ body {
         flex-grow: 1;
         display: flex;
         flex-direction: column;
-        
+
         > img {
             width: 100%;
             display: block;
@@ -138,7 +139,7 @@ body {
                         padding: 0.10em 0.5em;
                         text-align: left;
                         line-height: 31px;
-                        
+
                         height: 31px;
 
                         text-wrap: nowrap;
@@ -149,7 +150,7 @@ body {
                     padding: 0.25em 0.5em;
                 }
             }
-                
+
 
             article {
                 padding: 1.5em;
@@ -159,7 +160,7 @@ body {
 
                     * {
                         margin: 1.0em 0.0em;
-                    }  
+                    }
 
                     img {
                         max-width: 30em;
@@ -173,7 +174,7 @@ body {
 
                     blockquote, pre {
                         padding: 0.5em;
-                        
+
                     }
 
                     pre, blockquote {
@@ -220,11 +221,11 @@ body {
                     height: auto;
 
                 }
-        
+
             }
         }
 
-        
+
         a > article {
             padding: 0.75em;
         }
@@ -297,7 +298,7 @@ body {
 
     background-color: #00000088;
 
-    
+
     > button {
         position: relative;
         color: #ffffff88 !important;
@@ -327,7 +328,7 @@ body {
     border: none;
     background: none;
     display: flex;
-    
+
     div {
         position: absolute;
         height: auto;
@@ -368,4 +369,3 @@ body {
         flex-direction: row;
     }
 }
-

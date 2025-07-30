@@ -4,6 +4,8 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 import { faTwitter, faDiscord, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faCloud, faEnvelope, faBars, faFile, faCodeBranch, faRadio, faLink, faUser } from '@fortawesome/free-solid-svg-icons'
 
+import type { JSX } from "react";
+
 config.autoAddCss = false
 
 const logoLookup = {

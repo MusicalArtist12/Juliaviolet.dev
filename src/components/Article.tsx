@@ -9,6 +9,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { MDXContent } from 'mdx/types'
 
+import type { JSX } from "react";
+
 const Futura = localFont({
     src: "../lib/fonts/Futura-Light.ttf",
     display: 'swap'

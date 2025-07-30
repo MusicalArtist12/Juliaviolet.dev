@@ -1,11 +1,11 @@
-{ 
+{
     "Friends": [
         {
             "name": "Ari",
             "nickname": "Adryd",
             "callsign": "REDACTED",
             "badges": [
-                ["/88x31/adryd.png", 100], 
+                ["/88x31/adryd.png", 100],
                 ["/88x31/adryd_alt.png", 10]
             ],
             "badgeText": "Adryd",
@@ -38,7 +38,7 @@
             "nickname": "Breq",
             "callsign": "K9BRQ",
             "badges": [
-                ["/88x31/breq.png", 100], 
+                ["/88x31/breq.png", 100],
                 ["https://breq.dev/badges/breqalt.png", 10]
             ],
             "link": "https://breq.dev",
@@ -86,6 +86,16 @@
             "link": "https://qilow.carrd.co/",
             "colors": ["#fbdd00"],
             "hasOneko": false
+        },
+        {
+            "name":"Rain",
+            "nickname": "slonkazoid",
+            "badges": [
+                ["/88x31/slonk.webp", 100]
+            ],
+            "link": "https://slonk.ing/",
+            "colors": ["#F5C2E7"],
+            "hasOneko": false
         }
     ],
     "Sites": [
@@ -120,6 +130,14 @@
             ],
             "link": "http://makea.fish",
             "colors": ["#FFFFFF"]
+        },
+        {
+            "name": "Moonlight",
+            "badges": [
+                ["/88x31/moonlightnow.gif", 100]
+            ],
+            "link": "https://moonlight-mod.github.io/",
+            "colors": ["#FFFBA6"]
         }
     ]
 }

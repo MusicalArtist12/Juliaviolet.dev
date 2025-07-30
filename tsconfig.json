@@ -7,11 +7,21 @@
     ],
     "baseUrl": "src/",
     "paths": {
-      "@/components/*": ["components/*"],
-      "@/public/*": ["../public/*"],
-      "@/styles/*": ["styles/*"],
-      "@/api/*": ["api/*"],
-      "@/lib/*": ["lib/*"]
+      "@/components/*": [
+        "components/*"
+      ],
+      "@/public/*": [
+        "../public/*"
+      ],
+      "@/styles/*": [
+        "styles/*"
+      ],
+      "@/api/*": [
+        "api/*"
+      ],
+      "@/lib/*": [
+        "lib/*"
+      ]
     },
     "allowJs": true,
     "skipLibCheck": true,
@@ -30,7 +40,8 @@
         "name": "next"
       }
     ],
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "target": "ES2017"
   },
   "include": [
     "next-env.d.ts",
@@ -40,5 +51,5 @@
   ],
   "exclude": [
     "node_modules"
-  ],
+  ]
 }

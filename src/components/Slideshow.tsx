@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect, useRef, ReactElement} from 'react'
+import React, { useState, useEffect, useRef, ReactElement, type JSX } from 'react';
 import { useTransition, animated, AnimatedProps } from '@react-spring/web'
 import Image from 'next/image';
 
@@ -9,7 +9,7 @@ type AnimatedPropConstructor = (props: AnimatedProps<{ style: any; }>) => ReactE
 function getPhotos(Photos): AnimatedPropConstructor[] {
     let photos = Photos.map((photo) => <>
             <Image
-                alt={`Image: ${photo.title}`} 
+                alt={`Image: ${photo.title}`}
                 src={photo.location}
                 width={0}
                 height={0}
@@ -22,7 +22,7 @@ function getPhotos(Photos): AnimatedPropConstructor[] {
     let data: AnimatedPropConstructor[] = photos
         .map((photo) => {
             const Constructor = ({ style }) => <>
-                <animated.div style={{...style}} className={'box-shadow'}> 
+                <animated.div style={{...style}} className={'box-shadow'}>
                     {photo}
                 </animated.div>
             </>
@@ -44,7 +44,7 @@ export default function Slideshow({Photos} : {Photos: {location, title}[] } ): J
 
 
     const [index, set] = useState(0)
-    
+
     const onClick = () => set(state => (state + 1) % Photos.length)
 
     const ref = useRef<HTMLButtonElement>(null)
@@ -53,35 +53,35 @@ export default function Slideshow({Photos} : {Photos: {location, title}[] } ): J
     let height = ref.current ? ref.current.offsetHeight : 50
 
     data.forEach((_, i) => {
-        buttons[i] = <button onClick={() => set(i)} className={i == index ? 'selected' : ''}>⬤</button>
+        buttons[i] = <button key={i} onClick={() => set(i)} className={i == index ? 'selected' : ''}>⬤</button>
     })
 
     const [transition, api] = useTransition(index, () => ({
-        from:  { 
+        from:  {
             x: width,
             y: height / 2,
             width: "0%",
             height: "0%"
         },
-        enter: { 
+        enter: {
             x: 0,
             y: 0,
             width: "100%",
             height: "100%"
         },
-        leave: { 
+        leave: {
             x: 0,
             y: height / 2,
             width: "0%",
             height: "0%"
         },
-        config: { 
+        config: {
             tension: 110,
             friction: 10,
             clamp: true
         },
         exitBeforeEnter: true,
-    
+
     }))
 
     useEffect(() => {

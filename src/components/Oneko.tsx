@@ -1,7 +1,7 @@
 "use client"
 
 import { oneko, freezeOneko } from '@/lib/oneko/oneko.js' 
-import { useState } from 'react';
+import { useState, type JSX } from 'react';
 
 let rendered = false;
 

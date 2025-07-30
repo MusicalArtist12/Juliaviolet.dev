@@ -1,8 +1,10 @@
 import GetLogo from "@/components/GetLogo"
 import {BadgeElement} from "@/components/BadgeElement"
-import Oneko from '@/components/Oneko' 
+import Oneko from '@/components/Oneko'
 import Link from 'next/link'
 import { getDirectory } from '@/components/Fetchers'
+
+import type { JSX } from "react";
 
 export default async function Footer() {
     const Directory = await getDirectory()

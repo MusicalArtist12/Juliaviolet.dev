@@ -6,6 +6,8 @@ import './projects.css'
 import fs from 'fs'
 import path from 'path'
 
+import type { JSX } from "react";
+
 function PostElement({post} : {post: metaData}): JSX.Element {
     return <>
         {post.header ?

@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { getContacts } from '@/components/Fetchers'
 import "./contact.css"
 
+import type { JSX } from "react";
+
 function ContactItem({method}): JSX.Element {
     let Logo = GetLogo(method.logo, "2x")
 
