@@ -14,7 +14,7 @@
     "@types/mdx": "*",
     "@types/next": "*",
     "@vercel/blob": "*",
-    "next": "15.4.5",
+    "next": "^15.5.9",
     "next-mdx-remote": "*",
     "react": ">=19.1.1",
     "react-dom": ">=19.1.1",

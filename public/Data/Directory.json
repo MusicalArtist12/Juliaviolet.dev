@@ -108,6 +108,14 @@
             "colors": ["#5eb3a0"]
         },
         {
+            "name": "corru",
+            "badges": [
+                ["/88x31/corru.gif", 100]
+            ],
+            "link": "https://corru.observer",
+            "colors": ["#ffff00"]
+        },
+        {
             "name" : "I use Arch btw",
             "badges": [
                 ["/88x31/archlinux.gif", 100]
