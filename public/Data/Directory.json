@@ -96,6 +96,16 @@
             "link": "https://slonk.ing/",
             "colors": ["#F5C2E7"],
             "hasOneko": false
+        },
+        {
+            "name":"dd",
+            "nickname": "dd86k",
+            "badges": [
+                ["/88x31/dd86k.gif", 100]
+            ],
+            "link": "https://dd86k.space",
+            "colors": ["#000000"],
+            "hasOneko": false
         }
     ],
     "Sites": [
