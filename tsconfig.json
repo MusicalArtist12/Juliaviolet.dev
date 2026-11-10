@@ -5,22 +5,22 @@
       "dom.iterable",
       "esnext"
     ],
-    "baseUrl": "src/",
+    "noUncheckedSideEffectImports": false,
     "paths": {
       "@/components/*": [
-        "components/*"
+        "./src/components/*"
       ],
       "@/public/*": [
-        "../public/*"
+        "./public/*"
       ],
       "@/styles/*": [
-        "styles/*"
+        "./src/styles/*"
       ],
       "@/api/*": [
-        "api/*"
+        "./src/api/*"
       ],
       "@/lib/*": [
-        "lib/*"
+        "./src/lib/*"
       ]
     },
     "allowJs": true,
